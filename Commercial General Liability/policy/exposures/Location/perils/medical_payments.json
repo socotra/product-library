@@ -1,0 +1,7 @@
+{
+	"name": "medical_payments",
+	"displayName": "Medical Payments",
+	"fields": [],
+	"indemnityPerEvent": "5000",
+	"indemnityInAggregate": "100000"
+}

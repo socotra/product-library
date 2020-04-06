@@ -1,0 +1,18 @@
+{% assign policy_v = data.policy_characteristics.field_values %}
+{% assign exp_v = data.exposure_characteristics.field_values %}
+
+{% assign tech_premium = exp_v.cost | times: 0.03 | round %}
+
+{{ tech_premium | set_year_technical_premium }}
+
+{% if exp_v.num_axle == '3' %}
+  	{% assign claims_multiplier = 2 %}
+{% elsif exp_v.num_axle == '2' %}
+  	{% assign claims_multiplier = 1.5 %}
+{% else %}
+  	{% assign claims_multiplier = 1 %}
+{% endif %}
+
+{% assign premium = tech_premium | times: claims_multiplier %}
+
+{{ premium | set_year_premium }}

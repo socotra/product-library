@@ -1,0 +1,84 @@
+{
+  "name": "ring",
+  "displayName": "Ring",
+  "fields": [
+    {
+      "name": "ring_type",
+      "title": "Ring Type",
+      "type": "select",
+      "width": 3,
+      "values": [
+        "Diamond",
+        "Antique",
+        "Bridal",
+        "Cluster"
+      ]
+    },
+    {
+      "name": "vin",
+      "title": "Ring Identification Number (eg  2HGEJ6526VH515413  )",
+      "type": "string",
+      "newline": true,
+      "optional": true
+    },
+    {
+      "newline": true,
+      "name": "year",
+      "title": "Ring Year",
+      "type": "string",
+      "regex": "^(19[3-9][0-9]|2[0-9]{3})$",
+      "width": 3
+    },
+    {
+      "name": "make",
+      "title": "Ring Make",
+      "type": "string",
+      "width": 3
+    },
+    {
+      "name": "model",
+      "title": "Ring Model",
+      "type": "string",
+      "width": 3
+    },
+    {
+      "newline": true,
+      "name": "ring_value",
+      "title": "Ring Value",
+      "type": "number",
+      "width": 3,
+      "decimalPlaces": 0
+    },
+    {
+      "name": "ownership_indicator",
+      "title": "Ownership Indicator",
+      "width": 3,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Owned - Not Financed",
+        "Owned - Financed",
+        "Leased"
+      ]
+    },
+    {
+      "name": "ring_photos",
+      "title": "Ring photos and receipt and valuation documents ",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    }
+  ],
+  "externalDataCalls": [
+    {
+      "triggerField": "vin",
+      "targetFields": [
+        "make",
+        "model",
+        "year"
+      ],
+      "uri": "https://qg9x69rbi9.execute-api.us-east-2.amazonaws.com/prod/"
+    }
+  ]
+}

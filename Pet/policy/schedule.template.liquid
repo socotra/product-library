@@ -1,0 +1,99 @@
+{% assign policy_c = data.policy.characteristics[0] %}
+{% assign exp_v = data.policy.exposures[0].characteristics[0].field_values %}
+{% assign ph_v = data.policyholder.entity.values %}
+{% assign end_display = policy_c.coverage_end_timestamp | timestamp_millis_add: "day", -1 %}
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+</head>
+{% header %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+  <table width="100%">
+    <tr>
+      <td>
+        <p class="header-contact">
+          Figo Pet Insurance Co.<br>
+          223 W Erie St<br>
+          Chicago, IL<br>
+          +1 (844) 738 3446<br>
+          www.figopetinsurance.com
+        </p>
+      </td>
+      <td>
+        <img src="https://figopetinsurance.com/profiles/sndev_install/themes/sndev/img/FIGO_tag_navy.png" title="Pet Insurance Made Simple" class="logo" height="40px">
+      </td>
+    </tr>
+  </table>
+{% endheader %}
+<h1>Pet - Insurance Policy Schedule</h1><br>
+<h3>Insurance Details</h3>
+<table class="table border-tops-only content">
+  <tr>
+    <td>Policyholder</td>
+    <td>
+      <b>ID:</b> {{data.policyholder.id}}<br>
+      <b>Name:</b> {{ph_v.first_name}} {{ph_v.last_name}}<br>
+      <b>Date of Birth:</b> {{ph_v.date_of_birth | timestamp_millis_print: "MMM dd, YYYY" }}<br>
+    </td>
+  </tr>
+  <tr>
+    <td>My Insured Pet(s)</td>
+    <td>
+      <b>Pet:</b> {{exp_v.pet_name}}<br>
+      <b>Type:</b> {{exp_v.pet_type}}<br>
+      <b>Breed:</b> {{exp_v.pet_breed_dog}} {{exp_v.pet_breed_cat}}<br>
+      <b>Gender:</b> {{exp_v.pet_gender}}<br>
+      <b>Date of Birth</b> {{exp_v.date_of_birth}}<br>
+    </td>
+  </tr>
+  <tr>
+    <td>Policy</td>
+    <td>
+      <b>ID:</b> {{data.policy.display_id}}<br>
+      <b>Effective:</b> From {{policy_c.coverage_start_timestamp | timestamp_millis_print: "MMM dd, YYYY" }}
+      to {{end_display | timestamp_millis_print: "MMM dd, YYYY" }}<br>
+      <b>Covers:</b>
+      
+      {% for exp in data.policy.exposures %}
+        {% for peril in exp.perils %}
+          <ul>
+            {% if peril.name == 'accident' %}
+              <li><b>Accident / Illness:</b> {{peril.characteristics.last.indemnity_in_aggregate | format_number_currency: "en","US"}}</li>
+            {% else %}
+              <li><b>Accidental Death:</b> {{peril.characteristics.last.lump_sum_payment | format_number_currency: "en","US"}}</li>
+            {% endif %}
+          </ul>
+        {% endfor %}
+      {% endfor %}
+
+    </td>
+  </tr>
+  <tr>
+    <td>Total Premium</td>
+    <td>{{policy_c.gross_premium | format_number_currency: "en","US" }}</td>
+  </tr>
+</table>
+<br>
+<b>Authorized on</b> {{data.policy.issued_timestamp | timestamp_millis_print: "MMM dd, YYYY" }}
+{% footer %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+  <table width="100%">
+    <tr>
+      <td>
+        <p class="header-contact">
+          Figo - Pet Insurance Made Simple
+        </p>
+      </td>
+      <td>
+        <p class="header-contact">
+          Page {{ x | page_number }} of {{ y | page_count }}
+        </p>
+      </td>
+      <td>
+        <footer></footer>
+      </td>
+    </tr>
+  </table>
+{% endfooter %}

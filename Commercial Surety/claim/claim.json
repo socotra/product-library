@@ -1,0 +1,95 @@
+{
+  "fields": [
+    {
+      "name": "date_field_example",
+      "title": "calendar date entry",
+      "type": "date",
+      "precision": "day",
+      "minimumOffset": {
+        "field": "day",
+        "amount": -1,
+        "roundToDay": true
+      },
+      "maximumOffset": {
+        "field": "day",
+        "amount": 1,
+        "roundToDay": true
+      },
+      "showCalendar": true,
+      "optional": true
+    },
+    {
+      "name": "email_field_example",
+      "title": "email entry",
+      "type": "email",
+      "optional": true      
+    },
+    {
+      "name": "media_field_example",
+      "title": "Media Upload",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "number_field_example",
+      "title": "number entry (integer, optional)",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "select_field_example",
+      "title": "dropdown entry",
+      "type": "select",
+      "values": [
+        "Option 1",
+        "Option 2",
+        "Option 3",
+        "And so on"
+      ],
+      "optional": true
+    },
+    {
+      "name": "text_field_example",
+      "title": "large text entry with 3000 character max length",
+      "type": "string",
+      "multiline": true,
+      "optional": true,
+      "maximum": 3000
+    },
+    {
+      "name": "group_example",
+      "title": "field group",
+      "type": "group",
+      "fields": [
+        {
+          "name": "group_string_example",
+          "title": "string in field group",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "group_number_example",
+          "title": "number in field group",
+          "type": "number",
+          "optional": true
+        }
+      ],
+      "optional": true,
+      "repeatable": true
+    },
+    {
+      "name": "conditional_text_field",
+      "title": "Text entry to explain a previous entry",
+      "type": "string",
+      "multiline": true,
+      "optional": true,
+      "width": 12,
+      "condition": {
+         "select_field_example": ["Option 1", "Option 2", "Option 3"]
+      }
+    }
+  ]
+}

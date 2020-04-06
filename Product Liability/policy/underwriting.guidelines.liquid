@@ -1,0 +1,20 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+
+{{ "accept" | set_underwriting_decision }}
+
+{% if policy_v.select_recalled contains "Yes" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Rejected because of policy- Have you voluntarily or involuntarily recalled, or are you considering recalling, any known or suspected defective products from the market?" | add_underwriting_note }}
+{% elsif exposure_v.select_knowledge_of_defect contains "Yes" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Rejected because of exposure- Are you aware of any incident, condition, circumstance, defect or suspected defect in any product or work which may result in claim" | add_underwriting_note }}  
+{% elsif exposure_v.condition_Full_Compliance contains "No" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Rejected because of exposure- Are your products subject to any government or industry standards?If yes, are your products in full compliance?" | add_underwriting_note }}
+{% elsif exposure_v.upcoming_year_sales >= 1000000000 %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "We do not provide coverage for sales over 1000000000" | add_underwriting_note }}
+{% endif %}
+

@@ -1,0 +1,11 @@
+{% comment %} set the premium according to the amount of coverage {% endcomment %}
+{% assign indemnity = data.peril_characteristics.indemnity_per_event %}
+{% assign premium = 0 %}
+
+
+
+
+{% comment %} set the technical premium, commission, and premium  {% endcomment %}
+{{ premium | times: 0.8 | set_year_technical_premium }}
+{{ premium | times: 0.05 | add_year_commission: "Agent1234" }}
+{{ premium | set_year_premium }}

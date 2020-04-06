@@ -1,0 +1,10 @@
+{% assign exp_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+
+{% if exp_v.professionalindemnity_type}} == "Architect/Civil Engineer" %}
+	{{ "Architects_and_Engineers_Static.pdf" | render_static_document }}
+
+{% else %}
+	{{ "General_Static.pdf"| render_static_document }}
+
+{% endif %}

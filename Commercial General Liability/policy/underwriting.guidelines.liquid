@@ -1,0 +1,32 @@
+{% assign policy_v = data.policy.characteristics.last.field_values %}
+{% assign exposures = data.policy.exposures %}
+
+{% for location in exposures %}
+    {% for peril in location.perils %}
+        {% if peril.name == "bodily_injury" %}
+        {% assign val = peril.characteristics.last.indemnity_in_aggregate | plus: 0 %}
+            {% if val > 4000000 %}
+                {% if policy_v.insurance_fraud_conviction == 'Yes' %} 
+                    {{ "reject" | set_underwriting_decision }}
+                    {{ "Due to the Fraud Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}
+                {% elsif policy_v.10_year_felony_conviction_of_directors == 'Yes' %} 
+                    {{ "reject" | set_underwriting_decision }}
+                    {{ "Due to the Felony Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}
+                {% else %}
+                    {{ "none" | set_underwriting_decision }}
+                    {{ "Policy has been referred to an underwriter" | add_underwriting_note }}
+                {% endif %}
+            {% else %}
+            	{% if policy_v.insurance_fraud_conviction == 'Yes' %} 
+                    {{ "reject" | set_underwriting_decision }}
+                    {{ "Due to the Fraud Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}
+                {% elsif policy_v.10_year_felony_conviction_of_directors == 'Yes' %} 
+                    {{ "reject" | set_underwriting_decision }}
+                    {{ "Due to the Felony Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}
+                {% else %}
+                    {{ "accept" | set_underwriting_decision }}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

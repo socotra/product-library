@@ -1,0 +1,49 @@
+{
+  "fields": [
+    {
+      "name": "channel",
+      "title": "Sales Channel",
+      "type": "select",
+      "values":[
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+    },
+    {
+     "name": "email",
+     "title": "Email",
+     "type": "email",
+     "optional": true
+   },
+   {
+    "name": "at_fault_claims_past_5_years",
+    "title": "Number of at fault claims in the past 5 years",
+    "type": "select",
+    "values":[
+      "0",
+      "1",
+      "2",
+      "3 or more"
+    ],
+    "optional": false
+  },
+  {
+    "name": "insurance_fraud_conviction",
+    "title": "Has the applicant ever been convicted of insurance fraud?",
+    "type": "select",
+    "values": [
+      "No",
+      "Yes"
+    ],
+    "optional": false
+  }
+],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    }
+  ]
+}

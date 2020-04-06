@@ -1,0 +1,8 @@
+{
+  "name": "Contents - Equipment",
+  "displayName": "Contents Equipment",
+  "fields": [],
+  "indemnityPerItem": "500",
+  "indemnityInAggregate": "0",
+  "deductible": "1000"
+}

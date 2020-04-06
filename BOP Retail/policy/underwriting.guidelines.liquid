@@ -1,0 +1,42 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+{{ "accept" | set_underwriting_decision }}
+{{ "Perils with $0 Premiums are Included in Your Coverage Package" | add_underwriting_note }} 
+
+{% comment %} {% if exposure_v.select_field_example contains "And so on" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Rejected because of exposure select field value" | add_underwriting_note }}  
+{% endif %}
+
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign vehicles = data.policy.exposures %}
+ {% endcomment %}
+
+{% if policy_v.sales >= 5000000 %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Annual sales are too high for this policy." | add_underwriting_note }}
+{% comment %} {% else %}
+    {{ "accept" | set_underwriting_decision }} {% endcomment %}
+{% endif %}
+
+{% comment %} {% if policy_v.prior_group.prior_losses == "Greater than $250,000" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "You're super duper risky." | add_underwriting_note }}
+{% else %}
+    {{ "accept" | set_underwriting_decision }} 
+{% endif %} {% endcomment %}
+
+{% if policy_v.payroll == "Yes" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Annual payroll is too high for this policy" | add_underwriting_note }}
+{% comment %} {% else %}
+    {{ "accept" | set_underwriting_decision }} {% endcomment %}
+{% endif %}
+
+{% if exposure_v.building_hours == "Open 18-24 hours/day" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Unsafe hours of operation" | add_underwriting_note }}
+{% comment %} {% else %}
+    {{ "accept" | set_underwriting_decision }} {% endcomment %}
+{% endif %}

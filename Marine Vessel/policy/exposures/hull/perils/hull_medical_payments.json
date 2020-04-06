@@ -1,0 +1,10 @@
+{
+	"name": "hull_medical_payments",
+	"displayName": "Hull Medical Payments",
+	"fields": [],
+	"indemnityPerItem": "30000",
+	"indemnityPerEvent": "30000",
+	"indemnityInAggregate": "50000",
+	"deductible": "1000",
+	"lumpSumPayment": "0"
+}

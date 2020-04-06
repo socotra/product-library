@@ -1,0 +1,158 @@
+{
+  "fields": [
+    {
+      "name": "channel",
+      "title": "Sales Channel",
+      "width": 3,
+      "type": "select",
+      "values": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+    },
+    {
+      "name": "years",
+      "title": "Years in Business",
+      "type": "number",
+      "optional": true,
+      "width": 4,
+      "heading": "Business Details"
+    },
+    {
+      "name": "employees",
+      "title": "Number of Employees",
+      "type": "number",
+      "optional": true,
+      "width": 4
+    },
+    {
+      "name": "sales",
+      "title": "Annual Sales last year",
+      "width": 4,
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "payroll",
+      "title": "Does Total Annual Payroll Exceed $500,000?",
+      "type": "select",
+      "width": 6,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "newline": true
+    },
+    {
+      "name": "business_team",
+      "title": "Does Your Business Sponsor an Athletic Team?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+    {
+      "name": "poc",
+      "title": "Point of Contact (for Inspection)",
+      "optional": true,
+      "type": "group",
+      "fields": [
+        {
+          "name": "poc_firstname",
+          "title": "First Name",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "poc_lastname",
+          "title": "Last Name",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "poc_phone",
+          "title": "Phone Number (ie: 5551234444)",
+          "type": "string",
+          "optional": true,
+          "decimalPlaces": 0,
+          "regex": "^[0-9]{9}$"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "name": "prior_group",
+      "title": "Prior Policy Details",
+      "optional": true,
+      "type": "group",
+      "fields": [
+        {
+          "name": "prior_carrier",
+          "title": "Previous Carrier",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "prior_number",
+          "title": "Previous Policy Number",
+          "type": "number",
+          "optional": true
+        },
+        {
+          "name": "prior_losses",
+          "title": "Total Losses Under Previous Policy",
+          "type": "select",
+          "values": [
+           "Less than $250,000",
+           "Greater than $250,000"
+         ],
+          "optional": true
+        },
+        {
+          "name": "prior_premium",
+          "title": "Premium Under Previous Policy",
+          "type": "number",
+          "optional": true
+        },
+        {
+          "name": "prior_details",
+          "title": "Please Describe the Losses (date, cause, amount paid)",
+          "type": "string",
+          "optional": true
+        }
+      ]
+      
+    }
+
+  ],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    }
+  ],
+  "defaultPaymentTerms": {
+    "amount": 0,
+    "unit": "day"
+  },
+  "paymentSchedules": [
+    {
+      "type": "total",
+      "name": "upfront",
+      "displayName": "Up Front"
+    },
+    {
+      "type": "monthly",
+      "name": "monthly",
+      "displayName": "Monthly"
+    }
+  ],
+  "lapse": {
+    "gracePeriodDays": 30,
+    "reinstatementPeriodDays": 90
+  }
+}

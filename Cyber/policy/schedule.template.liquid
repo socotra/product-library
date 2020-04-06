@@ -1,0 +1,111 @@
+{% assign ph_v     = data.policyholder.entity.values %}
+{% assign policy = data.policy %}
+{% assign policy_c = policy.characteristics[0] %}
+{% assign policy_v = policy_c.field_values %}
+{% assign exp_v = data.policy.exposures[0].characteristics[0].field_values %}
+{% assign end_display = data.policy.effective_contract_end_timestamp | timestamp_millis_add: "day", -1 %}
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+</head>
+
+{% header %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+  <table width="100%">
+    <tr>
+      <td>
+        <p class="header-contact">
+          ACME Insurance Co.<br>
+          101 Mission Street<br>
+          San Francisco, CA<br>
+          +1 415 555 5555<br>
+          www.socotra.com
+        </p>
+      </td>
+      <td>
+        <img src="http://i.imgur.com/cCB0v64.png" title="Acme Insurance Co" class="logo" height="72px">
+      </td>
+    </tr>
+  </table>
+{% endheader %}
+
+<h1>ACME Cyber Security Insurance Policy Schedule</h1><br>
+
+<h3>Cyber Security Policy Insurance Details</h3>
+
+<table class="table border-tops-only content">
+  <tr>
+    <td>Policyholder</td>
+    <td>
+      <b>Business Name:</b> {{business_name}}<br>
+      <b>Name:</b> {{ph_v.primary_contact_first_name}} {{ph_v.primary_contact_last_name}}<br>
+      <b>ID:</b> {{data.policyholder.id}}<br>
+    </td>
+  </tr>
+   <tr>
+    <td>Policy</td>
+    <td>
+      <b>Number:</b> {{policy.display_id}}<br>
+      <b>Term:</b> {{policy.original_contract_start_timestamp | timestamp_millis_print: "d MMM YYYY" }}
+      through {{end_display | timestamp_millis_print: "d MMM YYYY" }}<br>
+      <b>Security Contact(s):</b> {{policy_v.security_contacts}}<br> 
+     </td>
+    </tr>
+    <tr>
+    <td>Qualification Details</td>
+    <td>
+      <b>DOES THE APPLICANT ANTICIPATE ESTABLISHING OR ENTERING INTO ANY RELATED OR UNRELATED VENTURES WHICH ARE A MATERIAL CHANGE IN OPERATIONS IN THE NEXT TWELVE (12) MONTHS:</b>  {{policy_v.ventures}}<br>
+
+      <b>DOES THE APPLICANT ANTICIPATE PROVIDING ANY NEW E-COMMERCE PRODUCTS OR SERVICES IN THE NEXT TWELVE (12) MONTHS?: </b>{{policy_v.ecommerce}}<br>
+
+      <b>Reports Permission:</b> {{policy_v.run_third_party_reports}}<br></td>
+    </tr>
+   <tr>
+    <td>Exposure(s)</td>
+    <td>
+      <b>Business Details:</b> {{exp_v.business_classification}}<br>
+    </td>
+  </tr>
+  <tr>
+    <td>Cost Breakdown</td>
+    <td>
+     <b>Gross Premium:</b>{{policy_c.gross_premium | format_number_currency: "en","US" }}</br>
+     <b>Jurisdictional Taxes: </b>{{policy_c.gross_taxes | format_number_currency: "en","US" }}</br>
+     <b>Underwriting Fees: </b>{{policy.fees[0].amount | format_number_currency: "en","US" }}</br> 
+     <b>Transaction Fees: </b>{{policy.fees[1].amount | format_number_currency: "en","US" }}</br>
+    </td>
+  </tr>
+  <tr>
+  <td>Total Due</td>
+    <td>
+     <b>{{ policy_c.gross_premium | plus: policy_c.gross_taxes  | plus: policy.fees[0].amount | plus: policy.fees[1].amount | format_number_currency: "en","US" }}</br> 
+    </td>
+  </table>
+
+<br>
+
+<b>Authorized on</b> {{policy.issued_timestamp | timestamp_millis_print: "d MMM YYYY" }}
+
+{% footer %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+  <table width="100%">
+    <tr>
+      <td>
+        <p class="header-contact">
+          Acme - Keep your loved ones secure.
+        </p>
+      </td>
+      <td>
+        <p class="header-contact">
+          Page {{ | page_number }} of {{ | page_count }}
+        </p>
+      </td>
+      <td>
+        <footer></footer>
+      </td>
+    </tr>
+  </table>
+{% endfooter %}

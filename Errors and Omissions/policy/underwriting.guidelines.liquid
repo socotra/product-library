@@ -1,0 +1,61 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign professionalindemnities = data.policy.exposures %}
+
+
+{% if policy_v.claims_past_5_years == 'None' %}
+    {{ "accept" | set_underwriting_decision }}
+    {{ "Premium includes credit for being claims free." | add_underwriting_note }}
+{% else %}
+    {{ "accept" | set_underwriting_decision }}
+    {{ "Premium has been increased based on the number of at-fault losses in the last 5 year." | add_underwriting_note }}
+{% endif %}
+
+
+{% for professionalindemnity in professionalindemnities %}
+	{% assign revenuethisyear = professionalindemnity.characteristics[0].field_values.revenuethisyear %}
+	{% if revenuethisyear >= 20000000 %}
+		{{ "reject" | set_underwriting_decision }}
+		{{ "For Revenue $20,000,000 and over cannot be covered through this program." | add_underwriting_note }}
+	{% endif %}
+{% endfor %}
+
+{% for professionalindemnity in professionalindemnities %}
+    {% assign valueofclaims5years = professionalindemnity.characteristics[0].field_values.valueofclaims5years %}
+    {% if valueofclaims5years >= 50000 %}
+        {{ "reject" | set_underwriting_decision }}
+        {{ "For 5 year total claims $50,000 and over cannot be bound." | add_underwriting_note }}
+    {% endif %}
+{% endfor %}
+
+{% for professionalindemnity in professionalindemnities %}
+    {% assign subcontractors_percent = professionalindemnity.characteristics[0].field_values.subcontractors_percent %}
+    {% if subcontractors_percent == 'More than 50%' %}
+        {{ "reject" | set_underwriting_decision }}
+        {{ "For Subcontract work 50% and over cannot be bound." | add_underwriting_note }}
+    {% endif %}
+{% endfor %}
+
+{% for professionalindemnity in professionalindemnities %}
+    {% assign subcontractors_eo = professionalindemnity.characteristics[0].field_values.subcontractors_eo %}
+    {% if subcontractors_eo == 'No' %}
+        {{ "reject" | set_underwriting_decision }}
+        {{ "Policy cannot be bound because Subcontractors not required to carry their own E&O insurance." | add_underwriting_note }}
+    {% endif %}
+{% endfor %}
+
+{% if policy_v.10_year_felony_conviction_of_directors == 'Yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to the Felony Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}       
+{% endif %}
+
+{% if policy_v.pending_claims == 'Yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to Pending Claims this Policy Cannot be Bound." | add_underwriting_note }}       
+{% endif %}
+
+{% if policy_v.insurance_fraud_conviction == 'Yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to the Fraud Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}   
+{% endif %}
+
+

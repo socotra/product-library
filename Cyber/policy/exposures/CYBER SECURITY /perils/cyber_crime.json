@@ -1,0 +1,21 @@
+{
+  "name": "cyber_crime",
+  "displayName": "Cyber Crime",
+   "fields": [
+  	 {
+      "name": "cyber_crime_description",
+      "title": "This is insurance for losses from total or partial interruption of your business as a result of a data breach, security failure or extortion threat.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "25000",
+  "indemnityPerEvent": "50000",
+  "indemnityInAggregate": "100000",
+  "deductible": "5000",
+  "lumpSumPayment": "0"
+}

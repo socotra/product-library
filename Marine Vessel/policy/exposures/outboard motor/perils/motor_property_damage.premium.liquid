@@ -1,0 +1,16 @@
+{% assign policy_v = data.policy_characteristics.field_values %}
+{% assign exp_v = data.exposure_characteristics.field_values %}
+
+{% assign tech_premium = exp_v.present_value | times: 0.03 | round %}
+
+{{ tech_premium | set_year_technical_premium }}
+
+{% if exp_v.fuel_type == "Battery" %}
+  	{% assign claims_multiplier = 2 %}
+{% else %}
+  	{% assign claims_multiplier = 1 %}
+{% endif %}
+
+{% assign premium = tech_premium | times: claims_multiplier %}
+
+{{ premium | set_year_premium }}

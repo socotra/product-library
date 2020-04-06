@@ -1,0 +1,8 @@
+{% assign policy_v = data.policy_characteristics.field_values %}
+{% assign exp_v = data.exposure_characteristics.field_values %}
+
+{% assign tech_premium = exp_v.limit | times: 0.03 | round %}
+
+{{ tech_premium | set_year_technical_premium }}
+
+{{ tech_premium | set_year_premium }}

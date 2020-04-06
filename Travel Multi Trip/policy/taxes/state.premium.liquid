@@ -1,0 +1,2 @@
+{% assign state_rate = 0.03 %}
+{{ data.peril_characteristics.premium | times: state_rate | set_peril_tax }}

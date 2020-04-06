@@ -1,0 +1,9 @@
+{
+	"name": "hull_uninsured_boaters_liability",
+	"displayName": "Uninsured Boaters Liability",
+	"fields": [],
+	"indemnityPerItem": "100000",
+	"indemnityPerEvent": "300000",
+	"deductible": "0",
+	"lumpSumPayment": "0"
+}

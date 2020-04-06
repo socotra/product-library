@@ -1,0 +1,19 @@
+{% comment %} set the premium according to the amount of coverage {% endcomment %}
+{% assign indemnity = data.peril_characteristics.indemnity_per_event %}
+{% assign premium = indemnity | times: 0.037 %}
+
+{% comment %} Look up a loading factor based on an exposure detail {% endcomment %}
+{% if data.exposure_characteristics.field_values.select_field_example == 'Option 1' %}  
+  {% assign rate = "example_table" | lookup: data.exposure_characteristics.field_values.select_field_example %}
+  {% assign premium = premium | times: rate %}
+{% endif %}
+
+{% comment %} discount based on data on the policy {% endcomment %}
+{% if data.policy_characteristics.field_values.select_field_example == 'Option 2' %}
+	{% assign premium = premium | times: 0.9 | round %}
+{% endif %}
+
+{% comment %} set the technical premium, commission, and premium  {% endcomment %}
+{{ premium | times: 0.8 | set_year_technical_premium }}
+{{ premium | times: 0.05 | add_year_commission: "Agent1234" }}
+{{ premium | set_year_premium }}

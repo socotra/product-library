@@ -1,0 +1,21 @@
+{
+  "name": "business_interruption",
+  "displayName": "Business Interruption",
+  "fields": [
+  	 {
+      "name": "business_interruption_description",
+      "title": "This is insurance for losses from total or partial interruption of your business as a result of a data breach, security failure or extortion threat.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "50000",
+  "indemnityPerEvent": "100000",
+  "indemnityInAggregate": "200000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

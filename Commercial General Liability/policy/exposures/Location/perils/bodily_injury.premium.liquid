@@ -1,0 +1,81 @@
+{% assign policy_v = data.policy_characteristics.field_values %}
+{% assign exp_v = data.exposure_characteristics.field_values %}
+{% assign peril_c = data.peril_characteristics %}
+
+{% assign premium = exp_v.revenuethisyear | times: 0.0001 | round %}
+
+{% assign rate = "business_nature" | lookup: policy_v.business_nature %}
+{% assign premium = premium | times: rate | round %}
+
+{% assign staterate = "state_rate_table" | lookup: exp_v.state %}
+{% assign premium = premium | times: staterate | round %}
+
+{% comment %} scale Legal Liability premium according to subcontract% {% endcomment %}
+{% assign subcontract = exp_v.subcontractors_percent %}
+
+{% if subcontract == "1-10%" %}
+   {% assign subcontract = 1.15 %}
+{% elsif subcontract == "10-20%" %}
+   {% assign subcontract = 1.5 %}
+{% elsif subcontract == "20-30%" %}
+   {% assign subcontract = 2.5 %}
+{% elsif subcontract == "30-40%" %}
+   {% assign subcontract = 3.5 %} 
+{% elsif subcontract == "40-50%" %}
+   {% assign subcontract = 4.5 %}
+{% elsif subcontract == "More than 50%" %}
+   {% assign subcontract = 6 %}    
+{% else %}
+   {% assign subcontract = 1 %}
+{% endif %}
+
+{% assign premium = premium | times: subcontract %}
+
+
+{% comment %} scale Legal Liability premium according to number of claims {% endcomment %}
+{% assign five_year_claims_history = policy_v.claims_past_5_years %}
+
+{% if five_year_claims_history == "1" %}
+   {% assign claims_multiplier = 2 %}
+{% elsif five_year_claims_history == "2" %}
+   {% assign claims_multiplier = 3 %}
+{% elsif five_year_claims_history == "3" %}
+   {% assign claims_multiplier = 4 %}
+{% elsif five_year_claims_history == "More than 3" %}
+   {% assign claims_multiplier = 5 %} 
+{% else %}
+   {% assign claims_multiplier = 1 %}
+{% endif %}
+
+{% assign premium = premium | times: claims_multiplier %}
+
+
+{% if policy_v.channel == 'Direct' %}
+	{% assign premium = premium | times: 0.9 | round %}
+{% endif %}
+
+{% if peril_c.indemnity_in_aggregate > 0 %}
+  {% assign adj = peril_c.indemnity_in_aggregate | minus: 10000 %}
+  {% if adj < 0 %}
+    {% assign adj = 0 %}
+  {% endif %}
+  {% assign adj = adj | times: 0.001 %}
+  {% assign premium = premium | plus: adj %}
+{% endif %}
+
+{% assign fact = peril_c.deductible | times: 0.03 %}
+{% assign premium = premium | minus: fact %}
+
+{{ premium | set_year_premium }}
+
+{% assign technical_premium = premium | times: 0.8 %}
+{{ technical_premium | set_year_technical_premium }}
+
+{% comment %} commission at a flat 5% for Agent and 10% for Broker {% endcomment %}
+{% if policy_v.channel == 'Agent' %}
+	{% assign agent_comm = premium | times: 0.05 %}
+    {{ agent_comm | add_year_commission: "Agent1234" }}
+{% elsif policy_v.channel == 'Broker' %}
+	{% assign broker_comm = premium | times: 0.10 %}
+    {{ broker_comm | add_year_commission: policy_v.broker_name }}
+{% endif %}

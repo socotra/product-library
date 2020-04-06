@@ -1,0 +1,5 @@
+key,value
+Less than 1000 ft, 0.99
+1000ft - 1 mile,1.03
+1- 5 miles,1.13
+Greater than 5 miles,1.2

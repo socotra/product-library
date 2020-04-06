@@ -1,0 +1,10 @@
+{
+  "name": "theft",
+  "displayName": "Theft",
+  "fields": [],
+  "indemnityPerItem": "0",
+  "indemnityPerEvent": "0",
+  "indemnityInAggregate": "300000",
+  "deductible": "0",
+  "lumpSumPayment": "0"
+}

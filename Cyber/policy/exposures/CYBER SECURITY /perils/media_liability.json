@@ -1,0 +1,21 @@
+{
+  "name": "media_liability",
+  "displayName": "Media Liability",
+   "fields": [
+  	 {
+      "name": "media_liability_description",
+      "title": "This is insurance for claims made against you that arise from the content of your website social media and other promotional material.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "25000",
+  "indemnityPerEvent": "50000",
+  "indemnityInAggregate": "100000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

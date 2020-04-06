@@ -1,0 +1,251 @@
+{
+  "name": "CYBER SECURITY ",
+  "displayName": "Cyber Security ",
+  "fields": [
+    {
+      "name": "business_classification",
+      "title": "What industry is your business in?",
+      "type": "select",
+      "values": [
+        "Advertising Consultant and Related Service",
+        "Agricultural Services",
+        "Answering Service",
+        "Application Service Provider",
+        "Automobile Service or Repair Center",
+        "Billing Service Medical",
+        "Billing Service Non Medical",
+        "Bookkeeping Service",
+        "Cable and Other Pay Television Service",
+        "Calculating and Accounting Machine Except Electronic Computer",
+        "Carpet Rug or Upholstery Cleaning Service",
+        "Communications Service",
+        "Computer Processing and Data Preparation and Processing Service",
+        "Computer Programming Service",
+        "Copying Duplication Service",
+        "Counseling Service Non profit",
+        "Customer call center Service",
+        "Data Hosting And Cloud Service Provider",
+        "Direct Mail Advertising Service",
+        "Electric and Other Service",
+        "Electric Service",
+        "Gas and Other Service",
+        "Hospital and Medical Service Plan",
+        "Human Resource Service",
+        "Industrial Personal Service Paper Wholesaler",
+        "Information Retrieval Service",
+        "Inspection Service Home Building Inspection Appraisal Service",
+        "Inspection Service Other",
+        "IT Software Hardware Training Service",
+        "Janitorial Residential Cleaning Window Cleaning Service",
+        "Landscape Gardening Service",
+        "Market Research Service",
+        "Media and Photoduplication Service",
+        "Messaging Services",
+        "Office Administrative Service",
+        "Office Machine Appliance Installation Repair Service",
+        "Oil and Gas Field Exploration Service",
+        "Oil and Gas Field Service",
+        "Other",
+        "Painting Service",
+        "Payroll Service",
+        "Payroll Service",
+        "Personal Assistant Service",
+        "Pet Training Service",
+        "Printing Prepress Support Service",
+        "Professional Service Primarily off Premise",
+        "Repo Services",
+        "Sanitary Service",
+        "Secretarial Document Preparation Service",
+        "Telecommunication Service Provider Light Installation And Service No Construction",
+        "Telemarketing Research Service",
+        "Translation Interpretation Service",
+        "Transportation Services",
+        "Upholstery Service",
+        "Vacuum Cleaner Sale Service Store",
+        "Videotape Editing Service",
+        "Web Maintenance Services"
+      ],
+      "optional": true
+    },
+     {
+      "name": "number_of_employees",
+      "title": "Number of employees including yourself",
+      "heading": "KNOWING A LITTLE ABOUT YOUR BUSINESS'S OPERATIONS WILL HELP US IDENTIFY THE COVERAGE YOUR BUSINESS NEEDS.",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "projected_annual_income",
+      "title": "Projected annual income",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "pci_dci_compliance",
+      "title": "PCI/DCI Complience",
+      "heading": "ARE YOU SUBJECT TO", 
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+     {
+      "name": "hipaa/hitech_compliance",
+      "title": "HIPAA/HITECH Complience", 
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+     {
+      "name": "personal_information_data_storage",
+      "title": "Personal Information (Name, DOB, Address, etc.)",
+      "heading": "FOR HOW MANY CUSTOMERS, EMPLOYEES, AND VENDORS DO YOU (OR A VENDOR ON YOUR BEHALF) STORE, TRANSMIT OR HAVE ACCESS TO AT LEAST ONE OF THE FOLLOWING PIECES OF SENSITIVE INFORMATION?",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "credit_debit_cards_data_storage",
+      "title": "Credit/Debit Cards",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "financial_banking_data_storage",
+      "title": "Financial/Banking",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    }, 
+    {
+      "name": "medical_phi_data_storage",
+      "title": "Medical (PHI)",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    }, 
+    {
+      "name": "social_security_national_id_data_storage",
+      "title": "Social Security or National Id",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "other_sensitive_data_storage",
+      "title": "Other Sensitive Data",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+     {
+      "name": "antivirus_firewalls_used",
+      "title": "Do you have both antivirus and firewalls in place? (updated at least monthly)", 
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+     {
+      "name": "office_computers_encryption",
+      "heading": "DO YOU ENCRYPT SENSITIVE DATA ON:",
+      "title": "Office Computers", 
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+     {
+      "name": "mobile_devices_encryption",
+      "title": "Mobile Devices (laptops, cell phones, flash drives, tablets, etc.)", 
+      "type": "select",
+      "newline": true,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+    {
+      "name": "networks_encryption",
+      "title": "Networks",
+      "newline": true, 
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+    {
+      "name": "date_system_backups",
+      "title": "Do you backup critical business systems, data, and Personally Identifiable Information (PII) at least once a week?", 
+      "type": "select",
+      "width": 12,
+      "newline": true,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true
+    },
+      {
+      "name": "legal_action_history",
+      "title": "Has any regulatory, governmental or administrative action been brought against you due to your handling of sensitive data?", 
+      "type": "select",
+      "newline": true,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    },
+     {
+      "name": "knowledge_of_potential_breaches",
+      "title": "Within the last 5 years, have you experienced or have reason to suspect any of the following (or something similar to them):", 
+      "type": "select",
+      "values": [
+        "System intrusions",
+        "Tampering ",
+        "Virus or malicious code attacks ",
+        "Loss of data ",
+        "Loss of portable media ",
+        "Hacking incident ",
+        "Extortion attempt ",
+        "Data theft ",
+        "Copyright or trademark dispute ",
+        "None "
+      ],
+      "optional": true
+    },
+    {
+      "name": "media_field_example",
+      "title": "Media Upload",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "additional_information",
+      "title": "Additional Information",
+      "type": "string",
+      "width": 12,
+      "multiline": true,
+      "maximum": 3000,
+      "optional": true  
+    }
+  ]
+}

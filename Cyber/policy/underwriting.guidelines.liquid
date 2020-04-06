@@ -1,0 +1,10 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+	{% if exposure_v.legal_action_history == 'No' %}
+		{{ "accept" | set_underwriting_decision }}
+		{{ "Initial Approval based on application details" | add_underwriting_note }}
+	{% else %}
+    	{{ "reject" | set_underwriting_decision }}
+    	{{ "Rejected due to current legal action" | add_underwriting_note }}  
+	{% endif %}

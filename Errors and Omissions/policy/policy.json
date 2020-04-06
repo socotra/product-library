@@ -1,0 +1,131 @@
+{
+  "fields": [
+    {
+      "name": "channel",
+      "title": "Sales Channel",
+      "width": 3,
+      "type": "select",
+      "values": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+    },
+      {
+        "name": "business_dba",
+        "title": "Business Name and dba",
+        "type": "string",
+        "newline": true,
+        "width": 3,
+        "optional": true
+      },
+      {
+        "name": "business_address",
+        "title": "Business Address",
+        "type": "string",
+        "width": 3,
+        "optional": true
+      },
+      {
+        "name": "business_email",
+        "title": "Business Email address",
+        "type": "email",
+        "width": 3,
+        "optional": true
+      },
+      {
+      "name": "legal_entity",
+      "title": "Legal Entity",
+      "width": 3,
+      "newline": true,
+      "type": "select",
+      "values": [
+        "Corporation",
+        "LLC",
+        "Partnership",
+        "Sole Prop"
+      ]
+    },
+    {
+        "name": "fein_number",
+        "title": "FEIN - EIN Number",
+        "type": "string",
+        "regex": "^[0-9]*$",
+        "decimalPlaces": 0,
+        "width": 3,
+        "optional": true
+      },
+    {
+      "name": "10_year_felony_conviction_of_directors",
+      "title": "Have any of the business' directors or employees been convicted of a felony in the past 10 years?",
+      "heading": "Preliminary Questions",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "insurance_fraud_conviction",
+      "title": "Have any of the business' directors or employees been convicted of activities related to insurance fraud?",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "pending_claims",
+      "title": "Are there any pending claims on the business?",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "claims_past_5_years",
+      "title": "Number of Claims/Losses in the past 5 years.",
+      "type": "select",
+      "values": [
+        "None",
+        "1",
+        "2",
+        "3",
+        "More than 3"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    },
+    {
+      "displayName": "Regulatory Disclosure",
+      "fileName": "regulatory_disclosure.pdf",
+      "templateName": "regulatory_disclosure.template.liquid"
+    }
+  ],
+  "defaultPaymentTerms": {
+    "amount": 0,
+    "unit": "day"
+  },
+  "paymentSchedules": [
+    {
+      "type": "total",
+      "name": "upfront",
+      "displayName": "Up Front"
+    },
+    {
+      "type": "monthly",
+      "name": "monthly",
+      "displayName": "Monthly"
+    }
+  ],
+  "lapse": {
+    "gracePeriodDays": 30,
+    "reinstatementPeriodDays": 90
+  }
+}

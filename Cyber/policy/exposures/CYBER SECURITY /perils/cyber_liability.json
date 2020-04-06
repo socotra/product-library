@@ -1,0 +1,11 @@
+{
+  "name": "cyber_liability",
+  "displayName": "Cyber Liability Blanket Umbrella",
+   "fields": [
+  ],
+  "indemnityPerItem": "50000",
+  "indemnityPerEvent": "100000",
+  "indemnityInAggregate": "250000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

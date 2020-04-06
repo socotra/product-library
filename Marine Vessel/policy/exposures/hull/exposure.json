@@ -1,0 +1,217 @@
+{
+  "name": "hull",
+  "displayName": "Hull",
+  "fields": [
+    {
+      "name": "power_type",
+      "title": "Power Type",
+      "type": "select",
+      "values":[
+        "Inboard",
+        "Outboard",
+        "Inboard/Outdrive",
+        "Waterjet",
+        "Sail"
+      ],
+      "optional": false
+    },
+    {
+      "name": "hull_type",
+      "title": "Hull Type",
+      "type": "select",
+      "values":[
+        "Cabin Cruiser",
+        "Open Cockpit",
+        "Sailboat",
+        "Bass",
+        "Personal WC",
+        "Waverunner",
+        "Ski"
+      ],
+      "optional": false
+    },
+    {
+      "name": "hull_material",
+      "title": "Hull Material",
+      "type": "select",
+      "values":[
+        "Fiberglass",
+        "Metal",
+        "Wood"
+      ],
+      "optional": true
+    },
+    {
+      "name": "hull_design",
+      "title": "Hull Design",
+      "type": "select",
+      "values":[
+        "Flat Bottom",
+        "Round Bottom",
+        "Vee Bottom",
+        "Catamaran"
+      ],
+      "optional": true
+    },
+    {
+      "name": "fuel_tank",
+      "title": "Fuel Tank",
+      "type": "select",
+      "values":[
+        "Fiberglass",
+        "Metal"
+      ],
+      "optional": true
+    },
+    {
+      "name": "identification",
+      "title": "Hull Identification Number (eg 2HGEJ6526VH515413)",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "registration_number",
+      "title": "Registration Number",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "manufacture",
+      "title": "Manufacture",
+      "type": "string",
+      "optional":true
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "type": "string",
+      "optional":true
+    },
+    {
+      "name": "year",
+      "title": "Watercraft Year",
+      "type": "date",
+      "precision": "year",
+      "minimumOffset": {
+        "field": "year",
+        "amount": -20
+      },
+      "maximumOffset": {
+        "field": "year",
+        "amount": 1
+      }
+    },
+    {
+      "name": "length",
+      "title": "Length (feet)",
+      "type": "number",
+      "decimalPlaces": 0,
+      "minimum": 0,
+      "optional": true
+    },
+    {
+      "name": "max_speed",
+      "title": "Max Speed",
+      "type": "number",
+      "decimalPlaces": 0,
+      "minimum": 0,
+      "optional": true
+    },
+    {
+      "name": "date_purchased",
+      "title": "Date Purchased",
+      "type": "date",
+      "precision": "day"
+    },
+    {
+      "name": "cost_new",
+      "title": "Cost New",
+      "type": "number",
+      "decimalPlaces":0,
+      "optional": true
+    },
+    {
+      "name": "present_value",
+      "title": "Present Value",
+      "type": "number",
+      "decimalPlaces":0,
+      "optional": false
+    },
+    {
+      "name": "storage_location",
+      "title": "Storage Location",
+      "type": "string",
+      "multiline": false,
+      "optional": true
+    },
+    {
+      "name": "layup",
+      "title": "Was this Hull Layed-up?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    },
+    {
+      "name": "layup_period",
+      "title": "Lay-Up Period (Days)",
+      "type": "number",
+      "minimum": 0,
+      "condition": {
+        "layup": ["Yes"]
+      },
+      "optional": false
+    },
+    {
+      "name": "layup_type",
+      "title": "Lay-Up Type",
+      "type": "select",
+      "values": [
+        "Dry",
+        "Afloat"
+      ],
+      "condition": {
+        "layup": ["Yes"]
+      },
+      "optional": false
+    },
+    {
+      "name": "waters_navigated",
+      "title": "Waters Navigated",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "chartered",
+      "title": "Is the boat chartered out to others?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    },
+    {
+      "name": "commercial_use",
+      "title": "Is the boat used for commercial or business uses?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    },
+    {
+      "name": "racing_use",
+      "title": "Is the boat used for racing?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    }
+  ]
+}

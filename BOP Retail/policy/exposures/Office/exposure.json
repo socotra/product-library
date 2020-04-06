@@ -1,0 +1,124 @@
+{
+  "name": "office",
+  "displayName": "Office",
+  "fields": [
+    {
+      "name": "building_street",
+      "title": "Street Address",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "building_city",
+      "title": "City",
+      "type": "select",
+      "values": [
+        "San Francisco",
+        "San Jose",
+        "Los Angeles",
+        "Portland",
+        "Seattle",
+        "Denver",
+        "Boulder",
+        "Austin",
+        "Dallas",
+        "Omaha",
+        "Chicago",
+        "Cleveland",
+        "New York City",
+        "Boston",
+        "Atlanta",
+        "Miami",
+        "Washington DC",
+        "Baltimore",
+        "Buffalo",
+        "Hartford"
+      ]
+    },
+    {
+      "name": "building_year",
+      "title": "Year Built",
+      "type": "select",
+      "values": [
+        "Pre-1980",
+        "1980-2000",
+        "Post-2000"
+      ],
+      "optional": false
+    },
+    {
+      "name": "building_own",
+      "title": "Rent or Own?",
+      "type": "select",
+      "values": [
+        "Rent/Lease",
+        "Own"
+      ],
+      "optional": true
+    },
+    {
+      "name": "building_hours",
+      "title": "Daily Hours of Operation",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "Open less than 18 hours/day",
+        "Open 18-24 hours/day"
+      ]
+    },
+    {
+      "name": "building_size",
+      "title": "Building Size (sq ft)",
+      "type": "number",
+      "optional": true
+    },
+    {
+      "name": "building_hydrant",
+      "title": "Distance to Fire Hydrant",
+      "type": "select",
+      "optional": false,
+      "newline": true,
+      "values": [
+        "Less than 1000 ft",
+        "1000ft - 1 mile",
+        "1- 5 miles",
+        "Greater than 5 miles"
+      ],
+      "heading": "Fire Protection"
+    },
+    {
+      "name": "building_sprinkler",
+      "title": "% of Building Covered by Fire Sprinklers",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "No Sprinklers",
+        "<50%",
+        "50-75%",
+        "75-100%"
+      ]
+    },
+    
+    {
+      "name": "building_glass",
+      "title": "Amount of Glass in Building",
+      "type": "group",
+      "optional": true,
+      "fields": [
+        {
+          "name": "building_glass_floor",
+          "title": "Ground Floor of Building (sq ft)",
+          "type": "number"
+        },
+        {
+          "name": "building_glass_high",
+          "title": "Above Ground Floor (sq ft)",
+          "type": "number"
+        }
+      ]
+    }
+ 
+
+    
+  ]
+}

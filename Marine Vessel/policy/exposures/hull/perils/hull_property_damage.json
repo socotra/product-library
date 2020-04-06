@@ -1,0 +1,6 @@
+{
+	"name": "hull_property_damage",
+	"displayName": "Hull Property Damage",
+	"indemnityInAggregate": "0",
+	"deductible": "0"
+}

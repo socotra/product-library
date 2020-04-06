@@ -1,0 +1,34 @@
+{
+  "name": "bid ",
+  "displayName": "Bid",
+  "fields": [ 
+      {
+      "name": "legal_action_history",
+      "title": "Has any regulatory, governmental or administrative action been brought against you for not completing a project?", 
+      "type": "select",
+      "width": 12,
+      "newline": true,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false
+    },
+    {
+      "name": "media_field_example",
+      "title": "Media Upload",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "additional_information",
+      "title": "Additional Information",
+      "type": "string",
+      "width": 12,
+      "multiline": true,
+      "maximum": 3000,
+      "optional": true  
+    }]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "damage",
+  "displayName": "Damage",
+  "fields": [],
+  "indemnityPerItem": "0",
+  "indemnityPerEvent": "0",
+  "indemnityInAggregate": "50000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

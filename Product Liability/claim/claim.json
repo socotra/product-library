@@ -1,0 +1,78 @@
+{
+  "fields": [
+    {
+      "name": "date_incident",
+      "title": "Date of Incident",
+      "type": "date",
+      "precision": "day",
+      "minimumOffset": {
+        "field": "day",
+        "amount": -1,
+        "roundToDay": true
+      },
+      "maximumOffset": {
+        "field": "day",
+        "amount": 1,
+        "roundToDay": true
+      },
+      "showCalendar": true,
+      "optional": true
+    },
+    {
+      "name": "email_field_example",
+      "title": "Email",
+      "type": "email",
+      "optional": true      
+    },
+    {
+      "name": "media_field_example",
+      "title": "Upload image of damages",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "incident_summary",
+      "title": "Incident summary",
+      "type": "string",
+      "multiline": true,
+      "optional": true,
+      "maximum": 3000,
+      "width": 12
+    },
+    {
+      "name": "reporter",
+      "title": "Reporter",
+      "type": "group",
+      "fields": [
+        {
+          "name": "rep_givenname",
+          "title": "Given Name",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "rep_lastname",
+          "title": "Lastname",
+          "type": "string",
+          "optional": true
+        }
+      ],
+      "optional": true,
+      "repeatable": true
+    },
+    {
+      "name": "Fraud_Check",
+      "title": "Fraud Check Result",
+      "width":12,
+      "newline": true,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Genuine",
+        "Fraudulent"
+      ]
+    }
+  ]
+}

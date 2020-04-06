@@ -1,0 +1,24 @@
+{% comment %} set the premium according to the amount of coverage {% endcomment %}
+{% assign indemnity = data.peril_characteristics.indemnity_per_event %}
+{% assign premium = indemnity | times: 0.0043 %}
+
+ {% assign rate = "hydrant_table" | lookup: data.exposure_characteristics.field_values.building_hydrant %}
+  {% assign premium = premium | times: rate %}
+
+  {% assign rate = "sprinkler_table" | lookup: data.exposure_characteristics.field_values.building_sprinkler %}
+  {% assign premium = premium | times: rate %}
+
+
+  {% assign rate = "city_table" | lookup: data.exposure_characteristics.field_values.building_city %}
+  {% assign premium = premium | times: rate %}
+{% comment %} {% endif %} {% endcomment %}
+
+{% comment %} discount based on data on the policy {% endcomment %}
+{% comment %} {% if data.policy_characteristics.field_values.select_field_example == 'Option 2' %}
+	{% assign premium = premium | times: 0.9 | round %}
+{% endif %} {% endcomment %}
+
+{% comment %} set the technical premium, commission, and premium  {% endcomment %}
+{{ premium | times: 0.8 | set_year_technical_premium }}
+{{ premium | times: 0.05 | add_year_commission: "Agent1234" }}
+{{ premium | set_year_premium }}

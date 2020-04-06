@@ -1,0 +1,368 @@
+{
+  "fields": [
+    {
+      "name": "business_nature",
+      "title": "Nature of Business",
+      "width": 6,
+      "type": "select",
+      "values": [
+        "Apartments",
+        "Condominiums",
+        "Contractor",
+        "Institutional",
+        "Manufacturing",
+        "Office",
+        "Restaurant",
+        "Retail",
+        "Service",
+        "Wholesale",
+        "Other"
+      ],
+      "optional": false
+    },
+    {
+      "name": "business_start_date",
+      "title": "Date Business Started",
+      "type": "date",
+      "precision": "day",
+      "width": 6,
+      "optional": false
+    },
+    {
+      "name": "business_address",
+      "title": "Business Address",
+      "type": "string",
+      "width": 8,
+      "optional": true,
+      "newline": true
+    },
+    {
+      "name": "business_email",
+      "title": "Business Email address",
+      "type": "email",
+      "width": 4,
+      "optional": true
+    },
+    {
+      "name": "business_dba",
+      "title": "Business Name and dba",
+      "type": "string",
+      "newline": true,
+      "width": 3,
+      "optional": true
+    },
+    {
+      "name": "legal_entity",
+      "title": "Legal Entity",
+      "width": 3,
+      "type": "select",
+      "values": [
+        "Corporation",
+        "LLC",
+        "Partnership",
+        "Sole Prop"
+      ]
+    },
+    {
+      "name": "fein_number",
+      "title": "FEIN - EIN Number",
+      "type": "string",
+      "regex": "^[0-9]*$",
+      "decimalPlaces": 0,
+      "width": 3,
+      "optional": true
+    },
+    {
+      "name": "business_description",
+      "title": "Description of Primary Operations",
+      "type": "string",
+      "newline": true,
+      "width": 12,
+      "optional": true
+    },
+    {
+      "name": "additional_interest",
+      "title": "Additional Interest",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "additional_interest_type",
+      "title": "Additional Interest Type",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "CO-OWNER",
+        "LIENHOLDER",
+        "LOSS PAYEE",
+        "MORTGAGEE",
+        "OWNER",
+        "REGISTRANT",
+        "TRUSTEE",
+        "LENDER'S LOSS PAYABLE"
+      ],
+      "optional": false,
+      "condition": {
+        "additional_interest": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "additional_interest_name",
+      "title": "Interest Name",
+      "width": 4,
+      "type": "string",
+      "optional": true,
+      "condition": {
+        "additional_interest": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "subsidiary",
+      "title": "IS THE APPLICANT A SUBSIDIARY OF ANOTHER ENTITY?",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "newline": true
+    },
+    {
+      "name": "subsidiary_name",
+      "title": "PARENT COMPANY NAME",
+      "width": 3,
+      "type": "string",
+      "optional": false,
+      "condition": {
+        "subsidiary": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "subsidiary_description",
+      "title": "RELATIONSHIP DESCRIPTION",
+      "width": 3,
+      "type": "string",
+      "optional": true,
+      "condition": {
+        "subsidiary": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "subsidiary_percent_owned",
+      "title": "% OWNED",
+      "width": 2,
+      "type": "number",
+      "optional": true,
+      "condition": {
+        "subsidiary": [
+          "Yes"
+        ]
+      }
+    },
+
+    {
+      "name": "safety",
+      "title": "IS A SAFETY PROGRAM IN USE?",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "newline": true
+    },
+    {
+      "name": "safety_type",
+      "title": "Type",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "SAFETY MANUAL",
+        "SAFETY POSITION",
+        "MONTHLY MEETINGS",
+        "OSHA",
+        "OTHER"
+      ],
+      "optional": false,
+      "condition": {
+        "safety": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "explosive_exposure",
+      "title": "ANY EXPOSURE TO FLAMMABLES, EXPLOSIVES, CHEMICALS?",
+      "width": 4,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": false,
+      "condition": {
+        "safety": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "10_year_felony_conviction_of_directors",
+      "title": "Have any of the business' directors or employees been convicted of a felony in the past 10 years?",
+      "heading": "Preliminary Questions",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "insurance_fraud_conviction",
+      "title": "Have any of the business' directors or employees been convicted of activities related to insurance fraud?",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "pending_claims",
+      "title": "Are there any pending claims on the business?",
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "claims_past_5_years",
+      "title": "Number of Claims in the past 5 years.",
+      "type": "select",
+      "values": [
+        "None",
+        "1",
+        "2",
+        "3",
+        "More than 3"
+      ]
+    },
+    {
+      "newline": true,
+      "name": "valueofclaims5years",
+      "title": "Value of Claims over past 5 years",
+      "type": "number",
+      "decimalPlaces": 0,
+      "width": 3,
+      "condition": {
+        "claims_past_5_years": [
+          "1",
+          "2",
+          "3",
+          "More than 3"
+        ]
+      }
+    },
+    {
+      "name": "policy_type",
+      "title": "Policy Type",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "Claims Made",
+        "Occurence"
+      ],
+      "newline": true
+    },
+    {
+      "name": "claims_made_retroactive_date",
+      "title": "Retroactive Date",
+      "type": "date",
+      "precision": "day",
+      "optional": false,
+      "condition": {
+        "policy_type": [
+          "Claims Made"
+        ]
+      }
+    },
+    {
+      "name": "channel",
+      "title": "Sales Channel",
+      "type": "select",
+      "newline": true,
+      "width": 6,
+      "optional": false,
+      "values": [
+        "Direct",
+        "Broker",
+        "Agent"
+      ]
+    },
+    {
+      "name": "broker_name",
+      "title": "Broker Name",
+      "type": "string",
+      "width": 6,
+      "optional": false,
+      "condition": {
+        "channel": [
+          "Broker"
+        ]
+      }
+    }
+  ],
+"documents": [
+  {
+    "displayName": "Regulatory Disclosure",
+    "fileName": "regulatory_disclosure.pdf",
+    "templateName": "regulatory_disclosure.template.liquid"
+  },
+  {
+    "displayName": "Broker Document",
+    "fileName": "broker.pdf",
+    "templateName": "broker.template.liquid"
+  },
+  {
+    "displayName": "Company Document",
+    "fileName": "company.pdf",
+    "templateName": "company.template.liquid"
+  },
+  {
+    "displayName": "Lienholder Document",
+    "fileName": "lienholder.pdf",
+    "templateName": "lienholder.template.liquid"
+  }
+],
+"defaultPaymentTerms": {
+  "amount": 0,
+  "unit": "day"
+},
+"paymentSchedules": [
+  {
+    "type": "total",
+    "name": "upfront",
+    "displayName": "Up Front"
+  },
+  {
+    "type": "monthly",
+    "name": "monthly",
+    "displayName": "Monthly"
+  }
+],
+"lapse": {
+  "gracePeriodDays": 30,
+  "reinstatementPeriodDays": 90
+}
+}

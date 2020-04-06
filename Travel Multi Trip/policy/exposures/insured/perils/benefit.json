@@ -1,0 +1,10 @@
+{
+  "name": "benefit",
+  "displayName": "Benefit",
+  "fields": [],
+  "indemnityPerItem": "0",
+  "indemnityPerEvent": "0",
+  "indemnityInAggregate": "250000",
+  "lumpSumPayment": "250000",
+  "deductible": "50"
+}

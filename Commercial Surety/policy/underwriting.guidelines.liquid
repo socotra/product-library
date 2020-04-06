@@ -1,0 +1,10 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+{{ "accept" | set_underwriting_decision }}
+{{ "Example Underwriting Note" | add_underwriting_note }}
+
+{% if exposure_v.select_field_example contains "And so on" %}
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Rejected because of exposure select field value" | add_underwriting_note }}  
+{% endif %}

@@ -1,0 +1,146 @@
+{
+  "name": "Mobile",
+  "displayName": "Mobile",
+  "fields": [
+    {
+      "name": "media_field_example",
+      "title": "Please upload a picture of the product",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "title": "Are your products subject to any government or industry standards?",
+      "name": "select_compliance",
+      "type": "select",
+      "width":12,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional":true
+    },
+    {
+      "name": "condition_Full_Compliance",
+      "title": "Are your products in full compliance?",
+      "width": 12,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+        ],
+      "optional": true,
+      "condition": {
+        "select_compliance": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "title": "Are you aware of any incident, condition, circumstance, defect or suspected defect in any product or work which may result in claim?",
+      "name": "select_knowledge_of_defect",
+      "type": "select",
+      "width":12,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "newline": true,
+      "optional":true
+    },
+    {
+      "name": "select_tested",
+      "title": "Is the product tested, reviewed and verified by others",
+      "type": "select",
+      "width":12,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional": true,
+      "match": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "title": "Do you offer training or instructions for your products?",
+      "name": "select_training",
+      "type": "select",
+      "width":12,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "optional":true
+    },
+    {
+      "title": "Number of years in business",
+      "name": "product_exprience",
+      "type": "select",
+      "width":12,
+      "values": [
+        "1-5",
+        "5-10",
+        "10-15",
+        "15-20",
+        "20-25"
+      ],
+      "optional":false
+    },
+    {
+      "title": "Amount of work subcontracted",
+      "name": "subcontract",
+      "type": "select",
+      "width":12,
+      "values": [
+        "0-30%",
+        "30%-50%",
+        "50%-70%",
+        "70%-100%"
+      ],
+      "optional":false
+    },
+    {
+      "title": "Total annual gross sales from the product for the upcoming year(estimate)",
+      "name": "upcoming_year_sales",
+      "type": "number",
+      "decimalPlaces": 0,
+      "width":12,
+      "optional":true
+    },
+    {
+      "name": "group_countries",
+      "title": "Add all the countries your sell your product in",
+      "type": "group",
+      "fields": [
+        {
+          "name": "select_country",
+          "title": "Country",
+          "type": "select",
+          "optional": true,
+          "width":12,
+          "values": [
+            "USA",
+            "CANADA",
+            "JAPAN",
+            "SOUTH KOREA",
+            "GERMANY"
+          ]
+        },
+        {
+          "title": "Annual gross sales from the product for the upcoming year(estimate)",
+          "name": "estimated_sales",
+          "type": "number",
+          "decimalPlaces": 0,
+          "width":12,
+          "optional":true
+          
+        }
+      ],
+      "optional": false,
+      "repeatable": true
+    }
+  ]
+}

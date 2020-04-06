@@ -1,0 +1,236 @@
+{
+  "name": "location",
+  "displayName": "Location",
+  "fields": [
+    {
+      "name": "street",
+      "title": "Street",
+      "type": "string",
+      "optional": true,
+      "width": 4
+    },
+    {
+      "name": "city",
+      "title": "City",
+      "type": "string",
+      "optional": true,
+      "width": 4
+    },
+    {
+      "name": "state",
+      "title": "State",
+      "type": "select",
+      "width": 2,
+      "values": [
+        "AL",
+        "AK",
+        "AZ",
+        "AR",
+        "CA",
+        "CO",
+        "CT",
+        "DE",
+        "FL",
+        "GA",
+        "HI",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NV",
+        "NH",
+        "NJ",
+        "NY",
+        "NM",
+        "NC",
+        "ND",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY"
+      ]
+    },
+    {
+      "name": "zip",
+      "title": "Zip",
+      "type": "string",
+      "optional": true,
+      "width": 2
+    },
+    {
+      "name": "revenueprior1year",
+      "title": "Annual Revenue Prior 1 Year",
+      "type": "number",
+      "optional": true,
+      "width": 3,
+      "decimalPlaces": 0,
+      "newline": true
+    },
+    {
+      "name": "revenueprior2year",
+      "title": "Annual Revenue Prior 2 Year",
+      "type": "number",
+      "optional": true,
+      "width": 3,
+      "decimalPlaces": 0
+    },
+    {
+      "name": "revenueprior3year",
+      "title": "Annual Revenue Prior 3 Year",
+      "type": "number",
+      "optional": true,
+      "width": 3,
+      "decimalPlaces": 0
+    },
+    {
+      "name": "revenuethisyear",
+      "title": "Annual Revenue",
+      "type": "number",
+      "width": 3,
+      "decimalPlaces": 0,
+      "optional": false
+    },
+
+    {
+      "name": "fulltimeemployees",
+      "title": "Full Time Employees",
+      "type": "number",
+      "optional": true,
+      "decimalPlaces": 0,
+      "newline": true,
+      "width": 3
+    },
+    {
+      "name": "parttimeemployees",
+      "title": "Part Time Employees",
+      "type": "number",
+      "optional": true,
+      "decimalPlaces": 0,
+      "width": 3
+    },
+    {
+      "newline": true,
+      "name": "subcontractors_percent",
+      "title": "% of subcontract work to total work",
+      "type": "select",
+      "values": [
+        "None",  
+        "1-10%",
+        "10-20%",
+        "20-30%",
+        "30-40%",
+        "40-50%",
+        "More than 50%"
+      ]
+    },
+    {
+      "name": "subcontractors_eo",
+      "title": "Subcontractors required to carry their own E&O Insurance?",
+      "newline": true,
+      "type": "select",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "contract_example_biz_lic_copy",
+      "title": "Contract Documentation Example and Business License Copy",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "commercial_auto",
+      "title": "Commercial Auto Cover Requested?",
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "vin",
+      "title": "VIN (eg  2HGEJ6526VH515413)",
+      "type": "string",
+      "optional": false,
+      "newline": true,
+      "width": 4,
+      "condition": {
+        "commercial_auto": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "make",
+      "title": "Make",
+      "type": "string",
+      "width": 3,
+      "condition": {
+        "commercial_auto": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "type": "string",
+      "width": 3,
+      "condition": {
+        "commercial_auto": [
+          "Yes"
+        ]
+      }
+    },
+    {
+      "name": "year",
+      "title": "Vehicle Year",
+      "type": "string",
+      "regex": "^(19[3-9][0-9]|2[0-9]{3})$",
+      "width": 3,
+      "condition": {
+        "commercial_auto": [
+          "Yes"
+        ]
+      }
+    }
+  ],
+"externalDataCalls": [
+  {
+    "triggerField": "vin",
+    "targetFields": [
+      "make",
+      "model",
+      "year"
+    ],
+    "uri": "https://qg9x69rbi9.execute-api.us-east-2.amazonaws.com/prod/"
+  }
+]
+}

@@ -1,0 +1,121 @@
+{
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    }
+  ],
+  "defaultPaymentTerms": {
+    "amount": 0,
+    "unit": "day"
+  },
+  "paymentSchedules": [
+    {
+      "type": "total",
+      "name": "upfront",
+      "displayName": "Up Front"
+    },
+    {
+      "type": "monthly",
+      "name": "monthly",
+      "displayName": "Monthly"
+    }
+  ],
+  "lapse": {
+    "gracePeriodDays": 30,
+    "reinstatementPeriodDays": 90
+  },
+  "fields": [
+    {
+      "name": "select_field_example",
+      "title": "Sales Channel",
+      "type": "select",
+      "values": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ],
+      "optional": true,
+      "match": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+    },
+    {
+      "name": "email_field_example",
+      "title": "Contact email",
+      "type": "email",
+      "optional": true
+    },
+    {
+      "name": "group_example",
+      "title": "Add all locations",
+      "type": "group",
+      "fields": [
+        {
+          "name": "group_string_example",
+          "title": "Address",
+          "type": "string",
+          "optional": true,
+          "width":12,
+          "maxLength": ""
+        }
+      ],
+      "optional": true,
+      "repeatable": true
+    },
+    {
+      "name": "select_recalled",
+      "title": "Have you voluntarily or involuntarily recalled, or are you considering recalling, any known or suspected defective products from the market?",
+      "width":12,
+      "newline": true,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "select_import",
+      "title": "Does the applicant import any products?",
+      "width":12,
+      "newline": true,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "select_Certificate_of_Insurance",
+      "title": "Does the applicant obtain Certificate of Insurance from each of your manufacturers/suppliers?",
+      "width":12,
+      "newline": true,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "conditional_text_field",
+      "title": "Text entry to explain a previous entry",
+      "width": 12,
+      "type": "string",
+      "multiline": true,
+      "optional": true,
+      "condition": {
+        "select_field_example": [
+          "Option 1",
+          "Option 2",
+          "Option 3"
+        ]
+      }
+    }
+  ]
+}

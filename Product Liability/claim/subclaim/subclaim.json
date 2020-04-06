@@ -1,0 +1,95 @@
+{
+  "fields": [
+    {
+      "name": "claim_number",
+      "title": "Claim Number",
+      "type": "string"
+    },
+    {
+      "newline": true,
+      "name": "registration_date",
+      "title": "Registration Entry Date",
+      "type": "date",
+      "precision": "day",
+      "maximumOffset": {
+        "field": "year",
+        "amount": 0,
+        "roundToDay": true
+      },
+      "minimumOffset": {
+        "field": "year",
+        "amount": -15,
+        "roundToDay": true
+      },
+      "showCalendar": true,
+      "optional": true
+    },
+    {
+      "name": "No_days_to_register",
+      "title": "No of Day taken to Register",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "newline": true,
+      "name": "catastrophe_code",
+      "title": "Catastrophe Code",
+      "type": "string",
+      "optional": true
+    },
+    
+    {
+      "name": "Description_of_loss",
+      "title": "Description of Loss",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "location_of_loss",
+      "title": "Location of Loss",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "loss_postcode",
+      "title": "Loss Postcode",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "business",
+      "title": "Business",
+      "type": "select",
+      "values": [
+        "Manufacturing",
+        "Broker",
+        "Distributor",
+        "Direct Importer"
+    ]
+    },
+    {
+      "name": "claim_handler",
+      "title": "Name of Claim Handler",
+      "type": "string"
+    },
+    {
+      "name": "last_review_date",
+      "title": "Last Review Date",
+      "type": "date",
+      "precision": "day",
+      "maximumOffset": {
+        "field": "year",
+        "amount": 0,
+        "roundToDay": true
+      },
+      "minimumOffset": {
+        "field": "year",
+        "amount": -6,
+        "roundToDay": true
+      },
+      "showCalendar": true,
+      "optional": true
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "name": "date_field_example",
+      "title": "calendar date entry",
+      "type": "date",
+      "precision": "day",
+      "minimumOffset": {
+        "field": "day",
+        "amount": -1,
+        "roundToDay": true
+      },
+      "maximumOffset": {
+        "field": "day",
+        "amount": 1,
+        "roundToDay": true
+      },
+      "showCalendar": true,
+      "optional": true
+    },
+    {
+      "name": "media_field_example",
+      "title": "Media Upload",
+      "type": "media",
+      "width": 12,
+      "repeatable": true,
+      "optional": true
+    },
+    {
+      "name": "claim_poc",
+      "title": "Claim POC",
+      "type": "string",
+      "optional": true      
+    },
+    {
+      "name": "claim_estimate",
+      "title": "Initial loss estimate",
+      "type": "number",
+      "decimalPlaces": 0,
+      "optional": true
+    },
+    {
+      "name": "claim_type",
+      "title": "Type of Claim",
+      "type": "select",
+      "values": [
+        "Building",
+        "Stock/Equipment",
+        "General Liability"
+      ],
+      "optional": true
+    },
+    {
+      "name": "claim_description",
+      "title": "Dscription of claim (including full contact information for POC)",
+      "type": "string",
+      "multiline": true,
+      "optional": true,
+      "maximum": 6000
+    }
+  ]
+}

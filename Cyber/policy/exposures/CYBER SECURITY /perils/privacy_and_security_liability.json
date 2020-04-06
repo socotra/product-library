@@ -1,0 +1,21 @@
+{
+  "name": "privacy_and_security_liability",
+  "displayName": "Privacy and Security Liability",
+   "fields": [
+  	 {
+      "name": "privacy_and_security_liability_description",
+      "title": "This is insurance for claims made against you that typically arise from your failure to protect sensitive information, including subsequent actions by a regulator.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "10000",
+  "indemnityPerEvent": "20000",
+  "indemnityInAggregate": "40000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

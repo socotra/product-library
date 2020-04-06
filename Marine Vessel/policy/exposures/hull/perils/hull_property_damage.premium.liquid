@@ -1,0 +1,23 @@
+{% assign policy_v = data.policy_characteristics.field_values %}
+{% assign exp_v = data.exposure_characteristics.field_values %}
+
+{% assign tech_premium = exp_v.present_value | times: 0.004 | round %}
+
+{{ tech_premium | set_year_technical_premium }}
+
+{% assign rate = "hull_type_rate_table" | lookup: exp_v.hull_type %}
+{% assign premium = tech_premium | times: rate %}
+
+{% assign claims_multiplier = 1 %}
+
+{% if exp_v.chartered == "Yes" %}
+  {% assign claims_multiplier = claims_multiplier | plus: 0.2 %}
+{% endif %}
+
+{% if exp_v.racing_use == "Yes" %}
+  {% assign claims_multiplier = claims_multiplier | plus: 0.5 %}
+{% endif %}
+
+{% assign premium = premium | times: claims_multiplier %}
+
+{{ premium | set_year_premium }}

@@ -1,0 +1,21 @@
+{
+  "name": "system_failure_business_interruption",
+  "displayName": "System Failure Business Interruption",
+ "fields": [
+  	 {
+      "name": "system_failure_business_interruption_description",
+      "title": "This is insurance for losses sustained due to the total or partial interruption of your business as a result of any unintentional or unplanned outage of your computer system not caused by a data breach or security failure.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "15000",
+  "indemnityPerEvent": "50000",
+  "indemnityInAggregate": "100000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

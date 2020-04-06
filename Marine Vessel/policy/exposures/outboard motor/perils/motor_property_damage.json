@@ -1,0 +1,6 @@
+{
+	"name": "motor_property_damage",
+	"displayName": "Outboard Motor Property Damage",
+	"indemnityInAggregate": "0",
+	"deductible": "0"
+}

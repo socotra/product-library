@@ -1,0 +1,237 @@
+{
+    "name": "professionalindemnity",
+    "displayName": "Professional Indemnity",
+    "fields": [
+      {
+        "name": "professionalindemnity_type",
+        "title": "Professional Indemnity Type",
+        "type": "select",
+        "width": 3,
+        "values": [
+          "Accounting",
+          "Architect/Civil Engineer",
+          "Attorney",
+          "Consulting",
+          "Real Estate",
+          "Advertising",
+          "Adjuster",
+          "Software",
+          "Financial Brokerage",
+          "Insurance Agency",
+          "Travel Agency",
+          "Janitorial",
+          "Other"
+        ]
+      },
+      
+      {
+        "name": "revenueprior1year",
+        "title": "Annual Revenue Prior 1 Year",
+        "type": "number",
+        "optional": true,
+        "width": 3,
+        "decimalPlaces": 0
+      },
+      {
+        "name": "revenueprior2year",
+        "title": "Annual Revenue Prior 2 Year",
+        "type": "number",
+        "optional": true,
+        "width": 3,
+        "decimalPlaces": 0
+      },
+      {
+        "name": "revenueprior3year",
+        "title": "Annual Revenue Prior 3 Year",
+        "type": "number",
+        "optional": true,
+        "width": 3,
+        "decimalPlaces": 0
+      },
+      {
+        "name": "revenuethisyear",
+        "title": "Annual Revenue Expected This Year",
+        "type": "number",
+        "newline": true,
+        "width": 3,
+        "decimalPlaces": 0
+      },
+      
+      {
+        "name": "fulltimeemployees",
+        "title": "Full Time Employees",
+        "type": "number",
+        "optional": true,
+        "decimalPlaces": 0,
+        "newline": true,
+        "width": 3
+      },
+      {
+        "name": "parttimeemployees",
+        "title": "Part Time Employees",
+        "type": "number",
+        "optional": true,
+        "decimalPlaces": 0,
+        "width": 3
+      },
+      {
+        "newline": true,
+        "name": "valueofclaims5years",
+        "title": "Value of Claims over past 5 years",
+        "type": "number",
+        "decimalPlaces": 0,
+        "width": 3
+      },
+      {
+        "name": "quality_control",
+        "title": "Quality Control Procedures in Place?",
+        "width": 3,
+        "newline": true,
+        "optional": true,
+        "type": "select",
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "name": "training_performed",
+        "title": "Official Training Procedures in Place?",
+        "width": 3,
+        "optional": true,
+        "type": "select",
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "name": "office_domicile_state",
+        "title": "Office Domicile State",
+        "newline": true,
+        "type": "select",
+        "width": 3,
+        "values": [
+          "AL",
+          "AK",
+          "AZ",
+          "AR",
+          "CA",
+          "CO",
+          "CT",
+          "DE",
+          "FL",
+          "GA",
+          "HI",
+          "ID",
+          "IL",
+          "IN",
+          "IA",
+          "KS",
+          "KY",
+          "LA",
+          "ME",
+          "MD",
+          "MA",
+          "MI",
+          "MN",
+          "MS",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "NH",
+          "NJ",
+          "NY",
+          "NM",
+          "NC",
+          "ND",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VT",
+          "VA",
+          "WA",
+          "WV",
+          "WI",
+          "WY"
+        ]
+      },
+      {
+        "name": "business_license",
+        "title": "Business License Number",
+        "type": "string",
+        "width": 3,
+        "optional": true
+      },
+      {
+        "name": "written_contracts",
+        "title": "Written Contracts in Place with clients?",
+        "width": 3,
+        "newline": true,
+        "optional": true,
+        "type": "select",
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "name": "written_contractsreview",
+        "title": "Written Contracts Reviewed by inhouse and/or outside legal counsel?",
+        "width": 5,
+        "optional": true,
+        "type": "select",
+        "values": [
+          "Inhouse legal counsel",
+          "Outside legal counsel",
+          "Both"
+        ],
+        "condition": {
+          "written_contracts": [
+            "Yes"
+          ]
+        }
+      },
+      {
+        "newline": true,
+        "name": "subcontractors_percent",
+        "title": "% of subcontract work to total work",
+        "type": "select",
+        "values": [
+        "None",  
+        "1-10%",
+        "10-20%",
+        "20-30%",
+        "30-40%",
+        "40-50%",
+        "More than 50%"
+      ]
+      },
+      {
+        "name": "subcontractors_eo",
+        "title": "Subcontractors required to carry their own E&O Insurance?",
+        "newline": true,
+        "type": "select",
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "name": "contract_example_biz_lic_copy",
+        "title": "Contract Documentation Example and Business License Copy",
+        "type": "media",
+        "width": 12,
+        "repeatable": true,
+        "optional": true
+      }
+    ]
+  }

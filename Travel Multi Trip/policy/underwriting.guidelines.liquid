@@ -1,0 +1,25 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign qualification_question_1 = policy_v.qualification_question_1 %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0] %}
+{% assign health_primary_coverage = exposure_v.field_values.health_primary_coverage %}
+
+
+{{ "reject" | set_underwriting_decision }}
+
+{% if qualification_question_1 == "Yes" %}
+	{{ "accept" | set_underwriting_decision }}
+	{{ "Welcome - you are Pre-qualified - For Multi Travel Coverage" | add_underwriting_note }}
+{% else %}
+	{{ "With regrets you DO NOT qualify for this Multi Trip Travel Protection Program because of your Age and Citzenship" | add_underwriting_note }}
+{% endif %}
+
+
+{{ "accept" | set_underwriting_decision }}
+
+{% if health_primary_coverage == "V.A." or health_primary_coverage == "Medicare" %}
+	{{ "reject" | set_underwriting_decision }}
+	{{ "With regretes you DO NOT qualify for this Protection Program as you do not have Valid Primary Coverage as V.A. and Medicare are not accepted" | add_underwriting_note }}
+{% else %}
+	{{ "Welcome - you are Pre-qualified - With Valid Primary Health Coverage" | add_underwriting_note }}
+{% endif %}
+

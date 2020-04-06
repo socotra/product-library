@@ -1,0 +1,45 @@
+{
+  "name": "portable_accessories",
+  "displayName": "Portable Accessories",
+  "fields": [
+    {
+      "name": "equipment",
+      "title": "Equipment",
+      "type": "string"
+    },
+    {
+      "name": "year",
+      "title": "Year",
+      "type": "date",
+      "precision": "year",
+      "minimumOffset": {
+        "field": "year",
+        "amount": -10
+      },
+      "maximumOff": {
+        "field": "year",
+        "amount": 1
+      }
+    },
+    {
+      "name": "manufacture",
+      "title": "Manufacture",
+      "type": "string"
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "type": "string"
+    },
+    {
+      "name": "serial_number",
+      "title": "Serial Number",
+      "type": "number"
+    },
+    {
+      "name": "limit",
+      "title": "Limit",
+      "type": "number"
+    }
+  ]
+}

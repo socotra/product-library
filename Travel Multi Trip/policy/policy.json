@@ -1,0 +1,182 @@
+{
+  "fields": [
+    {
+      "name": "channel",
+      "title": "Sales Channel",
+      "type": "select",
+      "values": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+    },
+    {
+      "name": "marketing_campaign",
+      "title": "How did you hear about Acme Travel Protection?",
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Friend or Family Member",
+        "Agent",
+        "Insurance Provider",
+        "Prior Customer",
+        "Google",
+        "Travel Agent",
+        "Expedia",
+        "Church or Volunteer Group",
+        "Other"
+      ]
+    },
+    {
+      "name": "bene_primary_firstname",
+      "title": "First Name",
+      "type": "string",
+      "optional": true,
+      "width": 3,
+      "heading": "Primary Beneficiary"
+    },
+    {
+      "name": "bene_primary_lastname",
+      "title": "Last Name",
+      "type": "string",
+      "width": 3,
+      "optional": true
+    },
+    {
+      "name": "bene_primary_ssn",
+      "title": "SSN (xxx-xx-xxxx)",
+      "type": "string",
+      "width": 2,
+      "optional": true,
+      "decimalPlaces": 0,
+      "regex": "[0-9]{3}-[0-9]{2}-[0-9]{4}"
+    },
+    {
+      "name": "bene_primary_relationship",
+      "title": "Relationship",
+      "optional": true,
+      "width": 2,
+      "type": "select",
+      "values": [
+        "Spouse",
+        "Child",
+        "Relative",
+        "Friend",
+        "Other"
+      ]
+    },
+    {
+      "name": "percentage",
+      "title": "Percentage",
+      "type": "number",
+      "optional": true,
+      "width": 2,
+      "decimalPlaces": 2
+    },
+    {
+      "name": "bene_additional",
+      "title": "Additional Beneficiaries",
+      "width": 3,
+      "newline": true,
+      "type": "select",
+      "optional": false,
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "bene_multiple",
+      "title": "Additional Beneficiaries",
+      "optional": true,
+      "type": "group",
+      "fields": [
+        {
+          "name": "bene_firstname",
+          "title": "First Name",
+          "width": 3,
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "bene_lastname",
+          "title": "Last Name",
+          "width": 3,
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "bene_ssn",
+          "title": "SSN",
+          "type": "string",
+          "width": 2,
+          "optional": true,
+          "decimalPlaces": 0,
+          "regex": "[0-9]{3}-[0-9]{2}-[0-9]{4}"
+        },
+        {
+          "name": "bene_relationship",
+          "title": "Relationship",
+          "optional": true,
+          "width": 2,
+          "type": "select",
+          "values": [
+            "Spouse",
+            "Child",
+            "Relative",
+            "Friend",
+            "Other"
+          ]
+        },
+        {
+          "name": "bene_percentage",
+          "title": "Percentage",
+          "type": "number",
+          "width": 2,
+          "optional": true,
+          "decimalPlaces": 2
+        }
+      ],
+      "repeatable": true,
+      "maximum": 6,
+      "condition": {
+        "bene_additional": "Yes"
+      }
+    },
+    {
+      "name": "qualification_question_1",
+      "title": "I hereby certify and I acknowledge that i am not over 84 and am a legal USA Resident",
+      "heading": "Qualification / Disclaimers",
+      "width": 12,
+      "optional": false,
+      "type": "select",
+      "values": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    }
+  ],
+  "defaultPaymentTerms": {
+    "amount": 0,
+    "unit": "day"
+  },
+  "paymentSchedules": [
+    {
+      "type": "total",
+      "name": "upfront",
+      "displayName": "Up Front"
+    },
+    {
+      "type": "monthly",
+      "name": "monthly",
+      "displayName": "Monthly"
+    }
+  ]
+}

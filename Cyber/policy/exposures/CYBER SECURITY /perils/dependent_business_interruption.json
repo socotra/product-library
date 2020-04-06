@@ -1,0 +1,21 @@
+{
+  "name": "dependent_business_interruption",
+  "displayName": "Dependent Business Interruption",
+   "fields": [
+  	 {
+      "name": "dependent_business_interruption_description",
+      "title": "This is insurance for losses sustained due to the total or partial interruption of your business as a result of a data breach security failure or extortion threat at an outsourced business process or IT services supplier.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "75000",
+  "indemnityPerEvent": "150000",
+  "indemnityInAggregate": "300000",
+  "deductible": "5000",
+  "lumpSumPayment": "0"
+}

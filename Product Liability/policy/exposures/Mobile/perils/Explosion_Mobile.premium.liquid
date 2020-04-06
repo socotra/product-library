@@ -1,0 +1,36 @@
+{% comment %} set the premium according to the amount of coverage {% endcomment %}
+{% assign indemnity = data.peril_characteristics.indemnity_in_aggregate %}
+{% assign exposure_v = data.exposure_characteristics.field_values %}
+{% assign exposure_fg = data.exposure_characteristics.field_groups_by_locator %}
+{% comment %}{% assign premium = indemnity | times: 0.037 %} {% endcomment %}
+
+{% assign sales_premium = 0 %}
+{% for country in exposure_v.group_countries %}
+	{% assign sales_premium = sales_premium | plus: exposure_fg[country].estimated_sales %}
+{% endfor %}
+{% assign premium = sales_premium | times: 0.02 %}
+
+
+{% assign final_rate = 0 %}
+{% for country in exposure_v.group_countries %}
+	{% assign rate = "rating_country" | lookup: exposure_fg[country].select_country %}
+	{% assign rate_value = premium | times: rate %}
+	{% assign final_rate = final_rate | plus: rate_value %}
+{% endfor %}
+{% assign premium = premium | plus: final_rate %}
+
+{% assign rating = "rating_experience_subcontract" | lookup: exposure_v.product_exprience | split: ' ' %}
+{% if exposure_v.subcontract contains "0-30%" %}
+	{% assign premium = premium | times: rating[0] %}
+{% elsif exposure_v.subcontract contains "30%-50%" %}
+	{% assign premium = premium | times: rating[1] %}
+{% elsif exposure_v.subcontract contains "50%-70%" %}
+	{% assign premium = premium | times: rating[2] %}
+{% elsif exposure_v.subcontract contains "70%-100%" %}
+	{% assign premium = premium | times: rating[3] %}
+{% endif %}
+
+{% comment %} set the technical premium, commission, and premium  {% endcomment %}
+{{ premium | times: 0.8 | set_year_technical_premium }}
+{{ premium | times: 0.05 | add_year_commission: "AliceL" }}
+{{ premium | set_year_premium }}

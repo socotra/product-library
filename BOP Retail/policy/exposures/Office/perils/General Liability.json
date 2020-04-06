@@ -1,0 +1,8 @@
+{
+  "name": "General Liability",
+  "displayName": "General Liability",
+  "fields": [],
+  "indemnityPerEvent": "1000000",
+  "indemnityInAggregate": "5000000",
+  "deductible": "1000"
+}

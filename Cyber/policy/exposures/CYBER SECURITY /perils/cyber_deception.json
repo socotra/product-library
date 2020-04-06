@@ -1,0 +1,21 @@
+{
+  "name": "cyber_deception",
+  "displayName": "Cyber Deception",
+   "fields": [
+  	 {
+      "name": "cyber_deception_description",
+      "title": "This is insurance for the loss of money as a result of the a social engineering or phishing attack against you which results in your voluntary transfer of money to an unintended third party.",
+      "type": "select",
+      "values": [
+        "Required",
+        "Declined"
+      ],
+      "optional": true
+    }
+  ],
+  "indemnityPerItem": "25000",
+  "indemnityPerEvent": "75000",
+  "indemnityInAggregate": "150000",
+  "deductible": "1000",
+  "lumpSumPayment": "0"
+}

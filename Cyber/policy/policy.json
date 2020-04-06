@@ -1,0 +1,283 @@
+{
+  "fields": [
+        
+  {
+      "name": "channel",
+      "title": "Sales Channel",
+      "width": 3,
+      "type": "select",
+      "values": [
+        "Direct",
+        "Agent",
+        "Broker"
+      ]
+  },
+  {
+    "name": "account_type",
+    "title": "Account Type",
+    "newline": true,
+    "type": "select",
+    "values": [
+      "Individual",
+      "Organization"
+    ]
+  },
+  {
+    "name": "account_type_legal_entity",
+    "title": "Legal Entity",
+    "type": "select",
+    "optional": true,
+    "values": [
+      "Corportion",
+      "LLC",
+      "Partnership",
+      "Sole Proprietorship"
+    ]
+  },
+  {
+    "name": "business_name",
+    "title": "Business Name",
+    "type": "string",
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Organization"
+        ]
+      }
+  },
+  {
+    "name": "business_description",
+    "title": "Business Description",
+    "type": "select",
+    "optional": true,
+     "condition": {
+        "account_type": [
+          "Organization"
+        ]
+      },
+    "values": [
+      "Service",
+      "Retail",
+      "Commercial"
+    ]
+  },
+  {
+    "name": "business_federal_employment_taxation_number",
+    "title": "FEIN - EIN Number",
+    "type": "number",
+    "optional": true,
+     "condition": {
+        "account_type": [
+          "Organization"
+        ]
+      }
+  },
+  {
+    "name": "primary_contact_first_name",
+    "title": "Primary Contact First Name",
+    "type": "string",
+    "newline": true,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Organization"
+        ]
+      }
+  },
+  {
+    "name": "primary_contact_last_name",
+    "title": "Last Name",
+    "type": "string",
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Organization"
+        ]
+      }
+  },
+  {
+    "name": "first_name",
+    "title": "First Name",
+    "type": "string",
+    "width": 4,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+      }
+  },
+  {
+    "name": "middle_name",
+    "title": "Middle",
+    "type": "string",
+    "width": 4,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+      }
+  },
+  {
+    "name": "last_name",
+    "title": "Last",
+    "type": "string",
+    "width": 4,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+      }
+  },
+  {
+    "name": "gender",
+    "title": "Gender",
+    "type": "select",
+    "width": 4,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+  },
+    "values": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "name": "occupation",
+    "title": "Occupation",
+    "type": "select",
+    "width": 4,
+    "optional": true,
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+      },
+    "values": [
+      "Unemployed",
+      "Business Professional",
+      "Military",
+      "Medical",
+      "Clerical"
+    ]
+  },
+
+  {
+    "name": "marital_status",
+    "title": "Marital Status",
+    "condition": {
+        "account_type": [
+          "Individual"
+        ]
+      },
+    "type": "select",
+    "width": 4,
+    "optional": true,
+    "values": [
+      "Single",
+      "Common-in-Law",
+      "Married",
+      "Separated",
+      "Divorced",
+      "Widow",
+      "Widower"
+    ]
+  },
+    {
+      "name": "contacts",
+      "title": "Security Contacts",
+      "optional": true,
+      "type": "group",
+      "fields": [
+        {
+          "name": "firstname",
+          "title": "First Name",
+          "width": 4,
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "lastname",
+          "title": "Last Name",
+          "width": 4,
+          "type": "string",
+          "optional": true
+        }     
+      ],
+      "repeatable": true,
+      "maximum": 6
+    },
+    {
+      "name": "ventures",
+      "title": "DOES YOUR BUSINESS ANTICIPATE ESTABLISHING OR ENTERING INTO ANY RELATED OR UNRELATED VENTURES WHICH ARE A MATERIAL CHANGE IN OPERATIONS IN THE NEXT TWELVE (12) MONTHS?",
+      "heading": "GENERAL INFORMATION",
+      "type": "select",
+      "width": 12,
+      "optional": true,
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "ecommerce",
+      "title": " DOES YOUR BUSIESS ANTICIPATE PROVIDING ANY NEW E-COMMERCE PRODUCTS OR SERVICES IN THE NEXT TWELVE (12) MONTHS?",
+      "type": "select",
+      "width": 12,
+      "newline": true,
+      "optional": true,
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "run_third_party_reports",
+      "title": "Insurance & Third Party Reports Provide a Better Quote - Can we order them?",
+      "width": 12,
+      "optional": true,
+      "type": "select",
+      "values": [
+        "Yes - Please Run Reports - To Provide the Best Quote",
+        "No - I Do Not Authorize - Just Provide a General Quote"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    },
+    {
+      "displayName": "Regulatory Disclosure",
+      "fileName": "regulatory_disclosure.pdf",
+      "templateName": "regulatory_disclosure.template.liquid"
+    }
+  ],
+  "defaultPaymentTerms": {
+    "amount": 0,
+    "unit": "day"
+  },
+  "paymentSchedules": [
+    {
+      "type": "total",
+      "name": "upfront",
+      "displayName": "Up Front"
+    },
+    {
+      "type": "monthly",
+      "name": "monthly",
+      "displayName": "Monthly"
+    }
+  ],
+  "lapse": {
+    "gracePeriodDays": 30,
+    "reinstatementPeriodDays": 90
+  }
+}

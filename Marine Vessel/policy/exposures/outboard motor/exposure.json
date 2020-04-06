@@ -1,0 +1,62 @@
+{
+  "name": "outboard_motor",
+  "displayName": "Outboard Motor",
+  "fields": [
+    {
+      "name": "year",
+      "title": "Year",
+      "type": "date",
+      "precision": "year",
+      "minimumOffset": {
+        "field": "year",
+        "amount": 10
+      }
+    },
+    {
+      "name": "manufacture",
+      "title": "Manufacture",
+      "type": "string"
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "type": "string"
+    },
+    {
+      "name": "serial_number",
+      "title": "Serial Number",
+      "type": "number"
+    },
+    {
+      "name": "horsepower",
+      "title": "Horsepower",
+      "type": "number"
+    },
+    {
+      "name": "fuel_type",
+      "title": "Fuel Type",
+      "type": "select",
+      "values": [
+        "Gasoline",
+        "Diesel",
+        "Battery"
+      ]
+    },
+    {
+      "name": "date_purchased",
+      "title": "Date Purchased",
+      "type": "date",
+      "precision": "day"
+    },
+    {
+      "name": "cost_new",
+      "title": "Cost New",
+      "type": "number"
+    },
+    {
+      "name": "present_value",
+      "title": "Present Value",
+      "type": "number"
+    }
+  ]
+}
