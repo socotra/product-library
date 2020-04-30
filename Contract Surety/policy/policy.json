@@ -1,278 +1,278 @@
 {
   "fields": [
    {
-      "name": "contract_surety_bond_type",
-      "title": "What Type of Bond would you like?",
-      "width": 12,
-      "type": "select",
-      "values": [
-        "Bid Bond",
-        "Contractor's License Bond",
-        "Contractor’s Performance Bond",
-        "Contractor’s Payment Bond",
-        "Contractors Performance and Payment Bond"
-        
-      ]
+    "name": "contract_surety_bond_type",
+    "title": "What Type of Bond would you like?",
+    "width": 12,
+    "type": "select",
+    "values": [
+      "Bid Bond",
+      "Contractor's License Bond",
+      "Contractor's Performance Bond",
+      "Contractor's Payment Bond",
+      "Contractors Performance and Payment Bond"
+
+    ]
   },
   {
-      "name": "contractor_license_bond_jurisdiction",
-      "title": "Contractor License Bond Jurisdiction",
-      "width": 6,
-      "type": "select",
-      "optional": false,
-      "condition": { 
-        "contract_surety_bond_type": [
-          "Contractor's License Bond"
-        ]
-      },
-      "values": [
-        "State",
+    "name": "contractor_license_bond_jurisdiction",
+    "title": "Contractor License Bond Jurisdiction",
+    "width": 6,
+    "type": "select",
+    "optional": false,
+    "condition": { 
+      "contract_surety_bond_type": [
+        "Contractor's License Bond"
+      ]
+    },
+    "values": [
+      "State",
+      "Municipal"
+    ]
+  },
+  {
+    "name": "city_name",
+    "title": "City Name",
+    "width": 12,
+    "type": "select",
+    "optional": false,
+    "condition": { 
+      "contractor_license_bond_jurisdiction": [
         "Municipal"
       ]
+    },
+    "values": [
+      "Cleveland",
+      "Columbus",
+      "Lancaster"
+    ]
   },
-   {
-      "name": "city_name",
-      "title": "City Name",
-      "width": 12,
-      "type": "select",
-      "optional": false,
-      "condition": { 
-        "contractor_license_bond_jurisdiction": [
-          "Municipal"
-        ]
-      },
-      "values": [
-        "Cleveland",
-        "Columbus",
-        "Lancaster"
+  {
+    "name": "contractor_license_bond",
+    "title": "Contractor License Bond",
+    "width": 12,
+    "type": "select",
+    "optional": true,
+    "condition": {
+      "city_name": [
+        "Cleveland"
       ]
-  },
-   {
-      "name": "contractor_license_bond",
-      "title": "Contractor License Bond",
-      "width": 12,
-      "type": "select",
-      "optional": true,
-      "condition": {
-        "city_name": [
-          "Cleveland"
-        ]
-      },
-      "values": [
-        "State",
-        "Municipal",
-        "Cleveland - City Backflow Tester ($10,000.00)",
-        "Cleveland - City Demolition Contractor ($25,000.00)",
-        "Cleveland - City Electrical Contractor ($25,000.00)",
-        "Cleveland - City Contractor",
-        "Cleveland - City Grade/Fill",
-        "Cleveland - City Heating, Ventilation, Air Conditioning and Refrigeration (HVAC) Contractor ($25,000.00)",
-        "Cleveland - City Master Plumber ($25,000.00)",
-        "Cleveland - City Sewer Builder ($25,000.00)",
-        "Cleveland - City Sidewalk Contractor ($25,000.00)",
-        "Cleveland Heights - City Contractor ($10,000.00)",
-        "Cleveland Heights - City Sewer ($5,000.00)",
-        "Cleveland Heights - City Snowplow/Landscaping ($10,000.00)"
+    },
+    "values": [
+      "State",
+      "Municipal",
+      "Cleveland - City Backflow Tester ($10,000.00)",
+      "Cleveland - City Demolition Contractor ($25,000.00)",
+      "Cleveland - City Electrical Contractor ($25,000.00)",
+      "Cleveland - City Contractor",
+      "Cleveland - City Grade/Fill",
+      "Cleveland - City Heating, Ventilation, Air Conditioning and Refrigeration (HVAC) Contractor ($25,000.00)",
+      "Cleveland - City Master Plumber ($25,000.00)",
+      "Cleveland - City Sewer Builder ($25,000.00)",
+      "Cleveland - City Sidewalk Contractor ($25,000.00)",
+      "Cleveland Heights - City Contractor ($10,000.00)",
+      "Cleveland Heights - City Sewer ($5,000.00)",
+      "Cleveland Heights - City Snowplow/Landscaping ($10,000.00)"
 
-      ]
-  },
-    {
-      "name": "run_third_party_reports",
-      "title": "Insurance & Third Party Reports Provide a Better Quote - Can we order them?",
-      "width": 12,
-      "optional": true,
-      "type": "select",
-      "values": [
-        "Yes - Please Run Reports - To Provide the Best Quote",
-        "No - I Do Not Authorize - Just Provide a General Quote"
-      ]
-    },
-    {
-          "name": "social_security_number",
-          "title": "SSN",
-          "width": 4,
-          "type": "string",
-          "optional": true,
-          "condition": { 
-          "run_third_party_reports": [
-          "Yes - Please Run Reports - To Provide the Best Quote"
-        ]
-          }
-        },
-    {
-          "name": "credit_score",
-          "title": "Credit Score",
-          "width": 4,
-          "type": "string",
-          "optional": true,
-          "condition": { 
-          "run_third_party_reports": [
-          "Yes - Please Run Reports - To Provide the Best Quote"
-        ]
-          }
-        },
-  {
-      "name": "oligee",
-      "title": "Obligee(s)",
-      "optional": true,
-      "type": "group",
-      "fields": [
-        {
-    "name": "account_type",
-    "title": "Account Type",
-    "newline": true,
-    "type": "select",
-    "values": [
-      "Individual",
-      "Organization"
     ]
   },
   {
-    "name": "account_type_legal_entity",
-    "title": "Legal Entity",
-    "type": "select",
+    "name": "run_third_party_reports",
+    "title": "Insurance & Third Party Reports Provide a Better Quote - Can we order them?",
+    "width": 12,
     "optional": true,
+    "type": "select",
     "values": [
-      "Corportion",
-      "LLC",
-      "Partnership",
-      "Sole Proprietorship"
+      "Yes - Please Run Reports - To Provide the Best Quote",
+      "No - I Do Not Authorize - Just Provide a General Quote"
     ]
   },
   {
-    "name": "business_name",
-    "title": "Business Name",
+    "name": "social_security_number",
+    "title": "SSN",
+    "width": 4,
     "type": "string",
     "optional": true,
-    "condition": {
-        "account_type": [
-          "Organization"
-        ]
-      }
+    "condition": { 
+      "run_third_party_reports": [
+        "Yes - Please Run Reports - To Provide the Best Quote"
+      ]
+    }
   },
   {
-    "name": "business_description",
-    "title": "Business Description",
-    "type": "select",
+    "name": "credit_score",
+    "title": "Credit Score",
+    "width": 4,
+    "type": "string",
     "optional": true,
-     "condition": {
-        "account_type": [
+    "condition": { 
+      "run_third_party_reports": [
+        "Yes - Please Run Reports - To Provide the Best Quote"
+      ]
+    }
+  },
+  {
+    "name": "oligee",
+    "title": "Obligee(s)",
+    "optional": true,
+    "type": "group",
+    "fields": [
+      {
+        "name": "account_type",
+        "title": "Account Type",
+        "newline": true,
+        "type": "select",
+        "values": [
+          "Individual",
           "Organization"
         ]
       },
-    "values": [
-      "Service",
-      "Retail",
-      "Commercial"
-    ]
-  },
-  {
-    "name": "business_federal_employment_taxation_number",
-    "title": "FEIN - EIN Number",
-    "type": "number",
-    "optional": true,
-     "condition": {
-        "account_type": [
-          "Organization"
+      {
+        "name": "account_type_legal_entity",
+        "title": "Legal Entity",
+        "type": "select",
+        "optional": true,
+        "values": [
+          "Corportion",
+          "LLC",
+          "Partnership",
+          "Sole Proprietorship"
         ]
-      }
-  },
-  {
-    "name": "primary_contact_first_name",
-    "title": "Primary Contact First Name",
-    "type": "string",
-    "newline": true,
-    "optional": true,
-    "condition": {
-        "account_type": [
-          "Organization"
+      },
+      {
+        "name": "business_name",
+        "title": "Business Name",
+        "type": "string",
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Organization"
+          ]
+        }
+      },
+      {
+        "name": "business_description",
+        "title": "Business Description",
+        "type": "select",
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Organization"
+          ]
+        },
+        "values": [
+          "Service",
+          "Retail",
+          "Commercial"
         ]
-      }
-  },
-  {
-    "name": "primary_contact_last_name",
-    "title": "Last Name",
-    "type": "string",
-    "optional": true,
-    "condition": {
-        "account_type": [
-          "Organization"
-        ]
-      }
-  },
-        {
-    "name": "first_name",
-    "title": "First Name",
-    "type": "string",
-    "width": 4,
-    "optional": true,
-    "condition": {
-        "account_type": [
-          "Individual"
-        ]
-      }
-  },
-  {
-    "name": "middle_name",
-    "title": "Middle",
-    "type": "string",
-    "width": 4,
-    "optional": true,
-    "condition": {
-        "account_type": [
-          "Individual"
-        ]
-      }
-  },
-  {
-    "name": "last_name",
-    "title": "Last",
-    "type": "string",
-    "width": 4,
-    "optional": true,
-    "condition": {
-        "account_type": [
-          "Individual"
-        ]
-      }
-  
-      
-  }   
-      ],
-      "repeatable": true,
-      "maximum": 6
-    }
-  ],
-  "documents": [
-    {
-      "displayName": "Policy Schedule",
-      "fileName": "schedule.pdf",
-      "templateName": "schedule.template.liquid"
-    },
-    {
-      "displayName": "Regulatory Disclosure",
-      "fileName": "regulatory_disclosure.pdf",
-      "templateName": "regulatory_disclosure.template.liquid"
-    }
-  ],
-  "defaultPaymentTerms": {
-    "amount": 0,
-    "unit": "day"
-  },
-  "paymentSchedules": [
-    {
-      "type": "total",
-      "name": "upfront",
-      "displayName": "Up Front"
-    },
-    {
-      "type": "monthly",
-      "name": "monthly",
-      "displayName": "Monthly"
-    }
-  ],
-  "lapse": {
-    "gracePeriodDays": 30,
-    "reinstatementPeriodDays": 90
+      },
+      {
+        "name": "business_federal_employment_taxation_number",
+        "title": "FEIN - EIN Number",
+        "type": "number",
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Organization"
+          ]
+        }
+      },
+      {
+        "name": "primary_contact_first_name",
+        "title": "Primary Contact First Name",
+        "type": "string",
+        "newline": true,
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Organization"
+          ]
+        }
+      },
+      {
+        "name": "primary_contact_last_name",
+        "title": "Last Name",
+        "type": "string",
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Organization"
+          ]
+        }
+      },
+      {
+        "name": "first_name",
+        "title": "First Name",
+        "type": "string",
+        "width": 4,
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Individual"
+          ]
+        }
+      },
+      {
+        "name": "middle_name",
+        "title": "Middle",
+        "type": "string",
+        "width": 4,
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Individual"
+          ]
+        }
+      },
+      {
+        "name": "last_name",
+        "title": "Last",
+        "type": "string",
+        "width": 4,
+        "optional": true,
+        "condition": {
+          "account_type": [
+            "Individual"
+          ]
+        }
+
+
+      }   
+    ],
+    "repeatable": true,
+    "maximum": 6
   }
+],
+"documents": [
+  {
+    "displayName": "Policy Schedule",
+    "fileName": "schedule.pdf",
+    "templateName": "schedule.template.liquid"
+  },
+  {
+    "displayName": "Regulatory Disclosure",
+    "fileName": "regulatory_disclosure.pdf",
+    "templateName": "regulatory_disclosure.template.liquid"
+  }
+],
+"defaultPaymentTerms": {
+  "amount": 0,
+  "unit": "day"
+},
+"paymentSchedules": [
+  {
+    "type": "total",
+    "name": "upfront",
+    "displayName": "Up Front"
+  },
+  {
+    "type": "monthly",
+    "name": "monthly",
+    "displayName": "Monthly"
+  }
+],
+"lapse": {
+  "gracePeriodDays": 30,
+  "reinstatementPeriodDays": 90
+}
 }
