@@ -325,11 +325,6 @@
   ],
 "documents": [
   {
-    "displayName": "Regulatory Disclosure",
-    "fileName": "regulatory_disclosure.pdf",
-    "templateName": "regulatory_disclosure.template.liquid"
-  },
-  {
     "displayName": "Broker Document",
     "fileName": "broker.pdf",
     "templateName": "broker.template.liquid"
