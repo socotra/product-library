@@ -1,19 +1,19 @@
 {
   "name": "license",
   "displayName": "License",
-   "fields": [
-     {
-      "name": "obligee_and_class_code",
-      "title": "City of Cleveland - All Contractor’s License – Compliance – 906",
-      "width": 12,
-      "type": "select",
-      "optional": true,
-      "values": [
-        "Confirmed",
-        "Discuss"
-      ]
+  "fields": [
+   {
+    "name": "obligee_and_class_code",
+    "title": "City of San Francisco - All Contractor's License - Compliance - 906",
+    "width": 12,
+    "type": "select",
+    "optional": true,
+    "values": [
+      "Confirmed",
+      "Discuss"
+    ]
   }
-     ],
+],
   "indemnityPerItem": "25000",
   "indemnityPerEvent": "25000",
   "indemnityInAggregate": "25000",
