@@ -1,0 +1,47 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+{% assign exposure_v = data.policy.exposures[0].characteristics[0].field_values %}
+
+{% if policy_v.insurance_fraud_conviction == 'yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to the Fraud Conviction(s) this Policy Cannot be Bound." | add_underwriting_note }}
+
+{% elsif exposure_v.any_work_performed_underground == 'yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "nature of work does not qualify for this policy" | add_underwriting_note }} 
+
+{% elsif exposure_v.any_work_performed_above_15_ft == 'yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "nature of work does not qualify for this plan" | add_underwriting_note }}
+    
+{% elsif policy_v.payment_plan == 'other' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "only monthly or annual payment plan" | add_underwriting_note }}    
+    
+{% elsif policy_v.claims_past_5_years == '3 and above' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "number of claims is too high" | add_underwriting_note }}
+    
+{% elsif policy_v.10_year_felony_conviction_of_directors == 'yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "felony convictions does not qualify for the plan" | add_underwriting_note }}  
+    
+{% elsif policy_v.pending_claims == 'yes' %} 
+    {{ "none" | set_underwriting_decision }}
+    {{ "pending claims needs manual intervention" | add_underwriting_note }} 
+    
+{% elsif exposure_v.employees_operate_machinery contains '50+' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "nature of work does not qualify" | add_underwriting_note }}  
+
+{% elsif exposure_v.employees_drive_on_the_job contains '50+' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "nature of work does not qualify" | add_underwriting_note }}
+
+{% elsif exposure_v.wcirb_number == 'Other' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "nature of work does not qualify" | add_underwriting_note }}
+
+{% else %}
+    {{ "accept" | set_underwriting_decision }}
+    {{ "Policy is accepted" | add_underwriting_note }}
+{% endif %}

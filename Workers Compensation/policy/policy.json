@@ -1,0 +1,142 @@
+{
+  "fields": [
+    {
+      "title": "Business name and DBA",
+      "name": "business_name_and_dba",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "title": "Business Address",
+      "name": "business_address",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "title": "Business Email",
+      "name": "business_email",
+      "type": "email",
+      "optional": true
+    },
+    {
+      "title": "Legal Entity",
+      "name": "legal_entity",
+      "type": "select",
+      "optional": true,
+      "values": [
+        "corp",
+        "llc",
+        "sole prop",
+        "partnership",
+        "other"
+      ]
+    },
+    {
+      "title": "FEIN Number",
+      "name": "fein_number",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "title": "Policy Maximum Coverage",
+      "name": "max_cover",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "1000000"
+      ]
+    },
+    {
+      "title": "Have any of the business' directors or employees been convicted of a felony in the past 10 years?",
+      "name": "10_year_felony_conviction_of_directors",
+      "type": "select",
+      "values": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "title": "Have any of the business' directors or employees been convicted of activities related to insurance fraud?",
+      "name": "insurance_fraud_conviction",
+      "type": "select",
+      "values": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "title": "Are there any pending claims on the business?",
+      "name": "pending_claims",
+      "type": "select",
+      "values": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "title": "Number of Claims/Losses in the past 5 years.",
+      "name": "claims_past_5_years",
+      "type": "select",
+      "values": [
+        "0",
+        "1",
+        "2",
+        "3 and above"
+      ],
+      "match": [
+        "0",
+        "1",
+        "2",
+        "3 and above"
+      ]
+    },
+    {
+      "title": "Business Phone",
+      "name": "business_phone",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "title": "credit bureau",
+      "name": "credit_bureau",
+      "type": "select",
+      "values": [
+        "Experian",
+        "transunion",
+        "Equifax"
+      ],
+      "optional": true
+    },
+    {
+      "title": "payment plan",
+      "name": "payment_plan",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "annual",
+        "monthly",
+        "other"
+      ]
+    },
+     {
+      "title": "Audit Period",
+      "name": "audit_period",
+      "type": "select",
+      "optional": false,
+      "values": [
+        "annual",
+        "monthly",
+        "quarterly",
+        "half yearly"
+      ]
+    }
+    
+  ],
+  "documents": [
+    {
+      "displayName": "Policy Schedule",
+      "fileName": "schedule.pdf",
+      "templateName": "schedule.template.liquid"
+    }
+  ]
+}
