@@ -1,0 +1,69 @@
+{% assign policy = data.policy %}
+{% assign premReport = data.premiumReport %}
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/socotra-static-assets-temp/new-styles.css">
+</head>
+
+<table width="100%" class="header">
+  <tr>
+    <td>
+      <p class="header-contact">
+        Acme Insurance Co.<br>
+        33 New Montgomery St<br>
+        San Francisco, CA<br>
+        +1 415 555 5555<br>
+        www.socotra.com
+      </p>
+    </td>
+    <td>
+      <img src="http://i.imgur.com/cCB0v64.png" title="Acme Insurance Co" class="logo" height="72px">
+    </td>
+  </tr>
+</table>
+
+<h1>Premium Report Acknowledgement</h1>
+
+<h2>Policy Information</h2>
+
+<b>Report Number:</b> {{premReport.display_id}}<br><br>
+
+<b>Insured:</b> {{data.policyholder.entity.values.first_name}} {{data.policyholder.entity.values.last_name}}<br><br>
+
+<b>Report Start Date:</b> {{premReport.start_timestamp | timestamp_millis_print: "d MMM YYYY" }}<br>
+<b>Report End Date:</b> {{premReport.end_timestamp | timestamp_millis_print: "d MMM YYYY" }}<br>
+
+<h2>Mileage</h2>
+
+<b>Miles Travelled:</b> {{ premReport.field_values.mileage }}<br><br>
+
+<h2>Surcharges</h2>
+
+{% assign total_surcharges = 0 %}
+
+{% for surcharge_loc in premReport.field_values.surcharges %}
+    {% assign surcharge = premReport.field_groups_by_locator[surcharge_loc] %}
+    {% assign amt = surcharge.surcharge_amount[0] | plus: 0 %}
+    {% assign total_surcharges = total_surcharges | plus: amt %}
+    <b>Surcharge {{ surcharge.surcharge_type[0] }}: </b> {{ amt | format_number_currency: 'en', 'US' }}<br>    
+{% endfor %}
+
+<br>
+<br>
+
+{% assign prem = premReport.gross_premium %}
+{% assign tax = premReport.gross_taxes %}
+{% assign fees = premReport.gross_fees %}
+{% assign other_fees = fees | minus: total_surcharges %}
+{% assign total = prem | plus: tax | plus: fees %}
+
+<h2>Charge Summary</h2>
+
+<b>Premium:</b> {{ prem | format_number_currency: 'en', 'US' }}<br>
+<b>Taxes:</b> {{ tax | format_number_currency: 'en', 'US' }}<br>
+<b>Surcharges:</b> {{ total_surcharges | format_number_currency: 'en', 'US' }}<br>
+<b>Other Fees:</b> {{ other_fees | format_number_currency: 'en', 'US' }}<br>
+<b>Total: {{ total | format_number_currency: 'en', 'US' }} </b><br>
+
+<footer>Acme - Keep your loved ones secure.</footer>
