@@ -1,0 +1,30 @@
+{
+  "name": "vehicle",
+  "displayName": "Vehicle",
+  "fields": [
+    {
+      "name": "vin",
+      "title": "Vehicle Identification Number",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "make",
+      "title": "Make",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "year",
+      "title": "Year",
+      "type": "string",
+      "optional": true
+    }
+  ]
+}

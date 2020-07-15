@@ -1,0 +1,15 @@
+{% assign policy_v = data.policy.characteristics[0].field_values %}
+
+{{ "accept" | set_underwriting_decision }}
+
+{% if policy_v.felony_conviction == 'Yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to felony conviction(s) this policy cannot be bound." | add_underwriting_note }}       
+{% endif %}
+
+{% if policy_v.insurance_fraud_conviction == 'Yes' %} 
+    {{ "reject" | set_underwriting_decision }}
+    {{ "Due to fraud conviction(s) this policy cannot be bound." | add_underwriting_note }}   
+{% endif %}
+
+

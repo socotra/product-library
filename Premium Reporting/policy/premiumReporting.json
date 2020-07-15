@@ -1,0 +1,39 @@
+{
+  "premiumReportingConfiguration": [
+    {
+      "reportName": "standardReport",
+      "fields": [
+        {
+          "name": "mileage",
+          "title": "Miles Traveled",
+          "type": "number",
+          "decimalPlaces": 0
+        },
+        {
+          "name": "surcharges",
+          "title": "Surcharges",
+          "type": "group",
+          "repeatable": true,
+          "fields": [
+            {
+              "name": "surcharge_type",
+              "title": "Surcharge Type",
+              "type": "string"
+            },
+            {
+              "name": "surcharge_amount",
+              "title": "Surcharge Amount",
+              "type": "number",
+              "decimalPlaces": 2
+            }
+          ]
+        }
+      ],
+      "documents": [{
+        "displayName": "Report Acknowledgement",
+        "fileName": "reportAcknowledgement.pdf",
+        "templateName": "reportAcknowledgement.template.liquid"
+      }]
+    }
+  ]
+}

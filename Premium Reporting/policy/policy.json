@@ -1,0 +1,26 @@
+{
+  "fields": [
+    {
+      "name": "felony_conviction",
+      "title": "Has any household member been convicted of a felony in the past 10 years?",
+      "heading": "Preliminary Questions",
+      "type": "select",
+      "optional": true,
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "name": "insurance_fraud_conviction",
+      "title": "Has any household member been convicted of activities related to insurance fraud?",
+      "type": "select",
+      "optional": true,
+      "values": [
+        "No",
+        "Yes"
+      ]
+    }
+  ],
+  "documents": []
+}
