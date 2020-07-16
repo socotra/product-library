@@ -14,6 +14,7 @@
           "title": "Surcharges",
           "type": "group",
           "repeatable": true,
+          "optional": true,
           "fields": [
             {
               "name": "surcharge_type",
