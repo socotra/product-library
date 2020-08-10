@@ -1,21 +1,22 @@
 {% assign premReport = data.premiumReport %}
 
+{% comment %} Premium Calc {% endcomment %}
 {% assign miles = premReport.field_values.mileage[0] %}
-
-{% assign prem = miles | times: 0.015 %}
-
+{% assign prem = miles | times: 0.10 %}
 {{ prem | add_premium: "standard prem"}}
 
-{% assign tax = prem | times: 0.1 %}
+{% comment %} Tax Calc {% endcomment %}
+{% assign tax = prem | times: 0.05 %}
+{{ tax | add_tax: "mileage tax"}}
 
-{{ tax | add_tax: "milage tax"}}
-
-{% assign processing_fee = miles | times: 0.008 %}
-
+{% comment %} Fee Calc {% endcomment %}
+{% assign processing_fee = miles | times: 0.008 | plus: 2.0 %}
 {{ processing_fee | add_fee: "processing fee", "Std Processing Fee" }}
 
+{% comment %} Commission Calc {% endcomment %}
 {{ 2 | add_commission: "Zenith Insurance Brokers" }}
 
+{% comment %} Add Surcharges {% endcomment %}
 {% for surcharge_loc in premReport.field_values.surcharges %}
     {% assign surcharge = premReport.field_groups_by_locator[surcharge_loc] %}
     {% assign amt = surcharge.surcharge_amount[0] | plus: 0 %}
