@@ -52,7 +52,7 @@
     },
     {
       "name": "claim_description",
-      "title": "Dscription of claim (including full contact information for POC)",
+      "title": "Description of claim (including full contact information for POC)",
       "type": "string",
       "multiline": true,
       "optional": true,
