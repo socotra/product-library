@@ -76,8 +76,8 @@
       {% unless entry[1].endorsement_effect == "unchanged" %}
             <tr>
               <td>{{entry[1].title}}</td>
-              <td>{{entry[1].old_value}}</td>
-              <td>{{entry[1].new_value}}</td>
+              <td>{{entry[1].old_value}} | format_number: "end", "US" }}</td>
+              <td>{{entry[1].new_value}} | format_number: "end", "US" }}</td>
             </tr>
       {% endunless %}
   {% endfor %}
@@ -92,8 +92,8 @@
       {% for entry in entry.updated_field_values %}
         <tr>
           <td>{{entry[1].title}}</td>
-          <td>{{entry[1].old_value}}</td>
-          <td>{{entry[1].new_value}}</td>
+          <td>{{entry[1].old_value}} | format_number: "end", "US" }}</td>
+          <td>{{entry[1].new_value}} | format_number: "end", "US" }}</td>
         </tr>
       {% endfor %}
     {% endfor %}
@@ -117,8 +117,8 @@
       {% for entry in exposure_update.updated_field_values %}
         <tr>
           <td>{{entry[1].title}}</td>
-          <td>{{entry[1].old_value}}</td>
-          <td>{{entry[1].new_value}}</td>
+          <td>{{entry[1].old_value}}| format_number: "end", "US" }}</td>
+          <td>{{entry[1].new_value}}| format_number: "end", "US" }}</td>
         </tr>
       {% endfor %}
       {% for field_group_type in exposure_update.updated_field_groups %}
@@ -132,8 +132,8 @@
           {% for entry in entry.updated_field_values %}
             <tr>
               <td>{{entry[1].title}}</td>
-              <td>{{entry[1].old_value}}</td>
-              <td>{{entry[1].new_value}}</td>
+              <td>{{entry[1].old_value}}| format_number: "end", "US" }}</td>
+              <td>{{entry[1].new_value}}| format_number: "end", "US" }}</td>
             </tr>
           {% endfor %}
         {% endfor %}
