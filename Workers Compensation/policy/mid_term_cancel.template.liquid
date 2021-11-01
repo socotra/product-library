@@ -1,4 +1,6 @@
 {% assign cancellation = data.policy.cancellation %}
+{% assign ph_v = data.policyholder.entity.values %}
+{% assign end_display = policy_c.policy_end_timestamp | timestamp_millis_add: "day", -1 %}
 
 <head>
   <meta charset="UTF-8">
@@ -24,7 +26,7 @@
 
 <h1>Policy Canceled</h1>
 
-Policy {{ data.policy.display_id }} is canceled effective {{ cancellation.effective_timestamp | timestamp_millis_print: "d MMM YYYY" }}.
+Policy {{ data.policy.display_id }} is canceled effective {{ cancellation.effective_timestamp | timestamp_millis_print: "d MMM YYYY" }}.  There will be no coverage for {{ph_v.business_name}} from {{cancellation.effective_timestamp | timestamp_millis_print: "d MMM YYYY" }} through {{end_display | timestamp_millis_print: "d MMM YYYY" }}.
 
 <br><br><br><br>
 

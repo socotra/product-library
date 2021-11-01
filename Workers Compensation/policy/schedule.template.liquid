@@ -1,7 +1,8 @@
 {% assign policy_c = data.policy.characteristics[0] %}
-{% assign policy_v = data.policy.exposures[0].characteristics[0].field_values %}
+{% assign policy_v = data.policy.characteristics.last.field_values %}
 {% assign ph_v = data.policyholder.entity.values %}
-{% assign exposure_v = data.policy.exposures.last.characteristics.last.field_values %}
+{% assign exposure_v = data.policy.exposures %}
+{% assign perils_v = exposure_v[0].perils %}
 
 {% assign end_display = policy_c.policy_end_timestamp | timestamp_millis_add: "day", -1 %}
 
@@ -28,7 +29,7 @@
 </table>
 
 
-<h1>Workers Compensation Policy Schedule</h1><br>
+<h1>Example Policy Schedule</h1><br>
 
 <h3>Insurance Details</h3>
 
@@ -37,8 +38,10 @@
     <td>Policyholder</td>
     <td>
       <b>ID:</b> {{data.policyholder.id}}<br>
-      <b>Name:</b> {{ph_v.first_name}} {{ph_v.last_name}}<br>
-      <b>Initiation Date:</b> {{ph_v.date_of_birth | timestamp_millis_print: "d MMM YYYY" }}<br>
+      <b>Name:</b> {{ph_v.business_name}}, <b>Doing Business As:</b> {{ph_v.doing_business_as}}<br>
+      <b>FEIN:</b> {{policy_v.fein | format_number: "en","US" | remove: "," }}, <b>In Business Since:</b> {{policy_v.year_business_started | format_number: "en","US" | remove: "," }}<br>
+      <b>Primary Business Activity:</b> {{policy_v.sic_code | format_number: "en","US" | remove: "," }}: {{policy_v.sic_description }}<br>
+      <b>Address:</b> {{policy_v.street }}, {{policy_v.city }}, {{policy_v.state }} {{policy_v.postal_code }}<br>
     </td>
   </tr>
   <tr>
@@ -47,15 +50,40 @@
       <b>ID:</b> {{data.policy.display_id}}<br>
       <b>Effective:</b> From {{policy_c.policy_start_timestamp | timestamp_millis_print: "d MMM YYYY" }}
       to {{end_display | timestamp_millis_print: "d MMM YYYY" }}<br>
-      <b>Class Code:</b> {{exposure_v.class_code}}<br>
-      <b>WCIRB:</b> {{exposure_v.wcirb_number}}<br>
-      <b>XMOD:</b> {{exposure_v.x_mod}}<br>
-      <b>Payroll:</b> {{exposure_v.annual_payroll}}<br>
+      <b>Key Parties:</b>
+        {% for party in policy_v.key_parties  %}
+            {{policy_c.field_groups_by_locator[party].first_name}} {{policy_c.field_groups_by_locator[party].last_name}}, {{policy_c.field_groups_by_locator[party].role}}<br>
+        {% endfor %}<br>
+      <b>Classes:</b> 
+        <ul>
+        {% for peril in perils_v %}
+            <li>{{peril.characteristics.last.field_values._description}}: {{peril.characteristics.last.field_values.estimated_wages | format_number_currency: "en","US" }}</li>
+        {% endfor %}<br>
+        </ul>
     </td>
   </tr>
   <tr>
-    <td>Total Premium</td>
-    <td>{{policy_c.gross_premium | format_number_currency: "en","US" }}</td>
+    <td>Total Cost: </td>
+    {% assign fees = 0 %}
+    {% for fee in data.policy.fees %}
+        {% assign fees = fees | plus: fee.amount %}
+    {% endfor %}
+    {% assign total_premium = policy_c.gross_premium | plus: policy_c.gross_taxes %}
+    {% assign total_premium = total_premium | plus: fees %}
+    <td>{{total_premium | format_number_currency: "en","US" }}</td>
+  </tr>
+  <tr>
+    <td>Cost Breakdown: </td>
+    <td>
+        <b>Premium: </b> {{policy_c.gross_premium | format_number_currency: "en","US" }}<br>
+        <b>Taxes: </b>{{policy_c.gross_taxes | format_number_currency: "en","US" }}<br>
+        <b>Total Fees: </b>{{fees | format_number_currency: "en","US" }}
+        <ul>
+            {% for fee in data.policy.fees %}
+                <li>{{fee.amount| format_number_currency: "en","US"}}, {{fee.name}}</li>
+            {% endfor %}</br>
+        </ul>
+    </td>
   </tr>
 </table>
 

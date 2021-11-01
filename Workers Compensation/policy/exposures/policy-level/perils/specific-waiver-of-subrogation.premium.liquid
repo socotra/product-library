@@ -1,0 +1,46 @@
+{% comment %} Set the premium according to the class code and wages, using per basis and including scheduled mods and experience mod factors.{% endcomment %}
+
+{% assign policy_c = data.policy_characteristics.field_values %}
+{% assign perils_c = data.peril_characteristics %}
+
+{% comment %} Policy Attributes for Rating {% endcomment %}
+{% assign experience_mod = policy_c.experience_mod %}
+{% assign tier = policy_c.uw_company %}
+{% assign postal_code = policy_c.postal_code %}
+
+{% comment %} Peril Attributes for Rating {% endcomment %}
+{% assign class_code = perils_c.field_values.class_code %}
+{% assign wages = perils_c.field_values.wages %}
+{% assign basis_type = perils_c.field_values.basis %}
+
+{% comment %} Basis Attributes for Rating {% endcomment %}
+{% if basis_type == "Per 100" %}
+    {% comment %} Standard Basis - Per 100 {% endcomment %}
+    {% assign basis = wages | divided_by: 100 %}
+{% elsif basis_type == "Per Capita" %}
+    {% assign basis = wages | divided_by: 1 %}
+{% else %}
+    {% assign basis = wages | divided_by: 1 %}
+{% endif %}
+
+{% comment %} Table Attributes for Rating {% endcomment %}
+{% if tier == "Low Risk Co" %}
+    {% comment %} Low Risks Lookup to Class Rates Preferred {% endcomment %}
+    {% assign base_rate = "class_rates_low_risk" | lookup: class_code %}
+{% elsif channel == "Standard Risk Co" %}
+    {% comment %} Standard Risks Lookup to Class Rates Standard {% endcomment %}
+    {% assign base_rate = "class_rates_standard" | lookup: class_code %}
+{% else %}
+    {% comment %} Third Tier is High Risk Co, Rates Are from Non Standard Class Rates {% endcomment %}
+    {% assign base_rate = "class_rates_high_risk" | lookup: class_code %}
+{% endif %}
+
+{% assign premium = basis | times: base_rate %}
+{% assign premium = premium | times: 0.015 %}
+
+{% if premium < 750 %}
+    {% assign premium = 750 %}
+{% endif %}
+
+{{ premium | set_year_technical_premium }}
+{{ premium | set_year_premium }}

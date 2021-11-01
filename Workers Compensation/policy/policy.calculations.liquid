@@ -1,4 +1,25 @@
-{% assign policy_c = data.policy.characteristics[0] %}
+{% comment %}{% assign policy_c = data.policy.characteristics[0] %}{% endcomment %}
+{% assign policy_v = data.policy.characteristics.last.field_values %}
+{% assign channel = policy_v.channel %}
+{% assign gross_premium = data.policy.characteristics[0].gross_premium %}
 
-{{ policy_c.gross_premium | times: 0.03 | add_fee: "transaction", "3% Transaction fee" }}
-{{ 10 | add_fee: "underwriting", "Underwriting fee" }}
+{% if channel == "Direct" %}
+    {{ gross_premium | times: 0.00 | add_fee: "transaction", "Congratulations, you saved 5% by buying direct!" }}
+    {{ 0 | add_fee: "underwriting", "Congratulations, you saved by buying direct!" }}
+{% elsif channel == "Partner" %}
+    {{ gross_premium | times: 0.03 | add_fee: "transaction", "3% Partner Transaction Fee" }}
+    {{ 10 | add_fee: "underwriting", "You saved $20 working with our partner!" }}
+{% elsif channel == "Agent" %}
+    {{ gross_premium | times: 0.05 | add_fee: "transaction", "5% Agent Transaction Fee" }}
+    {{ 20 | add_fee: "underwriting", "You saved $10 working with an agent!" }}
+{% else %}
+    {{ gross_premium | times: 0.07 | add_fee: "transaction", "7% Transaction fee" }}
+    {{ 40 | add_fee: "underwriting", "Underwriting fee" }}
+{% endif %}
+
+
+{% if gross_premium > 500000 %}
+    {{ gross_premium | times: 0.25 | times: -1 | add_fee: "discount", "Congratulations, you saved 25.% due to the success of your business!" }}
+{% endif %}
+
+{{ 1000 | add_fee: "expense_constant", "Expense Constant at Policy Inception" }}

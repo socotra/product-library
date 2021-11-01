@@ -1,0 +1,77 @@
+{
+    "name": "class-code",
+    "displayName": "Class Code",
+    "fields": [
+        {
+            "title": "Governing Law",
+            "name": "governing_law",
+            "type": "select",
+            "values": [
+                "State Act",
+                "US Longshore and Harbor Workers Comp",
+                "Extensions of the USLHW Act",
+                "Defense Base Act",
+                "Outer Continental Lands Act",
+                "Civilian Employees of Non Appropriated Fund Instrumentalities Act",
+                "Admiralty Law",
+                "Federal Employers Liability",
+                "Coverage Programs Under Admiralty Law or FELA",
+                "Program I",
+                "Program II",
+                "Waters not Subject to Admiralty Jurisdiction"
+            ]
+        },
+        {
+            "title": "State",
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "type": "lookup",
+            "table": "class_codes",
+            "title": "Class Code",
+            "name": "_description"
+        },
+        {
+            "title": "Class Description",
+            "name": "class_description",
+            "type": "lookup",
+            "table": "class_codes",
+            "match": [
+                "_description"
+            ]
+        },
+        {
+            "title": "Estimated Wages",
+            "name": "estimated_wages",
+            "type": "number"
+        },
+        {
+            "title": "Number of Employees",
+            "name": "number_employees",
+            "type": "number"
+        },
+        {
+            "title": "If Any",
+            "name": "if_any_basis",
+            "type": "select",
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Basis",
+            "name": "basis",
+            "type": "select",
+            "values": [
+                "Per 100",
+                "Per Capita"
+            ],
+            "match": [
+                "Per 100",
+                "Per Capita"
+            ]
+        }
+    ]
+}

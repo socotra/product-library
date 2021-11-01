@@ -1,0 +1,21 @@
+{% comment %} Set the catastrophe premium based on total wages across all class codes{% endcomment %}
+
+{% assign exposures = data.policy.exposures %}
+
+{% assign totalWages = 0 %}
+
+{% for exp in exposures %}
+    {% if exp.name == "work-cover" %}
+        {% for per in exp.perils %}
+            {% if per.characteristics.last.field_values.basis == "Per 100" %}
+                {% assign wages = per.characteristics.last.field_values.estimated_wages %}
+                {% assign totalWages = totalWages | plus: wages %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+{% assign premium = totalWages | times: 0.065 %}
+    
+{{ premium | set_year_technical_premium }}
+{{premium | set_year_premium}}

@@ -1,0 +1,58 @@
+{
+	"cancellationTypes": [
+		{
+			"name": "flat_cancel",
+			"title": "Flat Cancel",
+			"documents": [
+				{
+					"displayName": "Flat Cancellation",
+					"fileName": "flat_cancel.pdf",
+					"templateName": "flat_cancel.template.liquid"
+				}
+			],
+			"reinstatement": {
+				"defaultDeadlineDays": 15,
+				"documents": [
+					{
+						"displayName": "Reinstate",
+						"fileName": "reinstatement.pdf",
+						"templateName": "reinstatement.template.liquid"
+					}
+				]
+			},
+			"cancellationCategories": [
+				"Insured - Coverage Obtained Elsewhere",
+				"Insured - Business Sold, Closed",
+				"Carrier Requested",
+				"Finance Company Request"
+			]
+		},
+		{
+			"name": "mid_term_cancel",
+			"title": "Mid Term Cancellation",
+			"documents": [
+				{
+					"displayName": "Mid Term Cancel",
+					"fileName": "cancellation.pdf",
+					"templateName": "mid_term_cancel.template.liquid"
+				}
+			],
+			"reinstatement": {
+				"defaultDeadlineDays": 30,
+				"documents": [
+					{
+						"displayName": "Reinstate",
+						"fileName": "reinstatement.pdf",
+						"templateName": "reinstatement.template.liquid"
+					}
+				]
+			},
+			"cancellationCategories": [
+				"Insured - Coverage Obtained Elsewhere",
+				"Insured - Business Sold, Closed",
+				"Carrier Requested",
+				"Finance Company Request"
+			]
+		}
+	]
+}

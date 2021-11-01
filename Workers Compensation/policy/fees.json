@@ -1,12 +1,22 @@
 {
-  "fees": [
-    {
-      "name": "underwriting",
-      "displayName": "Underwriting Fee"
-    },
-    {
-      "name": "transaction",
-      "displayName": "Transaction Fee"
-    }
-  ]
+	"fees": [
+		{
+			"name": "underwriting",
+			"displayName": "Underwriting Fee"
+		},
+		{
+			"name": "transaction",
+			"displayName": "Transaction Fee"
+		},
+		{
+			"name": "expense_constant",
+			"displayName": "Fully Earned Expense",
+			"proration": "flat"
+		},
+		{
+			"name": "discount",
+			"displayName": "Discount",
+			"proration": "flat"
+		}
+	]
 }

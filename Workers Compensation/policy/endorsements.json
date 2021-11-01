@@ -1,16 +1,32 @@
 {
-  "endorsements": [
-    {
-      "name": "generic",
-      "displayName": "Policy Change",
-      "reprice": "always",
-      "documents": [
-        {
-          "displayName": "Policy Change",
-          "fileName": "endorsement.pdf",
-          "templateName": "endt.template.liquid"
-        }
-      ]
-    }
-  ]
+	"endorsements": [
+		{
+			"name": "generic",
+			"displayName": "Policy Change",
+			"reprice": "always",
+			"documents": [
+				{
+					"displayName": "Policy Change",
+					"fileName": "endorsement.pdf",
+					"templateName": "endt.template.liquid",
+					"generatingEvent": "quote",
+					"type": "pdf"
+				}
+			]
+		},
+		{
+			"name": "audit",
+			"displayName": "Audit",
+			"reprice": "always",
+			"documents": [
+				{
+					"displayName": "Audit",
+					"fileName": "audit.pdf",
+					"templateName": "audit.template.liquid",
+					"generatingEvent": "accept",
+					"type": "pdf"
+				}
+			]
+		}
+	]
 }

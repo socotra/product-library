@@ -106,7 +106,7 @@
   {% comment %} Then loop through the updated exposures within each group {% endcomment %}
   {% for exposure_update in exposure_group[1] %}
     {% assign exp_v = exposure_update.all_field_values %}
-    <h3>Updated {{exposure_update.display_name}} Exposure </h3>
+    <h3>Updated {{exposure_update.display_name}}: {{exp_v.first_name.new_value}} {{exp_v.last_name.new_value}}</h3>
     <table class="table price-table">
       <tr>
         <td><b>Field</b></td>
@@ -125,12 +125,11 @@
         {% for entry in field_group_type[1] %}
           {% comment %} Display updated field groups in the same table {% endcomment %}
           <tr>
-            <td><b> Updated {{entry.title}}  </b></td>
+            <td><b>Updated {{entry.title}}</b></td>
             <td></td>
             <td></td>
           </tr>
           {% for entry in entry.updated_field_values %}
-            <td>updated field values</td>
             <tr>
               <td>{{entry[1].title}}</td>
               <td>{{entry[1].old_value}}</td>
@@ -140,71 +139,7 @@
         {% endfor %}
       {% endfor %}
       <tr></tr>
-      {% for updated_peril in exposure_update.updated_perils %}
-        {% comment %}  <td><b> Updated {{updated_peril}} </b></td>{% endcomment %}
-        {% for entry in updated_peril.updated_field_values %}
-          <td>There are entries in field values </td>
-            <tr>
-              <td>{{entry[1].title}}</td>
-              <td>{{entry[1].old_value}}</td>
-              <td>{{entry[1].new_value}}</td>
-            </tr>
-        {% endfor %}
-      {% endfor %}
-        </table>
-      {% assign exposure_v = data.policy.exposures %}
-      {% assign perils_v = exposure_v[0].perils %}
-     <h3> Summary of Perils: </h3> <br>
-        <table class="table border-tops-only content">
-            {% for peril in perils_v %}
-                <tr>
-                    <td>
-                        {{peril.characteristics.last.field_values._description}}: {{peril.characteristics.last.field_values.estimated_wages | format_number_currency: "en","US" | remove: ","}} 
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-     <h3> Peril Changes: </h3> <br>
-     <table class="table border-tops-only content">
-      {% for peril_updts in exposure_update.updated_perils %}
-        {% for updt in peril_updts %}
-            {% for u in updt %}
-                {% assign first_field = true %}
-                <tr>
-                    {% for f in u.updated_field_values %}
-                        {% comment %}<b>f object: {{f}}</b><br>{% endcomment %} 
-                            <td>
-                                {% if (first_field)  %}
-                                    <b>Change Type: </b> {{f[1].endorsement_effect}}
-                                    {% assign first_field = false %}
-                                {% endif %}
-                            </td>
-                            <td>
-                                <b>Name: </b> {{f[1].title}} 
-                            </td>
-                            <td>
-                                {% if (f[1].endorsement_effect) == "updated"  %}
-                                    {% if (f[1].title) == "Wages" or  (f[1].title) == "Number of Employees" %}
-                                        <b>Old Value: </b> {{f[1].old_value  | format_number_currency: "en","US" }} 
-                                    {% else %}
-                                        <b>Old Value: </b> {{f[1].old_value}} 
-                                    {% endif %}
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if (f[1].title) == "Wages" or  (f[1].title) == "Number of Employees" %}
-                                    <b>New/Modified Value: </b> {{f[1].new_value  | format_number_currency: "en","US" }} 
-                                {% else %}
-                                    <b>New/Modified Value: </b> {{f[1].new_value}} 
-                                {% endif %}
-                            </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        {% endfor %}
-      {% endfor %}
-     </table>
-      
+    </table>
   {% endfor %}
 {% endfor %}
 

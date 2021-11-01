@@ -1,5 +1,10 @@
-{% assign policy = data.policy %}
-{% assign reinstatement = data.reinstatement %}
+{% assign policy_c = data.policy.characteristics[0] %}
+{% assign policy_v = data.policy.characteristics.last.field_values %}
+{% assign ph_v = data.policyholder.entity.values %}
+{% assign exposure_v = data.policy.exposures %}
+{% assign perils_v = exposure_v[0].perils %}
+
+{% assign end_display = policy_c.policy_end_timestamp | timestamp_millis_add: "day", -1 %}
 
 <head>
   <meta charset="UTF-8">
@@ -11,7 +16,7 @@
     <td>
       <p class="header-contact">
         Acme Insurance Co.<br>
-        33 New Montgomery St<br>
+        101 Mission Street<br>
         San Francisco, CA<br>
         +1 415 555 5555<br>
         www.socotra.com
@@ -23,10 +28,68 @@
   </tr>
 </table>
 
-<h1>Reinstatement Confirmation</h1>
 
-Your reinstatement request for policy {{ policy.display_id }} has been approved. Your reinstated policy will cover loss that occurs only on or after {{ reinstatement.reinstatement_timestamp | timestamp_millis_print: "d MMM YYYY" }}.
+<h1>Example Reinstatement</h1><br>
+<h2>Your policy will be reinstated without a lapse in coverage.</h2><br>
 
-<p>To make further inquiries regarding your Policy, please call 1-555-555-5555.
+<h3>Insurance Details</h3>
+
+<table class="table border-tops-only content">
+  <tr>
+    <td>Policyholder</td>
+    <td>
+      <b>ID:</b> {{data.policyholder.id}}<br>
+      <b>Name:</b> {{ph_v.business_name}}, <b>Doing Business As:</b> {{ph_v.doing_business_as}}<br>
+      <b>FEIN:</b> {{policy_v.fein | format_number: "en","US" | remove: "," }}, <b>In Business Since:</b> {{policy_v.year_business_started | format_number: "en","US" | remove: ","  }}<br>
+      <b>Primary Business Activity:</b> {{policy_v.industry_code | format_number: "en","US" | remove: "," }}: {{policy_v.industry_description }}<br>
+      <b>Address:</b> {{policy_v.street }}, {{policy_v.city }}, {{policy_v.state }} {{policy_v.postal_code }}<br>
+    </td>
+  </tr>
+  <tr>
+    <td>Policy</td>
+    <td>
+      <b>ID:</b> {{data.policy.display_id}}<br>
+      <b>Effective:</b> From {{policy_c.policy_start_timestamp | timestamp_millis_print: "d MMM YYYY" }}
+      to {{end_display | timestamp_millis_print: "d MMM YYYY" }}<br>
+      <b>Key Parties:</b>
+        {% for party in policy_v.key_parties  %}
+            {{policy_c.field_groups_by_locator[party].first_name}} {{policy_c.field_groups_by_locator[party].last_name}}, {{policy_c.field_groups_by_locator[party].role}}<br>
+        {% endfor %}
+      <b>Classes:</b> 
+        <ul>
+        {% for peril in perils_v %}
+            <li>{{peril.characteristics.last.field_values._description}}: {{peril.characteristics.last.field_values.estimated_wages | format_number_currency: "en","US" }}</li>
+        {% endfor %}<br>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Total Cost: </td>
+    {% assign fees = 0 %}
+    {% for fee in data.policy.fees %}
+        {% assign fees = fees | plus: fee.amount %}
+    {% endfor %}
+    {% assign total_premium = policy_c.gross_premium | plus: policy_c.gross_taxes %}
+    {% assign total_premium = total_premium | plus: fees %}
+    <td>{{total_premium | format_number_currency: "en","US" }}</td>
+  </tr>
+  <tr>
+    <td>Cost Breakdown: </td>
+    <td>
+        <b>Premium: </b> {{policy_c.gross_premium | format_number_currency: "en","US" }}<br>
+        <b>Taxes: </b>{{policy_c.gross_taxes | format_number_currency: "en","US" }}<br>
+        <b>Total Fees: </b>{{fees | format_number_currency: "en","US" }} : 
+        <ul>
+            {% for fee in data.policy.fees %}
+                <li>{{fee.amount| format_number_currency: "en","US"}}, {{fee.name}}</li>
+            {% endfor %}</br>
+        </ul>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<b>Authorized on</b> {{data.policy.issued_timestamp | timestamp_millis_print: "d MMM YYYY" }}
 
 <footer>Acme - Keep your loved ones secure.</footer>

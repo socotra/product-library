@@ -1,0 +1,1005 @@
+﻿sic_code,sic_description
+0116,Soybeans
+0119,Cash Grains Nec
+0111,Wheat
+0115,Corn
+0112,Rice
+0139,Field Crops Except Cash Grain
+0134,Irish Potatoes
+0161,Vegetables and Melons
+0174,Citrus Fruits
+0175,Deciduous Tree Fruits
+0172,Grapes
+0171,Berry Crops
+0173,Tree Nuts
+0179,Fruits and Tree Nuts Nec
+0182,Food Crops Grown Under Cover
+0181,Ornamental Nursery Products
+0811,Timber Tracts
+0132,Tobacco
+0131,Cotton
+0133,Sugarcane and Sugar Beets
+0191,General Farms Primarily Crop
+0831,Forest Products
+0919,Miscellaneous Marine Products
+02099,Food Preparations Nec
+0212,Beef Cattle Except Feedlots
+0241,Dairy Farms
+0211,Beef Cattle Feedlots
+0213,Hogs
+0252,Chicken Eggs
+0251,Broiler Fryer and Roaster Chickens
+0253,Turkeys and Turkey Eggs
+0254,Poultry Hatcheries
+0259,Poultry and Eggs Nec
+0214,Sheep and Goats
+0273,Animal Aquaculture
+0921,Fish Hatcheries and Preserves
+0279,Animal Specialties Nec
+0272,Horses and Other Equines
+0271,Fur-bearing Animals and Rabbits
+0219,General Livestock Nec
+0291,General Farms Primarily animals
+02411,Logging
+0912,Finfish
+0913,Shellfish
+0971,Hunting Trapping Game Propagation
+0724,Cotton Ginning
+0711,Soil Preparation Services
+0721,Crop Planting and Protection
+0722,Crop Harvesting
+0723,Crop Preparation Services For Market
+0761,Farm Labor Contractors
+0762,Farm Management Services
+0751,Livestock Services Except Veterinary
+0752,Animal Specialty Services
+07699,Repair Services Nec
+0851,Forestry Services
+01311,Crude Petroleum and Natural Gas
+01321,Natural Gas Liquids
+02819,Industrial Inorganic Chemicals Nec
+01221,Bituminous Coal and Lignite-surface Mining
+01222,Bituminous Coal-underground Mining
+01231,Anthracite Mining
+01011,Iron Ores
+01041,Gold Ores
+01044,Silver Ores
+01021,Copper Ores
+01031,Lead and Zinc Ores
+01061,Ferroalloy Ores Except Vanadium
+01094,Uranium-radium-vanadium Ores
+01099,Metal Ores Nec
+01411,Dimension Stone
+01422,Crushed and Broken Limestone
+01423,Crushed and Broken Granite
+01429,Crushed and Broken Stone Nec
+01499,Miscellaneous Nonmetallic Mining
+01442,Construction Sand and Gravel
+01446,Industrial Sand
+01455,Kaolin and Ball Clay
+03295,Minerals Ground or Treated
+01459,Clay and Related Minerals Nec
+01474,Potash Soda and Borate Minerals
+01475,Phosphate Rock
+01479,Chemical and Fertilizer Mining
+01381,Drilling Oil and Gas Wells
+01382,Oil and Gas Exploration Services
+01389,Oil and Gas Field Services Nec
+01241,Coal Mining Services
+01081,Metal Mining Services
+01481,Nonmetallic Mineral Services
+04911,Electric Services
+04931,Electric and Other Services Combined
+04939,Combination Utilities Nec
+04923,Gas Transmission and Distribution
+04924,Natural Gas Distribution
+04925,Gas Production and/or Distribution
+04932,Gas and Other Services Combined
+04941,Water Supply
+04971,Irrigation Systems
+04952,Sewerage Systems
+04961,Steam and Air-conditioning Supply
+01521,Single-family Housing Construction
+08741,Management Services
+01522,Residential Construction Nec
+01531,Operative Builders
+01541,Industrial Buildings and Warehouses
+01629,Heavy Construction Nec
+01542,Nonresidential Construction Nec
+01799,Special Trade Contractors Nec
+01623,Water Sewer and Utility Lines
+01781,Water Well Drilling
+06552,Subdividers and Developers Nec
+01611,Highway and Street Construction
+01622,Bridge Tunnel and Elevated Highway
+01721,Painting and Paper Hanging
+01771,Concrete Work
+01791,Structural Steel Erection
+01751,Carpentry Work
+01741,Masonry and Other Stonework
+01793,Glass and Glazing Work
+01761,Roofing Siding and Sheetmetal Work
+01711,Plumbing Heating Air-conditioning
+01731,Electrical Work
+01796,Installing Building Equipment
+07622,Radio and Television Repair
+01742,Plastering Drywall and Insulation
+01743,Terrazzo Tile Marble Mosaic Work
+01752,Floor Laying and Floor Work Nec
+01794,Excavation Work
+01795,Wrecking and Demolition Work
+07353,Heavy Construction Equipment Rental
+02047,Dog and Cat Food
+02048,Prepared Feeds Nec
+02034,Dehydrated Fruits Vegetables Soups
+02041,Flour and Other Grain Mill Products
+02044,Rice Milling
+02083,Malt
+02046,Wet Corn Milling
+02074,Cottonseed Oil Mills
+02075,Soybean Oil Mills
+02076,Vegetable Oil Mills Nec
+02079,Edible Fats and Oils
+02043,Cereal Breakfast Foods
+02063,Beet Sugar
+02061,Raw Cane Sugar
+02062,Cane Sugar Refining
+02064,Candy and Other Confectionery Products
+02067,Chewing Gum
+05441,Candy Nut and Confectionery Stores
+02066,Chocolate and Cocoa Products
+02037,Frozen Fruits and Vegetables
+02038,Frozen Specialties Nec
+02033,Canned Fruits and Specialties
+02035,Pickles Sauces and Salad Dressings
+02032,Canned Specialties
+02023,Dry Condensed Evaporated Products
+02026,Fluid Milk
+02021,Creamery Butter
+02022,Cheese; Natural and Processed
+02024,Ice Cream and Frozen Desserts
+02011,Meat Packing Plants
+02013,Sausages and Other Prepared Meats
+05147,Meats and Meat Products
+02077,Animal and Marine Fats and Oils
+02015,Poultry Slaughtering and Processing
+02091,Canned and Cured Fish and Seafoods
+02092,Fresh or Frozen Packaged Fish
+05461,Retail Bakeries
+02051,Bread Cake and Related Products
+02052,Cookies and Crackers
+02053,Frozen Bakery Products Except Bread
+02045,Prepared Flour Mixes and Doughs
+02098,Macaroni and Spaghetti
+02068,Salted and Roasted Nuts and Seeds
+02096,Potato Chips and Similar Snacks
+02087,Flavoring Extracts and Syrups Nec
+02095,Roasted Coffee
+02082,Malt Beverages
+02899,Chemical Preparations Nec
+02086,Bottled and Canned Soft Drinks
+05149,Groceries and Related Products Nec
+02097,Manufactured Ice
+02084,Wines Brandy and Brandy Spirits
+02085,Distilled and Blended Liquors
+02111,Cigarettes
+02121,Cigars
+02131,Chewing and Smoking Tobacco
+02141,Tobacco Stemming and Redrying
+07389,Business Services Nec
+02281,Yarn Spinning Mills
+02282,Throwing and Winding Mills
+02284,Thread Mills
+02298,Cordage and Twine
+02299,Textile Goods Nec
+02211,Broadwoven Fabric Mills Cotton
+02221,Broadwoven Fabric Mills Manmade
+02231,Broadwoven Fabric Mills Wool
+02241,Narrow Fabric Mills
+02397,Schiffli Machine Embroideries
+02297,Nonwoven Fabrics
+02257,Weft Knit Fabric Mills
+02258,Lace and Warp Knit Fabric Mills
+02259,Knitting Mills Nec
+02251,Women's Hosiery Except Socks
+02252,Hosiery Nec
+02253,Knit Outerwear Mills
+02254,Knit Underwear Mills
+02261,Finishing Plants Cotton
+02262,Finishing Plants Manmade
+02269,Finishing Plants Nec
+05131,Piece Goods and Notions
+02295,Coated Fabrics Not Rubberized
+03069,Fabricated Rubber Products Nec
+02273,Carpets and Rugs
+02391,Curtains and Draperies
+02392,Household Furnishings Nec
+05714,Drapery and Upholstery Stores
+02393,Textile Bags
+02394,Canvas and Related Products
+02296,Tire Cord and Fabrics
+02311,Men's and Boy's Suits and Coats
+02321,Men's and Boy's Furnishings
+02322,Men's and Boy's Underwear and Nightwear
+02323,Men's and Boy's Neckwear
+02325,Men's and Boy's Trousers and Slacks
+02326,Men's and Boy's Work Clothing
+02329,Men's and Boy's Clothing Nec
+02331,Women's and Misses' Blouses and Shirts
+02335,Women's Junior's and Misses' Dresses
+02337,Women's and Misses' Suits and Coats
+02339,Women's and Misses' Outerwear Nec
+02341,Women's and Children's Underwear
+02342,Bras Girdles and Allied Garments
+02353,Hats Caps and Millinery
+02361,Girl's and Children's Dresses Blouses
+02369,Girl's and Children's Outerwear Nec
+02371,Fur Goods
+02381,Fabric Dress and Work Gloves
+02384,Robes and Dressing Gowns
+02385,Waterproof Outerwear
+02386,Leather and Sheep-lined Clothing
+02387,Apparel Belts
+02389,Apparel and Accessories Nec
+02395,Pleating and Stitching
+02396,Automotive and Apparel Trimmings
+02399,Fabricated Textile Products Nec
+03151,Leather Gloves and Mittens
+03569,General Industrial Machinery
+05699,Miscellaneous Apparel and Accessories
+03111,Leather Tanning and Finishing
+03999,Manufacturing Industries Nec
+03021,Rubber and Plastics Footwear
+03142,House Slippers
+03143,Men's Footwear Except athletic
+03144,Women's Footwear Except athletic
+03149,Footwear Except Rubber Nec
+03171,Women's Handbags and Purses
+03131,Footwear Cut Stock
+03161,Luggage
+03172,Personal Leather Goods Nec
+03199,Leather Goods Nec
+02421,Sawmills and Planing Mills General
+02426,Hardwood Dimension and Flooring Mills
+02429,Special Product Sawmills Nec
+02491,Wood Preserving
+02435,Hardwood Veneer and Plywood
+02436,Softwood Veneer and Plywood
+02439,Structural Wood Members Nec
+02493,Reconstituted Wood Products
+02431,Millwork
+02441,Nailed Wood Boxes and Shook
+02448,Wood Pallets and Skids
+02449,Wood Containers Nec
+02499,Wood Products Nec
+02451,Mobile Homes
+02452,Prefabricated Wood Buildings
+02517,Wood Television and Radio Cabinets
+02611,Pulp Mills
+02621,Paper Mills
+02631,Paperboard Mills
+02653,Corrugated and Solid Fiber Boxes
+02679,Converted Paper Products Nec
+02657,Folding Paperboard Boxes
+02652,Setup Paperboard Boxes
+02655,Fiber Cans Drums and Similar Products
+02656,Sanitary Food Containers
+02671,Paper; Coated and Laminated Packaging
+02672,Paper; Coated and Laminated Nec
+02673,Bags: Plastic Laminated and Coated
+02674,Bags: Uncoated Paper and Multiwall
+02675,Die-cut Paper and Board
+03497,Metal Foil and Leaf
+02677,Envelopes
+02678,Stationery Products
+02676,Sanitary Paper Products
+03842,Surgical Appliances and Supplies
+02752,Commercial Printing Lithographic
+02754,Commercial Printing Gravure
+02759,Commercial Printing Nec
+02761,Manifold Business Forms
+02771,Greeting Cards
+02782,Blankbooks and Looseleaf Binders
+07334,Photocopying and Duplicating Services
+03993,Signs and Advertising Specialties
+02732,Book Printing
+02789,Bookbinding and Related Work
+02791,Typesetting
+02796,Platemaking Services
+02911,Petroleum Refining
+02951,Asphalt Paving Mixtures and Blocks
+02952,Asphalt Felts and Coatings
+02992,Lubricating Oils and Greases
+02999,Petroleum and Coal Products Nec
+03312,Blast Furnaces and Steel Mills
+02865,Cyclic Crudes and Intermediates
+02869,Industrial Organic Chemicals Nec
+02813,Industrial Gases
+02816,Inorganic Pigments
+02812,Alkalies and Chlorine
+02895,Carbon Black
+02861,Gum and Wood Chemicals
+02821,Plastics Materials and Resins
+02822,Synthetic Rubber
+02823,Cellulosic Manmade Fibers
+02824,Organic Fibers Noncellulosic
+02873,Nitrogenous Fertilizers
+02874,Phosphatic Fertilizers
+02875,Fertilizers Mixing Only
+02879,Agricultural Chemicals Nec
+02833,Medicinals and Botanicals
+02834,Pharmaceutical Preparations
+02835,Diagnostic Substances
+02836,Biological Products Except Diagnostic
+02851,Paints and Allied Products
+02891,Adhesives and Sealants
+02841,Soap and Other Detergents
+02844,Toilet Preparations
+02842,Polishes and Sanitation Goods
+02843,Surface Active Agents
+02893,Printing Ink
+02892,Explosives
+03087,Custom Compound Purchased Resins
+03861,Photographic Equipment and Supplies
+03952,Lead Pencils and Art Goods
+03081,Unsupported Plastics Film and Sheet
+03082,Unsupported Plastics Profile Shapes
+03089,Plastics Products Nec
+03084,Plastics Pipe
+03083,Laminated Plastics Plate and Sheet
+03086,Plastics Foam Products
+03085,Plastics Bottles
+03088,Plastics Plumbing Fixtures
+03996,Hard Surface Floor Coverings Nec
+03011,Tires and Inner Tubes
+07534,Tire Retreading and Repair Shops
+03052,Rubber and Plastics Hose and Beltings
+03061,Mechanical Rubber Goods
+03261,Vitreous Plumbing Fixtures
+03262,Vitreous China Table and Kitchenware
+03263,Semivitreous Table and Kitchenware
+03264,Porcelain Electrical Supplies
+03269,Pottery Products Nec
+03299,Nonmetallic Mineral Products
+05719,Miscellaneous Homefurnishings
+03251,Brick and Structural Clay Tile
+03253,Ceramic Wall and Floor Tile
+03255,Clay Refractories
+03259,Structural Clay Products Nec
+03297,Nonclay Refractories
+03211,Flat Glass
+03229,Pressed and Blown Glass Nec
+03221,Glass Containers
+03231,Products of Purchased Glass
+03241,Cement Hydraulic
+03273,Ready-mixed Concrete
+03271,Concrete Block and Brick
+03272,Concrete Products Nec
+03274,Lime
+03275,Gypsum Products
+03291,Abrasive Products
+03281,Cut Stone and Stone Products
+03296,Mineral Wool
+03292,Asbestos Products
+03313,Electrometallurgical Products
+03399,Primary Metal Products
+03317,Steel Pipe and Tubes
+03316,Cold Finishing of Steel Shapes
+03315,Steel Wire and Related Products
+03334,Primary Aluminum
+03341,Secondary Nonferrous Metals
+03353,Aluminum Sheet Plate and Foil
+03354,Aluminum Extruded Products
+03355,Aluminum Rolling and Drawing Nec
+03357,Nonferrous Wiredrawing and Insulating
+03331,Primary Copper
+03339,Primary Nonferrous Metals Nec
+03351,Copper Rolling and Drawing
+03356,Nonferrous Rolling and Drawing Nec
+03321,Gray and Ductile Iron Foundries
+03322,Malleable Iron Foundries
+03324,Steel Investment Foundries
+03325,Steel Foundries Nec
+03363,Aluminum Die-castings
+03364,Nonferrous Die-castings Except Aluminum
+03365,Aluminum Foundries
+03366,Copper Foundries
+03369,Nonferrous Foundries Nec
+03462,Iron and Steel Forgings
+03463,Nonferrous Forgings
+03449,Miscellaneous Metalwork
+03499,Fabricated Metal Products Nec
+03466,Crowns and Closures
+03469,Metal Stampings Nec
+03421,Cutlery
+03496,Miscellaneous Fabricated Wire Products
+03914,Silverware and Plated Ware
+03423,Hand and Edge Tools Nec
+03425,Saw Blades and Handsaws
+03523,Farm Machinery and Equipment
+03524,Lawn and Garden Equipment
+03545,Machine Tool Accessories
+03644,Noncurrent-carrying Wiring Devices
+03448,Prefabricated Metal Buildings
+03441,Fabricated Structural Metal
+03443,Fabricated Plate Work boiler Shop)
+03442,Metal Doors Sash and Trim
+03444,Sheet Metalwork
+03446,Architectural Metalwork
+03559,Special Industry Machinery Nec
+03411,Metal Cans
+03412,Metal Barrels Drums and Pails
+03429,Hardware Nec
+03537,Industrial Trucks and Tractors
+03493,Steel Springs Except Wire
+03495,Wire Springs
+03599,Industrial Machinery Nec
+03451,Screw Machine Products
+03452,Bolts Nuts Rivets and Washers
+03398,Metal Heat Treating
+03479,Metal Coating and Allied Services
+03471,Plating and Polishing
+03491,Industrial Valves
+03492,Fluid Power Valves and Hose Fittings
+03728,Aircraft Parts and Equipment Nec
+03432,Plumbing Fixture Fittings and Trim
+03494,Valves and Pipe Fittings Nec
+03562,Ball and Roller Bearings
+03482,Small Arms Ammunition
+03483,Ammunition Except For Small Arms Nec
+03484,Small Arms
+03489,Ordnance and Accessories Nec
+03841,Surgical and Medical Instruments
+03498,Fabricated Pipe and Fittings
+03431,Metal Sanitary Ware
+03543,Industrial Patterns
+03531,Construction Machinery
+03532,Mining Machinery
+03533,Oil and Gas Field Machinery
+03556,Food Products Machinery
+03553,Woodworking Machinery
+03554,Paper Industries Machinery
+03555,Printing Trades Machinery
+02599,Furniture and Fixtures Nec
+03552,Textile Machinery
+03639,Household Appliances Nec
+03821,Laboratory Apparatus and Furniture
+03827,Optical Instruments and Lenses
+03577,Computer Peripheral Equipment Nec
+03578,Calculating and Accounting Equipment
+03579,Office Machines Nec
+03581,Automatic Vending Machines
+03582,Commercial Laundry Equipment
+03589,Service Industry Machinery Nec
+03699,Electrical Equipment and Supplies Nec
+03564,Blowers and Fans
+03433,Heating Equipment Except Electric
+03634,Electric Housewares and Fans
+03585,Refrigeration and Heating Equipment
+03544,Special Dies Tools Jigs and Fixtures
+03541,Machine Tools Metal Cutting Type
+03542,Machine Tools Metal Forming Type
+03547,Rolling Mill Machinery
+03549,Metalworking Machinery Nec
+03511,Turbines and Turbine Generator Sets
+03566,Speed Changers Drives and Gears
+03568,Power Transmission Equipment Nec
+03519,Internal Combustion Engines Nec
+03563,Air and Gas Compressors
+03561,Pumps and Pumping Equipment
+03586,Measuring and Dispensing Pumps
+03743,Railroad Equipment
+03534,Elevators and Moving Stairways
+03535,Conveyors and Conveying Equipment
+03536,Hoists Cranes and Monorails
+03799,Transportation Equipment Nec
+03546,Power-driven Handtools
+03548,Welding Apparatus
+03565,Packaging Machinery
+03567,Industrial Furnaces and Ovens
+03593,Fluid Power Cylinders and Actuators
+03594,Fluid Power Pumps and Motors
+03596,Scales and Balances Except Laboratory
+03571,Electronic Computers
+03572,Computer Storage Devices
+03575,Computer Terminals
+03661,Telephone and Telegraph Apparatus
+03663,Radio and T.v. Communications Equipment
+03679,Electronic Components Nec
+03669,Communications Equipment Nec
+03651,Household Audio and Video Equipment
+03672,Printed Circuit Boards
+03674,Semiconductors and Related Devices
+03675,Electronic Capacitors
+03676,Electronic Resistors
+03677,Electronic Coils and Transformers
+03678,Electronic Connectors
+03671,Electron Tubes
+03845,Electromedical Equipment
+03812,Search and Navigation Equipment
+03822,Environmental Controls
+03823,Process Control Instruments
+03824,Fluid Meters and Counting Devices
+03825,Instruments To Measure Electricity
+03829,Measuring and Controlling Devices Nec
+03826,Analytical Instruments
+03844,X-ray Apparatus and Tubes
+03873,Watches Clocks Watchcases and Parts
+03915,Jewelers' Materials and Lapidary Work
+03695,Magnetic and Optical Recording Media
+03652,Prerecorded Records and Tapes
+07372,Prepackaged Software
+07819,Services Allied To Motion Pictures
+03641,Electric Lamps
+03645,Residential Lighting Fixtures
+03646,Commercial Lighting Fixtures
+03648,Lighting Equipment Nec
+03635,Household Vacuum Cleaners
+03631,Household Cooking Equipment
+03632,Household Refrigerators and Freezers
+03633,Household Laundry Equipment
+03612,Power Distribution and Specialty Transformers
+03621,Motors and Generators
+07694,Armature Rewinding Shops
+03613,Switchgear and Switchboard Apparatus
+03625,Relays and Industrial Controls
+03691,Storage Batteries
+03692,Primary Batteries Dry and Wet
+03643,Current-carrying Wiring Devices
+03624,Carbon and Graphite Products
+03629,Electrical Industrial Apparatus
+03711,Motor Vehicles and Car Bodies
+03713,Truck and Bus Bodies
+03714,Motor Vehicle Parts and Accessories
+03715,Truck Trailers
+03716,Motor Homes
+03792,Travel Trailers and Campers
+03592,Carburetors Pistons Rings Valves
+03647,Vehicular Lighting Equipment
+03694,Engine Electrical Equipment
+02531,Public Building and Related Furniture
+03465,Automotive Stampings
+03721,Aircraft
+03724,Aircraft Engines and Engine Parts
+03761,Guided Missiles and Space Vehicles
+03764,Space Propulsion Units and Parts
+03769,Space Vehicle Equipment Nec
+03731,Shipbuilding and Repairing
+03732,Boatbuilding and Repairing
+03751,Motorcycles Bicycles and Parts
+03944,Games Toys and Children's Vehicles
+03795,Tanks and Tank Components
+02434,Wood Kitchen Cabinets
+02541,Wood Partitions and Fixtures
+05712,Furniture Stores
+02512,Upholstered Household Furniture
+02514,Metal Household Furniture
+02515,Mattresses and Bedsprings
+02511,Wood Household Furniture
+02519,Household Furniture Nec
+02542,Partitions and Fixtures Except Wood
+02521,Wood Office Furniture
+02522,Office Furniture Except Wood
+02591,Drapery Hardware and Blinds and Shades
+03851,Ophthalmic Goods
+05999,Miscellaneous Retail Stores Nec
+03843,Dental Equipment and Supplies
+05995,Optical Goods Stores
+08072,Dental Laboratories
+03911,Jewelry Precious Metal
+03961,Costume Jewelry
+03949,Sporting and athletic Goods Nec
+03942,Dolls and Stuffed Toys
+03951,Pens and Mechanical Pencils
+03953,Marking Devices
+03955,Carbon Paper and Inked Ribbons
+03053,Gaskets; Packing and Sealing Devices
+03931,Musical Instruments
+03965,Fasteners Buttons Needles and Pins
+03991,Brooms and Brushes
+03995,Burial Caskets
+05012,Automobiles and Other Motor Vehicles
+05013,Motor Vehicle Supplies and New Parts
+05014,Tires and Tubes
+05015,Motor Vehicle Parts Used
+05021,Furniture
+05023,Homefurnishings
+05031,Lumber Plywood and Millwork
+05039,Construction Materials Nec
+05032,Brick Stone and Related Material
+05033,Roofing Siding and Insulation
+05043,Photographic Equipment and Supplies
+05044,Office Equipment
+05045,Computers Peripherals and Software
+05046,Commercial Equipment Nec
+05047,Medical and Hospital Equipment
+05048,Ophthalmic Goods
+05049,Professional Equipment Nec
+05051,Metals Service Centers and Offices
+05052,Coal and Other Minerals and Ores
+05063,Electrical Apparatus and Equipment
+05064,Electrical Appliances Television and Radio
+05074,Plumbing and Hydronic Heating Supplies
+05065,Electronic Parts and Equipment Nec
+05072,Hardware
+05075,Warm Air Heating and Air Conditioning
+05078,Refrigeration Equipment and Supplies
+05082,Construction and Mining Machinery
+05083,Farm and Garden Machinery
+05084,Industrial Machinery and Equipment
+05085,Industrial Supplies
+05087,Service Establishment Equipment
+05088,Transportation Equipment and Supplies
+05091,Sporting and Recreation Goods
+05136,Men's and Boy's Clothing
+05137,Women's and Children's Clothing
+05092,Toys and Hobby Goods and Supplies
+05093,Scrap and Waste Materials
+05094,Jewelry and Precious Stones
+05099,Durable Goods Nec
+07822,Motion Picture and Tape Distribution
+05111,Printing and Writing Paper
+05112,Stationery and Office Supplies
+05113,Industrial and Personal Service Paper
+05122,Drugs Proprietaries and Sundries
+05199,Nondurable Goods Nec
+05139,Footwear
+05141,Groceries General Line
+05142,Packaged Frozen Goods
+05143,Dairy Products Except Dried or Canned
+05144,Poultry and Poultry Products
+05145,Confectionery
+05146,Fish and Seafoods
+05148,Fresh Fruits and Vegetables
+05153,Grain and Field Beans
+05154,Livestock
+05159,Farm-product Raw Materials Nec
+05162,Plastics Materials and Basic Shapes
+05169,Chemicals and Allied Products Nec
+05171,Petroleum Bulk Stations and Terminals
+05172,Petroleum Products Nec
+05181,Beer and Ale
+05182,Wine and Distilled Beverages
+05191,Farm Supplies
+05192,Books Periodicals and Newspapers
+05193,Flowers and Florists Supplies
+05194,Tobacco and Tobacco Products
+05198,Paints Varnishes and Supplies
+05713,Floor Covering Stores
+05722,Household Appliance Stores
+07623,Refrigeration Service and Repair
+07629,Electrical Repair Shops
+05731,Radio Television and Electronic Stores
+05734,Computer and Software Stores
+05735,Record and Prerecorded Tape Stores
+05946,Camera and Photographic Supply Stores
+07378,Computer Maintenance and Repair
+05211,Lumber and Other Building Materials
+05231,Paint Glass and Wallpaper Stores
+05251,Hardware Stores
+05261,Retail Nurseries and Garden Stores
+05411,Grocery Stores
+05421,Meat and Fish Markets
+05499,Miscellaneous Food Stores
+05431,Fruit and Vegetable Markets
+05451,Dairy Products Stores
+05921,Liquor Stores
+05912,Drug Stores and Proprietary Stores
+05541,Gasoline Service Stations
+05611,Men's and Boys' Clothing Stores
+05621,Women's Clothing Stores
+05641,Children's and Infants' Wear Stores
+05651,Family Clothing Stores
+05632,Women's Accessory and Specialty Stores
+05661,Shoe Stores
+05944,Jewelry Stores
+07631,Watch Clock and Jewelry Repair
+05948,Luggage and Leather Goods Stores
+05941,Sporting Goods and Bicycle Shops
+05945,Hobby Toy and Game Shops
+05949,Sewing Needlework and Piece Goods
+05736,Musical Instrument Stores
+05942,Book Stores
+05994,News Dealers and Newsstands
+05311,Department Stores
+05399,Miscellaneous General Merchandise
+05331,Variety Stores
+05531,Auto and Home Supply Stores
+05992,Florists
+05943,Stationery Stores
+05947,Gift Novelty and Souvenir Shop
+05932,Used Merchandise Stores
+05271,Mobile Home Dealers
+05993,Tobacco Stores and Stands
+05961,Catalog and Mail-order Houses
+05962,Merchandising Machine Operators
+05983,Fuel Oil Dealers
+05984,Liquefied Petroleum Gas Dealers
+05989,Fuel Dealers Nec
+05963,Direct Selling Establishments
+04512,Air Transportation Scheduled
+04522,Air Transportation Nonscheduled
+07319,Advertising Nec
+07335,Commercial Photography
+07997,Membership Sports and Recreation Clubs
+04011,Railroads Line-haul Operating
+04013,Switching and Terminal Services
+04412,Deep Sea Foreign Transportation of Freight
+04481,Deep Sea Passenger Transportation Except Ferry
+04424,Deep Sea Domestic Transportation of Freight
+04432,Freight Transportation On The Great Lakes
+04482,Ferries
+04449,Water Transportation of Freight
+04499,Water Transportation Services Nec
+04489,Water Passenger Transportation
+04212,Local Trucking Without Storage
+04214,Local Trucking With Storage
+04213,Trucking Except Local
+04111,Local and Suburban Transit
+04131,Intercity and Rural Bus Transportation
+04121,Taxicabs
+04899,Communication Services Nec
+04119,Local Passenger Transportation Nec
+04151,School Buses
+04141,Local Bus Charter Service
+04142,Bus Charter Service Except Local
+04612,Crude Petroleum Pipelines
+04922,Natural Gas Transmission
+04613,Refined Petroleum Pipelines
+04619,Pipelines Nec
+04789,Transportation Services Nec
+07999,Amusement and Recreation Nec
+04581,Airports Flying Fields and Services
+09621,Regulation Administration of Transportation
+04959,Sanitary Services Nec
+04741,Rental of Railroad Cars
+04491,Marine Cargo Handling
+04492,Towing and Tugboat Service
+04785,Inspection and Fixed Facilities
+07549,Automotive Services Nec
+04173,Bus Terminal and Service Facilities
+04231,Trucking Terminal Facilities
+04731,Freight Transportation Arrangement
+04783,Packing and Crating
+04729,Passenger Transportation Arrangement
+04311,U.S. Postal Service
+04215,Courier Services Except By Air
+04513,Air Courier Services
+04225,General Warehousing and Storage
+04226,Special Warehousing and Storage Nec
+04222,Refrigerated Warehousing and Storage
+04221,Farm Product Warehousing and Storage
+02711,Newspapers
+02721,Periodicals
+02741,Miscellaneous Publishing
+02731,Book Publishing
+07331,Direct Mail Advertising Services
+07812,Motion Picture and Video Production
+07829,Motion Picture Distribution Services
+07832,Motion Picture Theaters Except Drive-in
+07833,Drive-in Motion Picture Theaters
+08999,Services Nec
+07922,Theatrical Producers and Services
+04832,Radio Broadcasting Stations
+04833,Television Broadcasting Stations
+04841,Cable and Other Pay Television Services
+04813,Telephone Communication Except Radio
+04822,Telegraph and Other Communications
+07375,Information Retrieval Services
+04812,Radiotelephone Communication
+07374,Data Processing and Preparation
+07379,Computer Related Services Nec
+07383,News Syndicates
+08231,Libraries
+06011,Federal Reserve Banks
+06021,National Commercial Banks
+06022,State Commercial Banks
+06029,Commercial Banks Nec
+06081,Foreign Bank and Branches and Agencies
+06035,Federal Savings Institutions
+06036,Savings Institutions Except Federal
+06061,Federal Credit Unions
+06062,State Credit Unions
+06141,Personal Credit Institutions
+06153,Short-term Business Credit
+06159,Miscellaneous Business Credit
+06111,Federal and Federally Sponsored Credit
+06162,Mortgage Bankers and Correspondents
+06082,Foreign Trade and International Banks
+06019,Central Reserve Depository Nec
+06163,Loan Brokers
+06099,Functions Related To Depository Banking
+06211,Security Brokers and Dealers
+06221,Commodity Contracts Brokers Dealers
+06799,Investors Nec
+06231,Security and Commodity Exchanges
+06792,Oil Royalty Traders
+06282,Investment Advice
+06371,Pension Health and Welfare Funds
+06733,Trusts Nec
+06091,Nondeposit Trust Facilities
+06289,Security and Commodity Service
+06311,Life Insurance
+06321,Accident and Health Insurance
+06324,Hospital and Medical Service Plans
+06331,Fire Marine and Casualty Insurance
+06351,Surety Insurance
+06361,Title Insurance
+06399,Insurance Carriers Nec
+06411,Insurance Agents Brokers and Service
+06722,Management Investment Open-ended
+06726,Investment Offices Nec
+06798,Real Estate Investment Trusts
+06513,Apartment Building Operators
+06514,Dwelling Operators Except Apartments
+06531,Real Estate Agents and Managers
+06512,Nonresidential Building Operators
+06515,Mobile Home Site Operators
+06517,Railroad Property Lessors
+06519,Real Property Lessors Nec
+07514,Passenger Car Rental
+07515,Passenger Car Leasing
+07513,Truck Rental and Leasing Without Drivers
+07519,Utility Trailer Rental
+07359,Equipment Rental and Leasing Nec
+07299,Miscellaneous Personal Services
+07841,Video Tape Rental
+07352,Medical Equipment Rental
+07377,Computer Rental and Leasing
+06794,Patent Owners and Lessors
+08111,Legal Services
+06541,Title abstract Offices
+08721,Accounting Auditing and Bookkeeping
+07291,Tax Return Preparation Services
+08712,Architectural Services
+0781,Landscape Counseling and Planning
+08748,Business Consulting Nec
+08711,Engineering Services
+08713,Surveying Services
+08734,Testing Laboratories
+07336,Commercial Art and Graphic Design
+08099,Health and Allied Services Nec
+07371,Custom Computer Programming Services
+07373,Computer Integrated Systems Design
+07376,Computer Facilities Management
+08742,Management Consulting Services
+07361,Employment Agencies
+03721,Aircraft research and development not producing prototypes)
+03724,Aircraft Engines and Engine Parts research and development not producing prototypes)
+03728,Aircraft Parts and Auxiliary Equipment NEC research and development not producing prototypes)
+03761,Guided Missiles and Space Vehicles research and development not producing prototypes)
+03764,Space Propulsion Units and Parts research and development not producing prototypes)
+03769,Space Vehicle Equipment Nec research and development not producing prototypes)
+08731,Commercial Physical Research
+08733,Noncommercial Research Organizations
+08732,Commercial Nonphysical Research
+07311,Advertising Agencies
+08743,Public Relations Services
+07313,Radio Television Publisher Representatives
+07312,Outdoor Advertising Services
+07221,Photographic Studios Portrait
+0741,Veterinary Services For Livestock
+0742,Veterinary Services Specialties
+06712,Bank Holding Companies
+06719,Holding Companies Nec
+08744,Facilities Support Services
+07363,Help Supply Services
+07338,Secretarial and Court Reporting
+07322,Adjustment and Collection Services
+07323,Credit Reporting Services
+04724,Travel Agencies
+04725,Tour Operators
+08699,Membership Organizations Nec
+07381,Detective and Armored Car Services
+07382,Security Systems Services
+07342,Disinfecting and Pest Control Services
+07349,Building Maintenance Services Nec
+0782,Lawn and Garden Services
+0783,Ornamental Shrub and Tree Services
+07217,Carpet and Upholstery Cleaning
+04953,Refuse Systems
+08211,Elementary and Secondary Schools
+08222,Junior Colleges
+08221,Colleges and Universities
+08244,Business and Secretarial Schools
+08243,Data Processing Schools
+08299,Schools and Educational Services
+07231,Beauty Shops
+07241,Barber Shops
+08249,Vocational Schools Nec
+07911,Dance Studios Schools and Halls
+08011,Offices and Clinics of Medical Doctors
+08031,Offices and Clinics of Osteopathic Physicians
+08021,Offices and Clinics of Dentists
+08041,Offices and Clinics of Chiropractors
+08042,Offices and Clinics of Optometrists
+08049,Offices of Health Practitioner
+08043,Offices and Clinics of Podiatrists
+08093,Specialty Outpatient Clinics Nec
+08092,Kidney Dialysis Centers
+08071,Medical Laboratories
+08082,Home Health Care Services
+08062,General Medical and Surgical Hospitals
+08069,Specialty Hospitals Except Psychiatric
+08063,Psychiatric Hospitals
+08051,Skilled Nursing Care Facilities
+08052,Intermediate Care Facilities
+08059,Nursing and Personal Care Nec
+08361,Residential Care
+08322,Individual and Family Services
+08331,Job Training and Related Services
+08351,Child Day Care Services
+05812,Eating Places
+07929,Entertainers and Entertainment Groups
+07941,Sports Clubs Managers and Promoters
+07948,Racing Including Track Operation
+08412,Museums and Art Galleries
+08422,Botanical and Zoological Gardens
+07996,Amusement Parks
+07993,Coin-operated Amusement Devices
+07992,Public Golf Courses
+04493,Marinas
+07991,Physical Fitness Facilities
+07933,Bowling Centers
+07011,Hotels and Motels
+07041,Membership-basis Organization Hotels
+07033,Trailer Parks and Campsites
+07032,Sporting and Recreational Camps
+07021,Rooming and Boarding Houses
+05813,Drinking Places
+07538,General Automotive Repair Shops
+07533,Auto Exhaust System Repair Shops
+07537,Automotive Transmission Repair Shops
+07539,Automotive Repair Shops Nec
+07532,Top and Body Repair and Paint Shops
+07536,Automotive Glass Replacement Shops
+07542,Carwashes
+07692,Welding Repair
+07641,Reupholstery and Furniture Repair
+07251,Shoe Repair and Shoeshine Parlors
+07219,Laundry and Garment Services Nec
+07261,Funeral Service and Crematories
+06553,Cemetery Subdividers and Developers
+07215,Coin-operated Laundries and Cleaning
+07211,Power Laundries Family and Commercial
+07212,Garment Pressing and Cleaners' Agents
+07216,Drycleaning Plants Except Rugs
+07213,Linen Supply
+07218,Industrial Launderers
+07384,Photofinish Laboratories
+07521,Automobile Parking
+08661,Religious Organizations
+06732,Trusts: Educational Religious Etc.
+08399,Social Services Nec
+08641,Civic and Social Associations
+08611,Business Associations
+08621,Professional Organizations
+08631,Labor Organizations
+08651,Political Organizations
+08811,0
+09111,Executive Offices
+09121,Legislative Bodies
+09311,Finance Taxation and Monetary Policy
+09131,Executive and Legislative Combined
+09199,General Government Nec
+09211,Courts
+09221,Police Protection
+09222,Legal Counsel and Prosecution
+09223,Correctional Institutions
+09224,Fire Protection
+09229,Public Order and Safety Nec
+09411,Administration of Educational Programs
+09431,Administration of Public Health Programs
+09441,Administration of Social and Manpower Programs
+09451,Administration of Veterans' Affairs
+09511,Air Water and Solid Waste Management
+09512,Land Mineral and Wildlife Conservation
+09531,Housing Programs
+09532,Urban and Community Development
+09611,Administration of General Economic Programs
+09631,Regulation Administration of Utilities
+09641,Regulation of Agricultural Marketing
+09651,Regulation Miscellaneous Commercial Sectors
+09661,Space Research and Technology
+09711,National Security
+09721,International Affairs 

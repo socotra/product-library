@@ -1,142 +1,602 @@
 {
-  "fields": [
-    {
-      "title": "Business name and DBA",
-      "name": "business_name_and_dba",
-      "type": "string",
-      "optional": true
+    "documents": [
+        {
+            "displayName": "Policy Schedule",
+            "fileName": "schedule.pdf",
+            "templateName": "schedule.template.liquid",
+            "generatingEvent": "quote",
+            "type": "pdf"
+        }
+    ],
+    "invoicing": {
+        "generatingEvent": "accept"
     },
-    {
-      "title": "Business Address",
-      "name": "business_address",
-      "type": "string",
-      "optional": true
+    "paymentSchedules": [
+        {
+            "type": "monthly",
+            "name": "monthly_reporting",
+            "displayName": "Monthly - Reporting"
+        },
+        {
+            "type": "quarterly",
+            "name": "quarterly_reporting",
+            "displayName": "Quarterly - Reporting"
+        },
+        {
+            "type": "total",
+            "name": "full_pay",
+            "displayName": "Full Pay"
+        }
+    ],
+    "defaultPaymentTerms": {
+        "amount": 7,
+        "unit": "day"
     },
-    {
-      "title": "Business Email",
-      "name": "business_email",
-      "type": "email",
-      "optional": true
-    },
-    {
-      "title": "Legal Entity",
-      "name": "legal_entity",
-      "type": "select",
-      "optional": true,
-      "values": [
-        "corp",
-        "llc",
-        "sole prop",
-        "partnership",
-        "other"
-      ]
-    },
-    {
-      "title": "FEIN Number",
-      "name": "fein_number",
-      "type": "string",
-      "optional": true
-    },
-    {
-      "title": "Policy Maximum Coverage",
-      "name": "max_cover",
-      "type": "select",
-      "optional": false,
-      "values": [
-        "1000000"
-      ]
-    },
-    {
-      "title": "Have any of the business' directors or employees been convicted of a felony in the past 10 years?",
-      "name": "10_year_felony_conviction_of_directors",
-      "type": "select",
-      "values": [
-        "yes",
-        "no"
-      ]
-    },
-    {
-      "title": "Have any of the business' directors or employees been convicted of activities related to insurance fraud?",
-      "name": "insurance_fraud_conviction",
-      "type": "select",
-      "values": [
-        "yes",
-        "no"
-      ]
-    },
-    {
-      "title": "Are there any pending claims on the business?",
-      "name": "pending_claims",
-      "type": "select",
-      "values": [
-        "yes",
-        "no"
-      ]
-    },
-    {
-      "title": "Number of Claims/Losses in the past 5 years.",
-      "name": "claims_past_5_years",
-      "type": "select",
-      "values": [
-        "0",
-        "1",
-        "2",
-        "3 and above"
-      ],
-      "match": [
-        "0",
-        "1",
-        "2",
-        "3 and above"
-      ]
-    },
-    {
-      "title": "Business Phone",
-      "name": "business_phone",
-      "type": "string",
-      "optional": true
-    },
-    {
-      "title": "credit bureau",
-      "name": "credit_bureau",
-      "type": "select",
-      "values": [
-        "Experian",
-        "transunion",
-        "Equifax"
-      ],
-      "optional": true
-    },
-    {
-      "title": "payment plan",
-      "name": "payment_plan",
-      "type": "select",
-      "optional": false,
-      "values": [
-        "annual",
-        "monthly",
-        "other"
-      ]
-    },
-     {
-      "title": "Audit Period",
-      "name": "audit_period",
-      "type": "select",
-      "optional": false,
-      "values": [
-        "annual",
-        "monthly",
-        "quarterly",
-        "half yearly"
-      ]
-    }
-    
-  ],
-  "documents": [
-    {
-      "displayName": "Policy Schedule",
-      "fileName": "schedule.pdf",
-      "templateName": "schedule.template.liquid"
-    }
-  ]
+    "fields": [
+        {
+            "title": "Underwriting Company",
+            "name": "uw_company",
+            "type": "select",
+            "values": [
+                "Low Risk Co",
+                "Standard Risk Co",
+                "High Risk Co"
+            ]
+        },
+        {
+            "title": "Channel",
+            "name": "channel",
+            "type": "select",
+            "values": [
+                "Direct",
+                "Agent",
+                "Broker",
+                "Partner"
+            ]
+        },
+        {
+            "name": "year_business_started",
+            "title": "Year Business Started",
+            "type": "string",
+            "regex": "^([0-9]{4})$",
+            "optional": false
+        },
+        {
+            "title": "Affinity Group",
+            "name": "affinity_group",
+            "type": "select",
+            "values": [
+                "National Golf Foundation",
+                "National Apartment Association"
+            ],
+            "match": [
+                "default"
+            ]
+        },
+        {
+            "title": "Governing Class Code",
+            "name": "governing_class_code",
+            "type": "lookup",
+            "table": "class_codes"
+        },
+        {
+            "title": "Experience Modifier",
+            "name": "experience_mod",
+            "type": "number",
+            "decimalPlaces": 3,
+            "maximum": 2,
+            "minimum": 0,
+            "width": 4
+        },
+        {
+            "name": "business_type",
+            "title": "Business Type",
+            "type": "select",
+            "values": [
+                "Sole Proprietor",
+                "Partnership",
+                "Limited Liability Corporation",
+                "S Corp"
+            ],
+            "optional": true
+        },
+        {
+            "name": "fein",
+            "type": "string",
+            "regex": "^([0-9]{9})$",
+            "optional": false,
+            "title": "FEIN"
+        },
+        {
+            "title": "SIC Code",
+            "name": "sic_code",
+            "type": "lookup",
+            "table": "sic_codes"
+        },
+        {
+            "title": "SIC Description",
+            "name": "sic_description",
+            "type": "lookup",
+            "table": "sic_codes",
+            "match": [
+                "sic_code"
+            ]
+        },
+        {
+            "title": "NAICS Code",
+            "name": "naics_code",
+            "type": "lookup",
+            "table": "naics_codes"
+        },
+        {
+            "title": "NAICS Description",
+            "name": "naics_description",
+            "type": "lookup",
+            "table": "naics_codes",
+            "match": [
+                "naics_code"
+            ]
+        },
+        {
+            "name": "note",
+            "type": "string",
+            "multiline": true,
+            "optional": true,
+            "maximum": 3000,
+            "title": "Notes"
+        },
+        {
+            "title": "Named Insureds",
+            "name": "named_insureds",
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Legal Name",
+                    "name": "legal_name",
+                    "type": "string"
+                },
+                {
+                    "title": "Percent Ownership",
+                    "name": "percent_ownership",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                }
+            ],
+            "optional": true,
+            "repeatable": true
+        },
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "name": "first_name",
+                    "title": "First Name",
+                    "type": "string",
+                    "optional": true
+                },
+                {
+                    "name": "last_name",
+                    "title": "Last Name",
+                    "type": "string",
+                    "optional": true
+                },
+                {
+                    "title": "Role",
+                    "name": "role",
+                    "type": "select",
+                    "values": [
+                        "Board Member",
+                        "Executive",
+                        "Employee"
+                    ]
+                },
+                {
+                    "title": "Included",
+                    "name": "included",
+                    "type": "select",
+                    "values": [
+                        "Included",
+                        "Excluded"
+                    ]
+                }
+            ],
+            "optional": true,
+            "repeatable": true,
+            "name": "owners_officers",
+            "title": "Owners & Officers"
+        },
+        {
+            "title": "Parties Involved",
+            "name": "parties_involved",
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "values": [
+                        "Individual",
+                        "Business"
+                    ],
+                    "match": [
+                        "Individual",
+                        "Business"
+                    ]
+                },
+                {
+                    "title": "First Name",
+                    "name": "first_name",
+                    "type": "string",
+                    "condition": {
+                        "type": [
+                            "Individual"
+                        ]
+                    }
+                },
+                {
+                    "title": "Last Name",
+                    "name": "last_name",
+                    "type": "string",
+                    "condition": {
+                        "type": [
+                            "Individual"
+                        ]
+                    }
+                },
+                {
+                    "title": "Organization Name",
+                    "name": "org_name",
+                    "type": "string",
+                    "condition": {
+                        "type": [
+                            "Business"
+                        ]
+                    }
+                },
+                {
+                    "title": "Role",
+                    "name": "role",
+                    "type": "select",
+                    "values": [
+                        "Lienholder",
+                        "Additional Insured",
+                        "Primary Insured",
+                        "Co-Owner",
+                        "Controlling Interest"
+                    ],
+                    "match": [
+                        "Lienholder",
+                        "Additional Insured",
+                        "Primary Insured"
+                    ]
+                }
+            ],
+            "optional": true,
+            "repeatable": true
+        },
+        {
+            "title": "Prior Coverage",
+            "name": "prior_coverages",
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Carrier",
+                    "name": "carrier",
+                    "type": "string"
+                },
+                {
+                    "title": "Premium Amount",
+                    "name": "premium_amount",
+                    "type": "number"
+                },
+                {
+                    "title": "Year",
+                    "name": "year",
+                    "type": "string"
+                }
+            ],
+            "optional": true,
+            "repeatable": true
+        },
+        {
+            "title": "Prior Losses",
+            "name": "prior_losses",
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Loss Amount",
+                    "name": "loss_amount",
+                    "type": "number"
+                },
+                {
+                    "title": "Nature of Injury",
+                    "name": "nature_of_injury",
+                    "type": "select",
+                    "values": [
+                        "Amputation",
+                        "Burn",
+                        "Concussion",
+                        "Contusion",
+                        "Crushing",
+                        "Dislocation",
+                        "Electric Shock"
+                    ]
+                },
+                {
+                    "title": "Loss Cause",
+                    "name": "loss_cause",
+                    "type": "select",
+                    "values": [
+                        "Burn",
+                        "Caught",
+                        "Cut/Punch/Scrape",
+                        "Fall/Slip",
+                        "Motor Vehicle",
+                        "Struck By",
+                        "Strain",
+                        "Striking Against"
+                    ]
+                },
+                {
+                    "title": "Claim Status",
+                    "name": "claim_status",
+                    "type": "select",
+                    "values": [
+                        "Open",
+                        "Closed"
+                    ]
+                },
+                {
+                    "title": "Description",
+                    "name": "description",
+                    "type": "string",
+                    "optional": true
+                },
+                {
+                    "title": "Claim Date",
+                    "name": "claim_date",
+                    "type": "date",
+                    "precision": "day"
+                }
+            ],
+            "optional": true,
+            "repeatable": true
+        },
+        {
+            "name": "email",
+            "title": "Email Address",
+            "type": "email",
+            "optional": true,
+            "width": 0,
+            "newline": false
+        },
+        {
+            "title": "Street",
+            "name": "street",
+            "type": "string"
+        },
+        {
+            "title": "City",
+            "name": "city",
+            "type": "string"
+        },
+        {
+            "title": "State",
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "name": "postal_code",
+            "type": "string",
+            "regex": "^([0-9]{5})$",
+            "title": "Postal Code"
+        },
+        {
+            "title": "Any work performed underground or above 15 feet?",
+            "name": "q_work_above_15",
+            "type": "select",
+            "values": [
+                "Yes",
+                "No"
+            ],
+            "optional": true,
+            "condition": {
+                "governing_class_code": [
+                    "0050"
+                ]
+            }
+        },
+        {
+            "title": "Any work performed on docks, barges, vessels, bridge over water?",
+            "name": "q_work_over_water",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Are subcontractors used?",
+            "name": "q_subcontractors_used",
+            "type": "select",
+            "values": [
+                "Yes",
+                "No"
+            ],
+            "optional": true,
+            "condition": {
+                "q_subcontractors_used": [
+                    "Yes"
+                ]
+            }
+        },
+        {
+            "title": "Percent of Work Subcontracted",
+            "name": "q_percent_subcontracted",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "optional": true,
+            "condition": {
+                "q_subcontractors_used": [
+                    "Yes"
+                ]
+            }
+        },
+        {
+            "title": "Any work sublet without certificates of insurance?",
+            "name": "q_work_without_cert_ins",
+            "type": "select",
+            "values": [
+                "Yes",
+                "No"
+            ],
+            "optional": true
+        },
+        {
+            "title": "Do employees travel out of state?",
+            "name": "q_employees_oos",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Any prior coverage declined, cancelled or non-renewed in past 3 years?",
+            "name": "q_prior_cov_declined",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Is applicant engaged or have ownership in any other type of business?",
+            "name": "q_other_business",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Does applicant own, operate or lease any watercraft or aircraft?",
+            "name": "q_own_lease_watercraft_aircraft",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Do you obtain workers from a professional employer organization PEO, employee leasing firm, labor contractor or any third party entity?",
+            "name": "q_workers_from_peo_or_3rd_party",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Is a written safety program in operation?",
+            "name": "q_written_safety_program",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Are employee health plans provided?",
+            "name": "q_health_plans_provided",
+            "type": "select",
+            "optional": true,
+            "values": [
+                "Yes",
+                "No"
+            ]
+        },
+        {
+            "title": "Renewal Direction",
+            "name": "renewal_direction",
+            "type": "select",
+            "values": [
+                "Strong",
+                "Average",
+                "Low"
+            ]
+        },
+        {
+            "title": "Scheduled Credits/Debits - Premises",
+            "name": "scheduled_credits_premises",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Classification Peculiarities",
+            "name": "scheduled_credits_class_peculiarities",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Medical Facilities",
+            "name": "scheduled_credits_medical_facilities",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Safety Devices",
+            "name": "scheduled_credits_safety_devices",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Employees - Selection/Training/Supervision",
+            "name": "scheduled_credits_employees_training",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Management - Cooperation with Insurance Carrier",
+            "name": "scheduled_credits_mgmt_coop_w_carrier",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        },
+        {
+            "title": "Scheduled Credits/Debits - Management - Safety Org",
+            "name": "scheduled_credits_mgmt_safety_org",
+            "type": "number",
+            "maximum": 1.2,
+            "minimum": 0.8,
+            "decimalPlaces": 2,
+            "optional": true
+        }
+    ]
 }
