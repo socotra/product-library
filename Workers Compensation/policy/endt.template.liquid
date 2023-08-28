@@ -24,7 +24,7 @@
         </p>
       </td>
       <td>
-        <img src="http://i.imgur.com/cCB0v64.png" title="Acme Insurance Co" class="logo" height="72px">
+        <svg width="35.658272mm" height="33.307178mm" viewBox="0 0 35.658273 33.307179" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g transform="translate(-16.653589,-40.752316)"><rect style="fill:#1984db;fill-opacity:1;stroke-width:0.191785;stroke-dasharray:none" width="35.658272" height="33.307178" x="16.653589" y="40.752316" /><text xml:space="preserve" style="font-size:7px;font-family:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.265" x="17.437286" y="50.744465"><tspan x="17.437286" y="50.744465">Acme</tspan><tspan x="17.437286" y="60.44585">Insurance</tspan><tspan x="17.437286" y="70.14724">Co.</tspan></text></g></svg>
       </td>
     </tr>
   </table>
@@ -159,7 +159,7 @@
             {% for peril in perils_v %}
                 <tr>
                     <td>
-                        {{peril.characteristics.last.field_values._description}}: {{peril.characteristics.last.field_values.estimated_wages | format_number_currency: "en","US" | remove: ","}} 
+                        {{peril.characteristics.last.field_values._description}}: {{peril.characteristics.last.field_values.estimated_wages | format_number_currency: "en","US" | remove: ","}}
                     </td>
                 </tr>
             {% endfor %}
@@ -172,7 +172,7 @@
                 {% assign first_field = true %}
                 <tr>
                     {% for f in u.updated_field_values %}
-                        {% comment %}<b>f object: {{f}}</b><br>{% endcomment %} 
+                        {% comment %}<b>f object: {{f}}</b><br>{% endcomment %}
                             <td>
                                 {% if (first_field)  %}
                                     <b>Change Type: </b> {{f[1].endorsement_effect}}
@@ -180,22 +180,22 @@
                                 {% endif %}
                             </td>
                             <td>
-                                <b>Name: </b> {{f[1].title}} 
+                                <b>Name: </b> {{f[1].title}}
                             </td>
                             <td>
                                 {% if (f[1].endorsement_effect) == "updated"  %}
                                     {% if (f[1].title) == "Wages" or  (f[1].title) == "Number of Employees" %}
-                                        <b>Old Value: </b> {{f[1].old_value  | format_number_currency: "en","US" }} 
+                                        <b>Old Value: </b> {{f[1].old_value  | format_number_currency: "en","US" }}
                                     {% else %}
-                                        <b>Old Value: </b> {{f[1].old_value}} 
+                                        <b>Old Value: </b> {{f[1].old_value}}
                                     {% endif %}
                                 {% endif %}
                             </td>
                             <td>
                                 {% if (f[1].title) == "Wages" or  (f[1].title) == "Number of Employees" %}
-                                    <b>New/Modified Value: </b> {{f[1].new_value  | format_number_currency: "en","US" }} 
+                                    <b>New/Modified Value: </b> {{f[1].new_value  | format_number_currency: "en","US" }}
                                 {% else %}
-                                    <b>New/Modified Value: </b> {{f[1].new_value}} 
+                                    <b>New/Modified Value: </b> {{f[1].new_value}}
                                 {% endif %}
                             </td>
                     {% endfor %}
@@ -204,7 +204,7 @@
         {% endfor %}
       {% endfor %}
      </table>
-      
+
   {% endfor %}
 {% endfor %}
 

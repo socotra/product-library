@@ -25,7 +25,7 @@
         </p>
       </td>
       <td>
-        <img src="http://i.imgur.com/cCB0v64.png" title="Acme Insurance Co" class="logo" height="72px">
+        <svg width="35.658272mm" height="33.307178mm" viewBox="0 0 35.658273 33.307179" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g transform="translate(-16.653589,-40.752316)"><rect style="fill:#1984db;fill-opacity:1;stroke-width:0.191785;stroke-dasharray:none" width="35.658272" height="33.307178" x="16.653589" y="40.752316" /><text xml:space="preserve" style="font-size:7px;font-family:Arial;fill:#ffffff;fill-opacity:1;stroke-width:0.265" x="17.437286" y="50.744465"><tspan x="17.437286" y="50.744465">Acme</tspan><tspan x="17.437286" y="60.44585">Insurance</tspan><tspan x="17.437286" y="70.14724">Co.</tspan></text></g></svg>
       </td>
     </tr>
   </table>
@@ -38,7 +38,7 @@
 <table class="table border-tops-only content">
   <tr>
     <td>Policyholder</td>
-    <td> 
+    <td>
       <b>Name:</b> {{ph_v.first_name}} {{ph_v.last_name}}<br>
       <b>DOB:</b> {{ph_v.date_of_birth | timestamp_millis_print: "d MMM YYYY" }}<br>
       <b>ID:</b> {{data.policyholder.id}}<br>
@@ -50,7 +50,7 @@
       <b>Number:</b> {{policy.display_id}}<br>
       <b>Term:</b> {{policy.original_contract_start_timestamp | timestamp_millis_print: "d MMM YYYY" }}
       through {{end_display | timestamp_millis_print: "d MMM YYYY" }}<br>
-      <b>Business Name and dba:</b> {{policy_v.business_dba}}<br> 
+      <b>Business Name and dba:</b> {{policy_v.business_dba}}<br>
      </td>
     </tr>
     <tr>
@@ -64,9 +64,9 @@
     <td>Exposure(s)</td>
     <td>
       <b>Professional Indemnity:</b> {{exp_v.professionalindemnity_type}}<br>
-      <b>Full Time Employees:</b> {{exp_v.fulltimeemployees| format_number_pattern: "0"}}<br> 
+      <b>Full Time Employees:</b> {{exp_v.fulltimeemployees| format_number_pattern: "0"}}<br>
       <b>Office Domicile State:</b> {{exp_v.office_domicile_state}}<br>
-      
+
       <b>Revenue Details:</b> {{exp_v.revenuethisyear | format_number_currency: "en","US" }}<br>
 
     </td>
@@ -76,14 +76,14 @@
     <td>
      <b>Gross Premium:</b>{{policy_c.gross_premium | format_number_currency: "en","US" }}</br>
      <b>Jurisdictional Taxes: </b>{{policy_c.gross_taxes | format_number_currency: "en","US" }}</br>
-     <b>Underwriting Fees: </b>{{policy.fees[0].amount | format_number_currency: "en","US" }}</br> 
+     <b>Underwriting Fees: </b>{{policy.fees[0].amount | format_number_currency: "en","US" }}</br>
      <b>Transaction Fees: </b>{{policy.fees[1].amount | format_number_currency: "en","US" }}</br>
     </td>
   </tr>
   <tr>
   <td>Total Due</td>
     <td>
-     <b>{{ policy_c.gross_premium | plus: policy_c.gross_taxes  | plus: policy.fees[0].amount | plus: policy.fees[1].amount | format_number_currency: "en","US" }}</br> 
+     <b>{{ policy_c.gross_premium | plus: policy_c.gross_taxes  | plus: policy.fees[0].amount | plus: policy.fees[1].amount | format_number_currency: "en","US" }}</br>
     </td>
   </table>
 
