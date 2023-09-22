@@ -27,7 +27,7 @@
 {% if tier == "Low Risk Co" %}
     {% comment %} Low Risks Lookup to Class Rates Preferred {% endcomment %}
     {% assign base_rate = "class_rates_low_risk" | lookup: class_code %}
-{% elsif channel == "Standard Risk Co" %}
+{% elsif tier == "Standard Risk Co" %}
     {% comment %} Standard Risks Lookup to Class Rates Standard {% endcomment %}
     {% assign base_rate = "class_rates_standard" | lookup: class_code %}
 {% else %}
